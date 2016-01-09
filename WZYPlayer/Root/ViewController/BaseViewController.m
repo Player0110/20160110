@@ -96,16 +96,14 @@ static const CGFloat MJDuration = 2.0;
 - (void)loadMoreData {
     
     // 模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        // 刷新表格
-//        [self.baseTableView reloadData];
-//        // 拿到当前的上拉刷新控件，结束刷新状态
-//        [self.baseTableView.mj_footer endRefreshing];
-//      });
-//  NSLog(@"上拉刷新");
-//    });
-//    NSLog(@"上拉刷新");
-//    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.baseTableView reloadData];
+        // 拿到当前的上拉刷新控件，结束刷新状态
+        [self.baseTableView.mj_footer endRefreshing];
+      });
+  NSLog(@"上拉刷新");
+    
 }
 
 #pragma mark - 空白页
