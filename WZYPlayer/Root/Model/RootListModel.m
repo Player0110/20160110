@@ -13,7 +13,7 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   return @{};
 }
-+ (NSValueTransformer *)hotJSONTransformer {
++ (NSValueTransformer *)listJSONTransformer {
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[RootModel class]];
 }
 

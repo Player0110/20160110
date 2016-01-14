@@ -12,6 +12,8 @@ pod 'ReactiveCocoa', '2.5'
 pod 'TPKeyboardAvoiding', '~> 1.2.11'
 pod 'AXStretchableHeaderTabViewController', '~> 0.2.0'
 pod 'SDWebImage', '~> 3.7.3'
-
+pod 'RESideMenu','~> 4.0.7'
+pod 'Colours', '~> 5.6.1'
 platform :ios, '8.0'
+
 pod 'MZFormSheetPresentationController', '~> 2.1.3'

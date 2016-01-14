@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		15BE2DEB2099E56567C6B407 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 558CB0EDABED75F46084FFB4 /* libPods.a */; };
+		551554791C462B9500722C52 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551554771C462B9500722C52 /* TextCell.m */; };
+		5515547A1C462B9500722C52 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551554781C462B9500722C52 /* TextCell.xib */; };
+		5515547E1C4637AC00722C52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5515547D1C4637AC00722C52 /* AVFoundation.framework */; };
+		551554801C4638D200722C52 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5515547F1C4638D200722C52 /* AVKit.framework */; };
+		551554821C4638F400722C52 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551554811C4638F400722C52 /* MediaPlayer.framework */; };
+		5523F2EE1C476BCF004033F7 /* RootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2ED1C476BCF004033F7 /* RootMenuViewController.m */; };
+		5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2F51C476D51004033F7 /* MenuViewController.m */; };
+		5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2F81C477679004033F7 /* CollectViewController.m */; };
+		5523F2FB1C477679004033F7 /* CollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5523F2F91C477679004033F7 /* CollectViewController.xib */; };
 		554492361C416BD4008F6FC0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544921F1C416BD4008F6FC0 /* DataService.m */; };
 		554492371C416BD4008F6FC0 /* RootListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492221C416BD4008F6FC0 /* RootListModel.m */; };
 		554492381C416BD4008F6FC0 /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492241C416BD4008F6FC0 /* RootModel.m */; };
@@ -16,15 +25,18 @@
 		5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5544922A1C416BD4008F6FC0 /* RootCell.xib */; };
 		5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */; };
 		5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544922F1C416BD4008F6FC0 /* BaseViewController.m */; };
-		5544923E1C416BD4008F6FC0 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492311C416BD4008F6FC0 /* MovieViewController.m */; };
 		5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492331C416BD4008F6FC0 /* PersonalViewController.m */; };
 		554492401C416BD4008F6FC0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492351C416BD4008F6FC0 /* RootViewController.m */; };
+		554B78091C43FC5C0031041D /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554B78071C43FC5C0031041D /* MovieViewController.m */; };
+		554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554B78081C43FC5C0031041D /* MovieViewController.xib */; };
 		557960991C08A4D300BB731E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 557960981C08A4D300BB731E /* main.m */; };
 		5579609C1C08A4D300BB731E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5579609B1C08A4D300BB731E /* AppDelegate.m */; };
 		557960A21C08A4D300BB731E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557960A01C08A4D300BB731E /* Main.storyboard */; };
 		557960A41C08A4D300BB731E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557960A31C08A4D300BB731E /* Assets.xcassets */; };
 		557960B21C08A4D300BB731E /* WZYPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557960B11C08A4D300BB731E /* WZYPlayerTests.m */; };
 		557960BD1C08A4D300BB731E /* WZYPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557960BC1C08A4D300BB731E /* WZYPlayerUITests.m */; };
+		55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEF36B1C46173F00000DAF /* LogoCell.m */; };
+		55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AEF36C1C46173F00000DAF /* LogoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +57,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		551554761C462B9500722C52 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
+		551554771C462B9500722C52 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
+		551554781C462B9500722C52 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		5515547D1C4637AC00722C52 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5515547F1C4638D200722C52 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		551554811C4638F400722C52 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5523F2EC1C476BCF004033F7 /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
+		5523F2ED1C476BCF004033F7 /* RootMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootMenuViewController.m; sourceTree = "<group>"; };
+		5523F2F41C476D51004033F7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		5523F2F51C476D51004033F7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		5523F2F71C477679004033F7 /* CollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
+		5523F2F81C477679004033F7 /* CollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
+		5523F2F91C477679004033F7 /* CollectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectViewController.xib; sourceTree = "<group>"; };
 		5544921E1C416BD4008F6FC0 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		5544921F1C416BD4008F6FC0 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		554492211C416BD4008F6FC0 /* RootListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootListModel.h; sourceTree = "<group>"; };
@@ -60,12 +85,13 @@
 		5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FillColor.m"; sourceTree = "<group>"; };
 		5544922E1C416BD4008F6FC0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		5544922F1C416BD4008F6FC0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		554492301C416BD4008F6FC0 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
-		554492311C416BD4008F6FC0 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		554492321C416BD4008F6FC0 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
 		554492331C416BD4008F6FC0 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		554492341C416BD4008F6FC0 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		554492351C416BD4008F6FC0 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		554B78061C43FC5C0031041D /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		554B78071C43FC5C0031041D /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		554B78081C43FC5C0031041D /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
 		557960941C08A4D300BB731E /* WZYPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZYPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557960981C08A4D300BB731E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5579609A1C08A4D300BB731E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +106,9 @@
 		557960BC1C08A4D300BB731E /* WZYPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZYPlayerUITests.m; sourceTree = "<group>"; };
 		557960BE1C08A4D300BB731E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558CB0EDABED75F46084FFB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		55AEF36A1C46173F00000DAF /* LogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoCell.h; sourceTree = "<group>"; };
+		55AEF36B1C46173F00000DAF /* LogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoCell.m; sourceTree = "<group>"; };
+		55AEF36C1C46173F00000DAF /* LogoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoCell.xib; sourceTree = "<group>"; };
 		77DBD327FC03862668A5BBE8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C48AAC129A0F0504A7E23473 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551554821C4638F400722C52 /* MediaPlayer.framework in Frameworks */,
+				551554801C4638D200722C52 /* AVKit.framework in Frameworks */,
+				5515547E1C4637AC00722C52 /* AVFoundation.framework in Frameworks */,
 				15BE2DEB2099E56567C6B407 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +177,12 @@
 		554492251C416BD4008F6FC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				551554761C462B9500722C52 /* TextCell.h */,
+				551554771C462B9500722C52 /* TextCell.m */,
+				551554781C462B9500722C52 /* TextCell.xib */,
+				55AEF36A1C46173F00000DAF /* LogoCell.h */,
+				55AEF36B1C46173F00000DAF /* LogoCell.m */,
+				55AEF36C1C46173F00000DAF /* LogoCell.xib */,
 				554492261C416BD4008F6FC0 /* LeftMenuView.h */,
 				554492271C416BD4008F6FC0 /* LeftMenuView.m */,
 				554492281C416BD4008F6FC0 /* RootCell.h */,
@@ -161,12 +199,20 @@
 			children = (
 				5544922E1C416BD4008F6FC0 /* BaseViewController.h */,
 				5544922F1C416BD4008F6FC0 /* BaseViewController.m */,
-				554492301C416BD4008F6FC0 /* MovieViewController.h */,
-				554492311C416BD4008F6FC0 /* MovieViewController.m */,
 				554492321C416BD4008F6FC0 /* PersonalViewController.h */,
 				554492331C416BD4008F6FC0 /* PersonalViewController.m */,
 				554492341C416BD4008F6FC0 /* RootViewController.h */,
 				554492351C416BD4008F6FC0 /* RootViewController.m */,
+				554B78061C43FC5C0031041D /* MovieViewController.h */,
+				554B78071C43FC5C0031041D /* MovieViewController.m */,
+				554B78081C43FC5C0031041D /* MovieViewController.xib */,
+				5523F2EC1C476BCF004033F7 /* RootMenuViewController.h */,
+				5523F2ED1C476BCF004033F7 /* RootMenuViewController.m */,
+				5523F2F41C476D51004033F7 /* MenuViewController.h */,
+				5523F2F51C476D51004033F7 /* MenuViewController.m */,
+				5523F2F71C477679004033F7 /* CollectViewController.h */,
+				5523F2F81C477679004033F7 /* CollectViewController.m */,
+				5523F2F91C477679004033F7 /* CollectViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +282,9 @@
 		E5DA72CCF23973F32DACFF6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				551554811C4638F400722C52 /* MediaPlayer.framework */,
+				5515547F1C4638D200722C52 /* AVKit.framework */,
+				5515547D1C4637AC00722C52 /* AVFoundation.framework */,
 				558CB0EDABED75F46084FFB4 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -311,7 +360,7 @@
 				TargetAttributes = {
 					557960931C08A4D300BB731E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = C53DGAEY52;
+						DevelopmentTeam = E543LKP2QM;
 					};
 					557960AC1C08A4D300BB731E = {
 						CreatedOnToolsVersion = 7.1;
@@ -347,9 +396,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5515547A1C462B9500722C52 /* TextCell.xib in Resources */,
 				557960A41C08A4D300BB731E /* Assets.xcassets in Resources */,
 				5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */,
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
+				554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */,
+				55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */,
+				5523F2FB1C477679004033F7 /* CollectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,15 +475,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
+				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
 				554492391C416BD4008F6FC0 /* LeftMenuView.m in Sources */,
-				5544923E1C416BD4008F6FC0 /* MovieViewController.m in Sources */,
+				551554791C462B9500722C52 /* TextCell.m in Sources */,
+				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
 				554492401C416BD4008F6FC0 /* RootViewController.m in Sources */,
 				5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */,
 				5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */,
 				5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */,
 				554492361C416BD4008F6FC0 /* DataService.m in Sources */,
 				5579609C1C08A4D300BB731E /* AppDelegate.m in Sources */,
+				554B78091C43FC5C0031041D /* MovieViewController.m in Sources */,
 				554492381C416BD4008F6FC0 /* RootModel.m in Sources */,
+				5523F2EE1C476BCF004033F7 /* RootMenuViewController.m in Sources */,
 				557960991C08A4D300BB731E /* main.m in Sources */,
 				554492371C416BD4008F6FC0 /* RootListModel.m in Sources */,
 				5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */,
@@ -568,10 +626,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WZYPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.WZYPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -581,10 +641,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WZYPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.WZYPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
