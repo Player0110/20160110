@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CollectViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+#import "SWTableViewCell.h"
+@interface CollectViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -6,9 +6,11 @@
 //  Copyright © 2016年 wzy. All rights reserved.
 //
 
+#import "CollectViewController.h"
 #import "MenuViewController.h"
 
 @interface MenuViewController ()
+@property(strong, nonatomic) CollectViewController *collectVC;
 
 @end
 
@@ -55,12 +57,13 @@
     [self.sideMenuViewController hideMenuViewController];
     break;
   case 1:
+
     [self.sideMenuViewController
         setContentViewController:
             [[UINavigationController alloc]
                 initWithRootViewController:
                     [self.storyboard instantiateViewControllerWithIdentifier:
-                                         @"secondViewController"]]
+                                         @"CollectViewController"]]
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
     break;

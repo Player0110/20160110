@@ -16,7 +16,7 @@
 		5523F2EE1C476BCF004033F7 /* RootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2ED1C476BCF004033F7 /* RootMenuViewController.m */; };
 		5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2F51C476D51004033F7 /* MenuViewController.m */; };
 		5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2F81C477679004033F7 /* CollectViewController.m */; };
-		5523F2FB1C477679004033F7 /* CollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5523F2F91C477679004033F7 /* CollectViewController.xib */; };
+		5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F35D1C47931E004033F7 /* YZHUDManager.m */; };
 		554492361C416BD4008F6FC0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544921F1C416BD4008F6FC0 /* DataService.m */; };
 		554492371C416BD4008F6FC0 /* RootListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492221C416BD4008F6FC0 /* RootListModel.m */; };
 		554492381C416BD4008F6FC0 /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492241C416BD4008F6FC0 /* RootModel.m */; };
@@ -69,7 +69,8 @@
 		5523F2F51C476D51004033F7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		5523F2F71C477679004033F7 /* CollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
 		5523F2F81C477679004033F7 /* CollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
-		5523F2F91C477679004033F7 /* CollectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectViewController.xib; sourceTree = "<group>"; };
+		5523F35C1C47931E004033F7 /* YZHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZHUDManager.h; sourceTree = "<group>"; };
+		5523F35D1C47931E004033F7 /* YZHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZHUDManager.m; sourceTree = "<group>"; };
 		5544921E1C416BD4008F6FC0 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		5544921F1C416BD4008F6FC0 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		554492211C416BD4008F6FC0 /* RootListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootListModel.h; sourceTree = "<group>"; };
@@ -177,6 +178,8 @@
 		554492251C416BD4008F6FC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5523F35C1C47931E004033F7 /* YZHUDManager.h */,
+				5523F35D1C47931E004033F7 /* YZHUDManager.m */,
 				551554761C462B9500722C52 /* TextCell.h */,
 				551554771C462B9500722C52 /* TextCell.m */,
 				551554781C462B9500722C52 /* TextCell.xib */,
@@ -212,7 +215,6 @@
 				5523F2F51C476D51004033F7 /* MenuViewController.m */,
 				5523F2F71C477679004033F7 /* CollectViewController.h */,
 				5523F2F81C477679004033F7 /* CollectViewController.m */,
-				5523F2F91C477679004033F7 /* CollectViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -402,7 +404,6 @@
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
 				554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */,
 				55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */,
-				5523F2FB1C477679004033F7 /* CollectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +486,7 @@
 				5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */,
 				5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */,
 				554492361C416BD4008F6FC0 /* DataService.m in Sources */,
+				5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */,
 				5579609C1C08A4D300BB731E /* AppDelegate.m in Sources */,
 				554B78091C43FC5C0031041D /* MovieViewController.m in Sources */,
 				554492381C416BD4008F6FC0 /* RootModel.m in Sources */,

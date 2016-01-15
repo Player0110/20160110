@@ -36,6 +36,10 @@
                         block:(void (^)(RootListModel *listModel,
                                         NSError *error))completion;
 + (NSURL *)stringWithUrl:(NSString *)string;
-- (NSURLSessionDataTask *)detailsblock:(void (^)(RootModel *rootModel, NSError *error))completion;
-
+- (NSURLSessionDataTask *)detailsblock:(void (^)(RootModel *rootModel,
+                                                 NSError *error))completion;
+//收藏
+- (void)collectModel;
++ (NSMutableArray *)fetchCollectModel;
+- (void)deleteCollecrModel;
 @end

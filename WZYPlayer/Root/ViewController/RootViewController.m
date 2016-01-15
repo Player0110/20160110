@@ -85,7 +85,6 @@
   [self.navigationController showViewController:movieVC sender:nil];
 }
 
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
@@ -101,7 +100,6 @@
   [self.baseTableView registerNib:[UINib nibWithNibName:@"RootCell"
                                                  bundle:[NSBundle mainBundle]]
            forCellReuseIdentifier:@"RootCell"];
-
 }
 /*
 #pragma mark - Navigation

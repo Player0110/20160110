@@ -13,7 +13,6 @@ static const CGFloat MJDuration = 2.0;
 
 @interface BaseViewController ()
 @property(strong, nonatomic) UIButton *returnButton;
-@property(strong, nonatomic) UIButton *rightButton;
 
 @end
 
@@ -41,23 +40,9 @@ static const CGFloat MJDuration = 2.0;
       [[UIBarButtonItem alloc] initWithCustomView:self.returnButton];
   self.navigationItem.leftBarButtonItem = returnButton;
 }
-- (void)shareButtonView {
-  self.rightButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-  self.rightButton.frame = CGRectMake(0, 0, 55, 55);
-  //
-  UIImage *image = [[UIImage imageNamed:@"share"]
-      imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-  [self.rightButton.imageView setTintColor:[UIColor grayColor]];
-  //
-  [self.rightButton setImage:image forState:(UIControlStateNormal)];
-  [self.rightButton addTarget:self
-                       action:@selector(didClickEdit)
-             forControlEvents:(UIControlEventTouchUpInside)];
-  UIBarButtonItem *rightButton =
-      [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
-  self.navigationItem.rightBarButtonItem = rightButton;
-}
 - (void)didClickEdit {
+    
+    
 }
 - (void)didClickReturn {
 

@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="97"/>
+            <point key="canvasLocation" x="1375" y="-64"/>
         </scene>
         <!--Personal View Controller-->
         <scene sceneID="MLb-5l-aX6">
@@ -78,6 +78,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SHg-kz-Ryk"/>
+                        <segue destination="J3M-3Q-Ex5" kind="show" id="bbz-xP-7bw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-DK-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,7 +101,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OX-kz-z8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="742"/>
+            <point key="canvasLocation" x="207" y="795"/>
+        </scene>
+        <!--Collect View Controller-->
+        <scene sceneID="5yi-rw-7sC">
+            <objects>
+                <viewController storyboardIdentifier="CollectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J3M-3Q-Ex5" customClass="CollectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Obf-FL-gyo"/>
+                        <viewControllerLayoutGuide type="bottom" id="kVS-pA-JIa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wQh-bx-IBl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-Nd-WXB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="top" secondItem="Obf-FL-gyo" secondAttribute="bottom" constant="-64" id="6LX-61-Xn0"/>
+                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="leading" secondItem="wQh-bx-IBl" secondAttribute="leading" id="PlL-ee-R3V"/>
+                            <constraint firstItem="kVS-pA-JIa" firstAttribute="top" secondItem="Y2d-Nd-WXB" secondAttribute="bottom" id="aiK-F9-UU8"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2d-Nd-WXB" secondAttribute="trailing" id="sGO-KT-EeA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8SD-Gw-QDB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="DvD-lR-Bni">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="J3M-3Q-Ex5" id="WXr-cz-UBN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="Y2d-Nd-WXB" id="NNx-uX-ZPm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCL-Bo-cil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="749"/>
         </scene>
     </scenes>
 </document>

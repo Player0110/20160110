@@ -8,13 +8,16 @@
 
 #import "LogoCell.h"
 #import "MovieViewController.h"
+#import "RootModel.h"
 #import "TextCell.h"
 #import "UIImageView+WebCache.h"
+#import "YZHUDManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 @interface MovieViewController ()
 @property(assign, nonatomic) CGFloat height;
 @property(assign, nonatomic) CGFloat desHeight;
+@property(strong, nonatomic) UIButton *rightButton;
 
 @end
 
@@ -159,7 +162,26 @@
                    completion:^{
                    }];
 }
-
+- (void)shareButtonView {
+  self.rightButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+  self.rightButton.frame = CGRectMake(0, 0, 55, 55);
+  //
+  UIImage *image = [[UIImage imageNamed:@"share"]
+      imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+  [self.rightButton.imageView setTintColor:[UIColor grayColor]];
+  //
+  [self.rightButton setImage:image forState:(UIControlStateNormal)];
+  [self.rightButton addTarget:self
+                       action:@selector(didClickEdit)
+             forControlEvents:(UIControlEventTouchUpInside)];
+  UIBarButtonItem *rightButton =
+      [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
+  self.navigationItem.rightBarButtonItem = rightButton;
+}
+- (void)didClickEdit {
+  [self.rootModel collectModel];
+  [[YZHUDManager sharedYZHUDManager] showWithHint:@"收藏成功"];
+}
 ///
 /*
 #pragma mark - Navigation

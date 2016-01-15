@@ -56,7 +56,8 @@ static NSString *const DetailsUrl =
       }];
 }
 
-- (NSURLSessionDataTask *)detailsblock:(void (^)(RootModel *rootModel, NSError *error))completion {
+- (NSURLSessionDataTask *)detailsblock:(void (^)(RootModel *rootModel,
+                                                 NSError *error))completion {
   return [[DataService sharedClient]
       POST:[self stringByReplacingOccurrencesOfString:self.movieId]
       parameters:@{}
@@ -78,6 +79,63 @@ static NSString *const DetailsUrl =
       [string stringByReplacingOccurrencesOfString:@".webp" withString:@".jpg"];
   NSURL *url = [NSURL URLWithString:imgUrl];
   return url;
+}
+//收藏
+- (void)collectModel {
+
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                       NSUserDomainMask, YES);
+  NSString *path = [paths objectAtIndex:0];
+  NSString *filename =
+      [path stringByAppendingPathComponent:@"CollectList.plist"];
+
+  NSMutableArray *array = [NSMutableArray arrayWithContentsOfFile:filename];
+  if (array.count > 0) {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    [array insertObject:data atIndex:0];
+    [array writeToFile:filename atomically:YES];
+    return;
+  }
+
+  NSFileManager *fm = [NSFileManager defaultManager];
+  [fm createFileAtPath:filename contents:nil attributes:nil];
+  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+  NSArray *arr = [[NSArray alloc] initWithObjects:data, nil];
+  [arr writeToFile:filename atomically:YES];
+}
+
++ (NSMutableArray *)fetchCollectModel {
+  NSMutableArray *array = [NSMutableArray new];
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                       NSUserDomainMask, YES);
+  NSString *path = [paths objectAtIndex:0];
+  NSString *filename =
+      [path stringByAppendingPathComponent:@"CollectList.plist"];
+  NSArray *arr = [NSArray arrayWithContentsOfFile:filename];
+  for (NSData *d in arr) {
+    RootModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:d];
+    [array addObject:model];
+  }
+
+  return array;
+}
+- (void)deleteCollecrModel {
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                       NSUserDomainMask, YES);
+  NSString *path = [paths objectAtIndex:0];
+  NSString *filename =
+      [path stringByAppendingPathComponent:@"CollectList.plist"];
+  NSMutableArray *array = [NSMutableArray new];
+  array = [RootModel fetchCollectModel];
+  NSLog(@"%@", self);
+  [array removeObject:self];
+
+  NSMutableArray *a = [NSMutableArray new];
+  for (RootModel *model in array) {
+    NSData *d = [NSKeyedArchiver archivedDataWithRootObject:model];
+    [a addObject:d];
+  }
+  [a writeToFile:filename atomically:YES];
 }
 
 @end
