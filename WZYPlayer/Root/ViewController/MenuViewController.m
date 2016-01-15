@@ -108,7 +108,7 @@
   }
 
   NSArray *titles =
-      @[ @"Home", @"Calendar", @"Profile", @"Settings", @"Log Out" ];
+      @[ @"正在热映", @"即将上映", @"我的收藏", @"Settings", @"Log Out" ];
   NSArray *images = @[
     @"IconHome",
     @"IconCalendar",

@@ -18,7 +18,7 @@
 - (void)cell:(RootCell *)cell model:(RootModel *)model {
 
   [self.picImageView
-      sd_setImageWithURL:nil
+      sd_setImageWithURL:[RootModel stringWithUrl:model.logo]
         placeholderImage:
             [[SDImageCache sharedImageCache]
                 imageFromDiskCacheForKey:[[RootModel stringWithUrl:model.logo]
