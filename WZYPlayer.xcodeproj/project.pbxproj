@@ -19,7 +19,7 @@
 		5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F35D1C47931E004033F7 /* YZHUDManager.m */; };
 		5541CF271C48A7C1005144D8 /* LocaldData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5541CF261C48A7C1005144D8 /* LocaldData.m */; };
 		5541CF2A1C48BF8F005144D8 /* SavePathString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5541CF291C48BF8E005144D8 /* SavePathString.m */; };
-		5541CF2D1C48D2B3005144D8 /* PrevueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5541CF2C1C48D2B3005144D8 /* PrevueViewController.m */; };
+		5541CF301C48E9EE005144D8 /* PrevueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5541CF2F1C48E9EE005144D8 /* PrevueViewController.m */; };
 		554492361C416BD4008F6FC0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544921F1C416BD4008F6FC0 /* DataService.m */; };
 		554492371C416BD4008F6FC0 /* RootListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492221C416BD4008F6FC0 /* RootListModel.m */; };
 		554492381C416BD4008F6FC0 /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492241C416BD4008F6FC0 /* RootModel.m */; };
@@ -78,8 +78,8 @@
 		5541CF261C48A7C1005144D8 /* LocaldData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocaldData.m; path = Model/LocaldData.m; sourceTree = "<group>"; };
 		5541CF281C48BF8E005144D8 /* SavePathString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePathString.h; sourceTree = "<group>"; };
 		5541CF291C48BF8E005144D8 /* SavePathString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePathString.m; sourceTree = "<group>"; };
-		5541CF2B1C48D2B3005144D8 /* PrevueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrevueViewController.h; sourceTree = "<group>"; };
-		5541CF2C1C48D2B3005144D8 /* PrevueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevueViewController.m; sourceTree = "<group>"; };
+		5541CF2E1C48E9EE005144D8 /* PrevueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrevueViewController.h; sourceTree = "<group>"; };
+		5541CF2F1C48E9EE005144D8 /* PrevueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevueViewController.m; sourceTree = "<group>"; };
 		5544921E1C416BD4008F6FC0 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		5544921F1C416BD4008F6FC0 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		554492211C416BD4008F6FC0 /* RootListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootListModel.h; sourceTree = "<group>"; };
@@ -213,6 +213,8 @@
 		5544922D1C416BD4008F6FC0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5541CF2E1C48E9EE005144D8 /* PrevueViewController.h */,
+				5541CF2F1C48E9EE005144D8 /* PrevueViewController.m */,
 				5544922E1C416BD4008F6FC0 /* BaseViewController.h */,
 				5544922F1C416BD4008F6FC0 /* BaseViewController.m */,
 				554492321C416BD4008F6FC0 /* PersonalViewController.h */,
@@ -228,8 +230,6 @@
 				5523F2F51C476D51004033F7 /* MenuViewController.m */,
 				5523F2F71C477679004033F7 /* CollectViewController.h */,
 				5523F2F81C477679004033F7 /* CollectViewController.m */,
-				5541CF2B1C48D2B3005144D8 /* PrevueViewController.h */,
-				5541CF2C1C48D2B3005144D8 /* PrevueViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -491,7 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5541CF2D1C48D2B3005144D8 /* PrevueViewController.m in Sources */,
+				5541CF301C48E9EE005144D8 /* PrevueViewController.m in Sources */,
 				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
 				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
 				554492391C416BD4008F6FC0 /* LeftMenuView.m in Sources */,

@@ -6,11 +6,11 @@
 //  Copyright © 2016年 wzy. All rights reserved.
 //
 
-#import "PrevueViewController.h"
 #import "DataService.h"
 #import "LeftMenuView.h"
 #import "LocaldData.h"
 #import "MovieViewController.h"
+#import "PrevueViewController.h"
 #import "RootCell.h"
 #import "RootListModel.h"
 #import "RootModel.h"
@@ -29,6 +29,7 @@
 
   self.title = NSLocalizedString(@"即将上映", nil);
   self.dataArray = [NSMutableArray arrayWithCapacity:5];
+
   [self data];
   [self setupSubviews];
   [self setupRefresh];
@@ -89,14 +90,14 @@
   // Dispose of any resources that can be recreated.
 }
 - (void)setupSubviews {
-    self.baseTableView =
-    [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:self.baseTableView];
-    self.baseTableView.dataSource = self;
-    self.baseTableView.delegate = self;
-    [self.baseTableView registerNib:[UINib nibWithNibName:@"RootCell"
-                                                   bundle:[NSBundle mainBundle]]
-             forCellReuseIdentifier:@"RootCell"];
+  self.baseTableView =
+      [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  [self.view addSubview:self.baseTableView];
+  self.baseTableView.dataSource = self;
+  self.baseTableView.delegate = self;
+  [self.baseTableView registerNib:[UINib nibWithNibName:@"RootCell"
+                                                 bundle:[NSBundle mainBundle]]
+           forCellReuseIdentifier:@"RootCell"];
 }
 
 /*

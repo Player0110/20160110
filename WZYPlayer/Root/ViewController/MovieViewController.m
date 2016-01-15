@@ -137,7 +137,9 @@
   [playButton addTarget:self
                  action:@selector(playClick)
        forControlEvents:(UIControlEventTouchUpInside)];
-  [headerView addSubview:playButton];
+  if (self.rootModel.mobilePreview) {
+    [headerView addSubview:playButton];
+  }
   playButton.frame =
       CGRectMake((self.view.frame.size.width - 80) / 2, 80, 80, 80);
 

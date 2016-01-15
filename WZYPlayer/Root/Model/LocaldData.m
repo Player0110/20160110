@@ -13,11 +13,7 @@
 
 @implementation LocaldData
 
-+ (void)saveListData:(RootListModel *)listModel type:(NSString *)name{
-
-  if ([LocaldData achieveListDataType:name]) {
-    return;
-  }
++ (void)saveListData:(RootListModel *)listModel type:(NSString *)name {
 
   NSString *filename = [SavePathString savePathLocalNameType:name];
   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listModel];
@@ -25,13 +21,16 @@
       [[NSMutableArray alloc] initWithObjects:data, nil];
   [listArray writeToFile:filename atomically:YES];
 }
-+ (RootListModel *)achieveListDataType:(NSString *)name{
+
++ (RootListModel *)achieveListDataType:(NSString *)name {
   NSString *filename = [SavePathString savePathLocalNameType:name];
   NSMutableArray *a = [NSMutableArray arrayWithContentsOfFile:filename];
   RootListModel *rootListModel =
       [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
   return rootListModel;
 }
+/////////
+////////
 
 + (void)saveDetailData:(RootModel *)model {
   NSString *name = [NSString stringWithFormat:@"%@.plist", model.name];

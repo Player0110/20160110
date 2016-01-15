@@ -55,7 +55,7 @@ static const CGFloat MJDuration = 2.0;
 #pragma mark - MJRefresh上下拉
 - (void)setupRefresh {
   [self headerRereshing];
-  [self fooderRereshing];
+//  [self fooderRereshing];
 }
 
 - (void)headerRereshing {

@@ -65,6 +65,7 @@
                                          @"PrevueViewController"]]
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
+    break;
 
   case 2:
     [self.sideMenuViewController
@@ -75,8 +76,6 @@
                                          @"CollectViewController"]]
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
-
-    break;
 
     break;
   default:
