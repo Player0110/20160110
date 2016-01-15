@@ -7,6 +7,8 @@
 //
 
 #import "RootListModel.h"
+#import <UIKit/UIKit.h>
+
 #import <Mantle/Mantle.h>
 
 @interface RootModel : MTLModel <MTLJSONSerializing>
@@ -28,6 +30,7 @@
 @property(strong, nonatomic) NSString *mobilePreview;
 @property(strong, nonatomic) NSString *des;
 @property(strong, nonatomic) NSString *actors;
+@property(strong, nonatomic) UIImage *logoImage;
 
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
                            block:(void (^)(RootListModel *listModel,

@@ -9,6 +9,7 @@
 #import "DataService.h"
 #import "RootListModel.h"
 #import "RootModel.h"
+#import "SavePathString.h"
 static NSString *const RootUrl =
     @"http://piao.163.com/m/movie/"
     @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
@@ -83,12 +84,7 @@ static NSString *const DetailsUrl =
 //收藏
 - (void)collectModel {
 
-  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                       NSUserDomainMask, YES);
-  NSString *path = [paths objectAtIndex:0];
-  NSString *filename =
-      [path stringByAppendingPathComponent:@"CollectList.plist"];
-
+  NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
   NSMutableArray *array = [NSMutableArray arrayWithContentsOfFile:filename];
   if (array.count > 0) {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
@@ -105,12 +101,9 @@ static NSString *const DetailsUrl =
 }
 
 + (NSMutableArray *)fetchCollectModel {
+  NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
   NSMutableArray *array = [NSMutableArray new];
-  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                       NSUserDomainMask, YES);
-  NSString *path = [paths objectAtIndex:0];
-  NSString *filename =
-      [path stringByAppendingPathComponent:@"CollectList.plist"];
+
   NSArray *arr = [NSArray arrayWithContentsOfFile:filename];
   for (NSData *d in arr) {
     RootModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:d];
@@ -120,14 +113,11 @@ static NSString *const DetailsUrl =
   return array;
 }
 - (void)deleteCollecrModel {
-  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                       NSUserDomainMask, YES);
-  NSString *path = [paths objectAtIndex:0];
-  NSString *filename =
-      [path stringByAppendingPathComponent:@"CollectList.plist"];
+    
+  NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
+
   NSMutableArray *array = [NSMutableArray new];
   array = [RootModel fetchCollectModel];
-  NSLog(@"%@", self);
   [array removeObject:self];
 
   NSMutableArray *a = [NSMutableArray new];

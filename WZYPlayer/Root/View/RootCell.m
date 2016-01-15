@@ -19,14 +19,14 @@
 
   [self.picImageView
       sd_setImageWithURL:[RootModel stringWithUrl:model.logo]
+        placeholderImage:
+            [[SDImageCache sharedImageCache]
+                imageFromDiskCacheForKey:[[RootModel stringWithUrl:model.logo]
+                                             absoluteString]]
                completed:^(UIImage *image, NSError *error,
-                           SDImageCacheType cacheType, NSURL *imageURL) {
-
-                 if (image) {
-                   self.picImageView.image = image;
-                 }
-
+                           SDImageCacheType cacheType, NSURL *imageURL){
                }];
+
   self.titleLabel.text = model.name;
   self.summaryLabel.text = model.highlight;
 }

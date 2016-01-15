@@ -9,6 +9,7 @@
 #import "DataService.h"
 #import "LLSlideMenu.h"
 #import "LeftMenuView.h"
+#import "LocaldData.h"
 #import "MovieViewController.h"
 #import "RootCell.h"
 #import "RootListModel.h"
@@ -18,6 +19,8 @@
 @interface RootViewController ()
 
 @property(strong, nonatomic) NSMutableArray *dataArray;
+@property(strong, nonatomic) NSMutableArray *listarray;
+
 @property(nonatomic, strong) LeftMenuView *slideMenu;
 
 // 全屏侧滑手势
@@ -44,14 +47,20 @@
 }
 
 - (void)data {
-  [RootModel URL:@""
-           block:^(RootListModel *listModel, NSError *error) {
-             if (!error) {
-               self.dataArray = listModel.list;
-               [self.baseTableView reloadData];
-             }
+  if ([LocaldData achieveListData]) {
+    self.dataArray = [LocaldData achieveListData].list;
+    [self.baseTableView reloadData];
 
-           }];
+  } else {
+    [RootModel URL:@""
+             block:^(RootListModel *listModel, NSError *error) {
+               if (!error) {
+                 self.dataArray = listModel.list;
+                 [LocaldData saveListData:listModel];
+                 [self.baseTableView reloadData];
+               }
+             }];
+  }
 }
 #pragma mark - TabelView Delegate and DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -100,6 +109,8 @@
   [self.baseTableView registerNib:[UINib nibWithNibName:@"RootCell"
                                                  bundle:[NSBundle mainBundle]]
            forCellReuseIdentifier:@"RootCell"];
+}
+- (void)viewDidAppear:(BOOL)animated {
 }
 /*
 #pragma mark - Navigation
