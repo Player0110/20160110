@@ -112,8 +112,8 @@ static NSString *const DetailsUrl =
 
   return array;
 }
-- (void)deleteCollecrModel {
-    
+- (void)deleteCollectModel {
+
   NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
 
   NSMutableArray *array = [NSMutableArray new];

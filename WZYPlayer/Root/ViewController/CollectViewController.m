@@ -27,7 +27,7 @@
   [self.tableView registerNib:[UINib nibWithNibName:@"RootCell"
                                              bundle:[NSBundle mainBundle]]
        forCellReuseIdentifier:@"RootCell"];
-  self.tableView.tableHeaderView = [[UIView alloc] init];
+  self.tableView.tableFooterView = [[UIView alloc] init];
   [self data];
 }
 - (void)data {
@@ -86,7 +86,7 @@
 
   RootModel *model = self.array[cellIndexPath.row];
 
-  [model deleteCollecrModel];
+  [model deleteCollectModel];
   [self.array removeObjectAtIndex:(NSUInteger)index];
   [self.tableView deleteRowsAtIndexPaths:@[ cellIndexPath ]
                         withRowAnimation:UITableViewRowAnimationLeft];

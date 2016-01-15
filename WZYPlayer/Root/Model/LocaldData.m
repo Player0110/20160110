@@ -8,6 +8,7 @@
 
 #import "LocaldData.h"
 #import "RootListModel.h"
+#import "RootModel.h"
 #import "SavePathString.h"
 
 @implementation LocaldData
@@ -17,7 +18,7 @@
   if ([LocaldData achieveListData]) {
     return;
   }
-    
+
   NSString *filename = [SavePathString savePathLocalName];
   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listModel];
   NSMutableArray *listArray =
@@ -30,5 +31,22 @@
   RootListModel *rootListModel =
       [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
   return rootListModel;
+}
+
++ (void)saveDetailData:(RootModel *)model {
+  NSString *name = [NSString stringWithFormat:@"%@.plist", model.name];
+  NSString *filename = [SavePathString savePathName:name];
+  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model];
+  NSMutableArray *detailArray =
+      [[NSMutableArray alloc] initWithObjects:data, nil];
+  [detailArray writeToFile:filename atomically:YES];
+}
+
++ (RootModel *)achieveDetailData:(RootModel *)model {
+  NSString *name = [NSString stringWithFormat:@"%@.plist", model.name];
+  NSString *filename = [SavePathString savePathName:name];
+  NSMutableArray *a = [NSMutableArray arrayWithContentsOfFile:filename];
+  RootModel *rmodel = [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
+  return rmodel;
 }
 @end

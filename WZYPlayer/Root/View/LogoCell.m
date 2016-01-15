@@ -15,12 +15,12 @@
 
   [self.pictureView
       sd_setImageWithURL:[RootModel stringWithUrl:model.logo2]
+        placeholderImage:
+            [[SDImageCache sharedImageCache]
+                imageFromDiskCacheForKey:[[RootModel stringWithUrl:model.logo2]
+                                             absoluteString]]
                completed:^(UIImage *image, NSError *error,
-                           SDImageCacheType cacheType, NSURL *imageURL) {
-                 if (image) {
-                   self.pictureView.image = image;
-                 }
-
+                           SDImageCacheType cacheType, NSURL *imageURL){
                }];
 
   self.gradeLabel.text = model.grade;

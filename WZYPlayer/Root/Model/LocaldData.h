@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 @class RootListModel;
+@class RootModel;
 
 @interface LocaldData : NSObject
 + (void)saveListData:(RootListModel *)listModel;
 + (RootListModel *)achieveListData;
-
++ (void)saveDetailData:(RootModel *)model;
++ (RootModel *)achieveDetailData:(RootModel *)model;
 @end

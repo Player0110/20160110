@@ -6,6 +6,7 @@
 //  Copyright © 2016年 wzy. All rights reserved.
 //
 
+#import "LocaldData.h"
 #import "LogoCell.h"
 #import "MovieViewController.h"
 #import "RootModel.h"
@@ -44,8 +45,15 @@
   [self data];
 }
 - (void)data {
+  if ([LocaldData achieveDetailData:self.rootModel]) {
+    self.rootModel = [LocaldData achieveDetailData:self.rootModel];
+    [self.tableView reloadData];
+    return;
+  }
+
   [self.rootModel detailsblock:^(RootModel *rootModel, NSError *error) {
     self.rootModel = rootModel;
+    [LocaldData saveDetailData:rootModel];
     [self.tableView reloadData];
 
   }];
@@ -109,15 +117,18 @@
       [[UITableViewHeaderFooterView alloc] init];
   UIImageView *imageView = [[UIImageView alloc]
       initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 235)];
-
+  NSLog(@"%@", self.rootModel.logo556640);
   [imageView
       sd_setImageWithURL:[RootModel stringWithUrl:self.rootModel.logo556640]
+        placeholderImage:[[SDImageCache sharedImageCache]
+                             imageFromDiskCacheForKey:
+                                 [[RootModel
+                                     stringWithUrl:self.rootModel.logo556640]
+                                     absoluteString]]
                completed:^(UIImage *image, NSError *error,
-                           SDImageCacheType cacheType, NSURL *imageURL) {
-                 if (image) {
-                   imageView.image = image;
-                 }
+                           SDImageCacheType cacheType, NSURL *imageURL){
                }];
+
   [headerView addSubview:imageView];
 
   UIButton *playButton = [UIButton buttonWithType:(UIButtonTypeCustom)];

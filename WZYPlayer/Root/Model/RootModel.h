@@ -44,5 +44,5 @@
 //收藏
 - (void)collectModel;
 + (NSMutableArray *)fetchCollectModel;
-- (void)deleteCollecrModel;
+- (void)deleteCollectModel;
 @end
