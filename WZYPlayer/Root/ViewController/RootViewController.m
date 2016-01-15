@@ -21,12 +21,6 @@
 @property(strong, nonatomic) NSMutableArray *dataArray;
 @property(strong, nonatomic) NSMutableArray *listarray;
 
-@property(nonatomic, strong) LeftMenuView *slideMenu;
-
-// 全屏侧滑手势
-@property(nonatomic, strong) UIPanGestureRecognizer *leftSwipe;
-@property(nonatomic, strong) UIPercentDrivenInteractiveTransition *percent;
-
 @end
 
 @implementation RootViewController
@@ -41,22 +35,20 @@
   [self setupSubviews];
   [self setupRefresh];
   [self setupEmptyView];
-
-  //侧边栏
-  //  [self setupLeftView];
 }
 
 - (void)data {
-  if ([LocaldData achieveListData]) {
-    self.dataArray = [LocaldData achieveListData].list;
+  if ([LocaldData achieveListDataType:@"list.plist"]) {
+    self.dataArray = [LocaldData achieveListDataType:@"list.plist"].list;
     [self.baseTableView reloadData];
 
   } else {
     [RootModel URL:@""
+              type:@""
              block:^(RootListModel *listModel, NSError *error) {
                if (!error) {
                  self.dataArray = listModel.list;
-                 [LocaldData saveListData:listModel];
+                 [LocaldData saveListData:listModel type:@"list.plist"];
                  [self.baseTableView reloadData];
                }
              }];
@@ -112,6 +104,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
 }
+
 /*
 #pragma mark - Navigation
 

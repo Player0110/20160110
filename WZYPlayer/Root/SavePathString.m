@@ -17,12 +17,12 @@
   NSString *filename = [path stringByAppendingPathComponent:name];
   return filename;
 }
-+ (NSString *)savePathLocalName {
++ (NSString *)savePathLocalNameType:(NSString *)name {
   NSDate *d = [NSDate date];
   NSString *s = [NSString stringWithFormat:@"%@", d];
   NSString *time = [s substringToIndex:10];
-  NSString *name = [NSString stringWithFormat:@"%@T%@", time, @"List.plist"];
-  NSString *filename = [SavePathString savePathName:name];
+  NSString *n = [NSString stringWithFormat:@"%@T%@", time, name];
+  NSString *filename = [SavePathString savePathName:n];
 
   return filename;
 }

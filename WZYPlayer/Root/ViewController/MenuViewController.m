@@ -8,7 +8,7 @@
 
 #import "CollectViewController.h"
 #import "MenuViewController.h"
-
+#import "PrevueViewController.h"
 @interface MenuViewController ()
 @property(strong, nonatomic) CollectViewController *collectVC;
 
@@ -57,7 +57,16 @@
     [self.sideMenuViewController hideMenuViewController];
     break;
   case 1:
+    [self.sideMenuViewController
+        setContentViewController:
+            [[UINavigationController alloc]
+                initWithRootViewController:
+                    [self.storyboard instantiateViewControllerWithIdentifier:
+                                         @"PrevueViewController"]]
+                        animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
 
+  case 2:
     [self.sideMenuViewController
         setContentViewController:
             [[UINavigationController alloc]
@@ -66,6 +75,9 @@
                                          @"CollectViewController"]]
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
+
+    break;
+
     break;
   default:
     break;
@@ -108,7 +120,11 @@
   }
 
   NSArray *titles =
-      @[ @"正在热映", @"即将上映", @"我的收藏", @"Settings", @"Log Out" ];
+      @[ @"正在热映",
+         @"即将上映",
+         @"我的收藏",
+         @"Settings",
+         @"Log Out" ];
   NSArray *images = @[
     @"IconHome",
     @"IconCalendar",

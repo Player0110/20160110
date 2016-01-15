@@ -19,6 +19,15 @@ static NSString *const DetailsUrl =
     @"detail.html?movie_id=%@&mobileType=iPhone&ver=3.7.1&channel=lede&"
     @"deviceId="
     @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+
+static NSString *const PrevueUrl =
+    @"http://piao.163.com/m/movie/"
+    @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&type=1&channel=lede&"
+    @"deviceId="
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+
+//
+
 @implementation RootModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   return @{
@@ -44,9 +53,16 @@ static NSString *const DetailsUrl =
       }];
 }
 + (NSURLSessionDataTask *)URL:(NSString *)url
+                         type:(NSString *)type
                         block:(void (^)(RootListModel *listModel,
                                         NSError *error))completion {
-  return [[DataService sharedClient] POST:RootUrl
+  NSString *str;
+  if ([type isEqualToString:@"1"]) {
+    str = PrevueUrl;
+  } else {
+    str = RootUrl;
+  }
+  return [[DataService sharedClient] POST:str
       parameters:@{}
       completion:^(id response, NSError *error) {
         RootListModel *rootList =

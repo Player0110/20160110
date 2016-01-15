@@ -11,8 +11,8 @@
 @class RootModel;
 
 @interface LocaldData : NSObject
-+ (void)saveListData:(RootListModel *)listModel;
-+ (RootListModel *)achieveListData;
++ (void)saveListData:(RootListModel *)listModel type:(NSString *)name;
++ (RootListModel *)achieveListDataType:(NSString *)name;
 + (void)saveDetailData:(RootModel *)model;
 + (RootModel *)achieveDetailData:(RootModel *)model;
 @end

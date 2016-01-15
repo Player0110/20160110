@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface PrevueViewController : UIViewController
+@interface PrevueViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

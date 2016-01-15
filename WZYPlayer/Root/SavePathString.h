@@ -10,5 +10,5 @@
 
 @interface SavePathString : NSObject
 + (NSString *)savePathName:(NSString *)name;
-+ (NSString *)savePathLocalName;
++ (NSString *)savePathLocalNameType:(NSString *)name;
 @end

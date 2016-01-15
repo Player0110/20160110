@@ -36,6 +36,7 @@
                            block:(void (^)(RootListModel *listModel,
                                            NSError *error))completion;
 + (NSURLSessionDataTask *)URL:(NSString *)url
+                         type:(NSString *)type
                         block:(void (^)(RootListModel *listModel,
                                         NSError *error))completion;
 + (NSURL *)stringWithUrl:(NSString *)string;

@@ -78,7 +78,8 @@
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SHg-kz-Ryk"/>
-                        <segue destination="J3M-3Q-Ex5" kind="show" id="bbz-xP-7bw"/>
+                        <segue destination="J3M-3Q-Ex5" kind="show" id="nIv-Le-5wn"/>
+                        <segue destination="Lxc-UZ-5d3" kind="show" id="9if-Zr-Nwj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-DK-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,7 +102,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OX-kz-z8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="885"/>
+            <point key="canvasLocation" x="-412" y="869"/>
+        </scene>
+        <!--Prevue View Controller-->
+        <scene sceneID="F5r-fM-I1C">
+            <objects>
+                <viewController storyboardIdentifier="PrevueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lxc-UZ-5d3" customClass="PrevueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K7b-eg-cuC"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ye-a8-Phy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GNp-PB-gIJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k1X-x6-5kz">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="mU2-Zf-uyA">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="Lxc-UZ-5d3" id="ne3-jR-XKy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nv-DJ-oEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="858"/>
         </scene>
         <!--Collect View Controller-->
         <scene sceneID="5yi-rw-7sC">
@@ -143,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCL-Bo-cil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="749"/>
+            <point key="canvasLocation" x="1046" y="741"/>
         </scene>
     </scenes>
 </document>
