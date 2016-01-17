@@ -2,14 +2,17 @@
 //  MovieViewController.h
 //  WZYPlayer
 //
-//  Created by wzy on 16/1/9.
+//  Created by wzy on 16/1/11.
 //  Copyright © 2016年 wzy. All rights reserved.
 //
 
-#import "BaseViewController.h"
 #import "RootModel.h"
 #import <UIKit/UIKit.h>
-@interface MovieViewController : BaseViewController
+#import "BaseViewController.h"
+
+@interface MovieViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong, nonatomic) RootModel *rootModel;
 
 @end

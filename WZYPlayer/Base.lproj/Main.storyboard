@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HXV-AS-GJC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fjR-IE-QCv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,14 +21,16 @@
                     <navigationItem key="navigationItem" id="7LW-Yb-30Q">
                         <barButtonItem key="leftBarButtonItem" title="leftButton" id="OEX-LG-k4S">
                             <connections>
-                                <action selector="leftBarButtonAction:" destination="BYZ-38-t0r" id="uGc-3c-3ZJ"/>
+                                <action selector="presentLeftMenuViewController:" destination="BYZ-38-t0r" id="L9P-kL-Ih1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="74"/>
+            <point key="canvasLocation" x="1375" y="-64"/>
         </scene>
         <!--Personal View Controller-->
         <scene sceneID="MLb-5l-aX6">
@@ -48,21 +50,126 @@
             </objects>
             <point key="canvasLocation" x="1931" y="74"/>
         </scene>
+        <!--Root Menu View Controller-->
+        <scene sceneID="dqj-XX-ZFh">
+            <objects>
+                <viewController storyboardIdentifier="RootMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fjR-IE-QCv" customClass="RootMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jdi-M8-8hu"/>
+                        <viewControllerLayoutGuide type="bottom" id="KHD-F5-FDs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kGe-6N-pxi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uut-Mv-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-363" y="157"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Of-1D-Ylf">
             <objects>
-                <navigationController id="HXV-AS-GJC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="contentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXV-AS-GJC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wil-jY-vaL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SHg-kz-Ryk"/>
+                        <segue destination="J3M-3Q-Ex5" kind="show" id="nIv-Le-5wn"/>
+                        <segue destination="Lxc-UZ-5d3" kind="show" id="9if-Zr-Nwj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-DK-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="74"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="6Qd-7v-kMp">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7kE-98-Y7u" customClass="MenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJu-ZW-jpV"/>
+                        <viewControllerLayoutGuide type="bottom" id="l18-j2-dqE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mz0-Eu-Vqr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OX-kz-z8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="869"/>
+        </scene>
+        <!--Prevue View Controller-->
+        <scene sceneID="F5r-fM-I1C">
+            <objects>
+                <viewController storyboardIdentifier="PrevueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lxc-UZ-5d3" customClass="PrevueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K7b-eg-cuC"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ye-a8-Phy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GNp-PB-gIJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k1X-x6-5kz">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="mU2-Zf-uyA">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="Lxc-UZ-5d3" id="ne3-jR-XKy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nv-DJ-oEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="858"/>
+        </scene>
+        <!--Collect View Controller-->
+        <scene sceneID="5yi-rw-7sC">
+            <objects>
+                <viewController storyboardIdentifier="CollectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J3M-3Q-Ex5" customClass="CollectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Obf-FL-gyo"/>
+                        <viewControllerLayoutGuide type="bottom" id="kVS-pA-JIa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wQh-bx-IBl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-Nd-WXB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="top" secondItem="Obf-FL-gyo" secondAttribute="bottom" constant="-64" id="6LX-61-Xn0"/>
+                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="leading" secondItem="wQh-bx-IBl" secondAttribute="leading" id="PlL-ee-R3V"/>
+                            <constraint firstItem="kVS-pA-JIa" firstAttribute="top" secondItem="Y2d-Nd-WXB" secondAttribute="bottom" id="aiK-F9-UU8"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2d-Nd-WXB" secondAttribute="trailing" id="sGO-KT-EeA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8SD-Gw-QDB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="DvD-lR-Bni">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="J3M-3Q-Ex5" id="WXr-cz-UBN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="Y2d-Nd-WXB" id="NNx-uX-ZPm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCL-Bo-cil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="741"/>
         </scene>
     </scenes>
 </document>
