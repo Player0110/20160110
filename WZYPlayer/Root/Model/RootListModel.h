@@ -9,6 +9,6 @@
 #import <Mantle/Mantle.h>
 
 @interface RootListModel : MTLModel <MTLJSONSerializing>
-@property(strong, nonatomic) NSMutableArray *hot;
+@property(strong, nonatomic) NSMutableArray *list;
 
 @end

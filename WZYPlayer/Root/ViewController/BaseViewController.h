@@ -24,6 +24,7 @@
  */
 - (void)setupEmptyView;
 - (void)leftButton;
+-(void)shareButtonView;
 
 @end
 

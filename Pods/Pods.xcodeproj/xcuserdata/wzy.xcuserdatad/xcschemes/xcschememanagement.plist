@@ -6,78 +6,98 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>AXStretchableHeaderTabViewController.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>BlocksKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Colours.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>LLSlideMenu.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MZAppearance.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MZFormSheetPresentationController.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RESideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SWTableViewCell.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>TPKeyboardAvoiding.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B72E08AE5579288EF18162722F6C97F</key>
+		<key>14D2008578FFE471DE50AE7147D301A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14D2008578FFE471DE50AE7147D301A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,22 +112,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D8FECB0FC9FE544261B5D3EA2BFAFE4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>34440D436B6519A357FFA66228EB4C96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3ADB16A5A6E4C555B1DB8FF6EA21FE80</key>
+		<key>5274848432142B064787A7B27709C558</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5274848432142B064787A7B27709C558</key>
+		<key>557FA3A4220EDDF99AC63CFD3D994797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>599E5A41D613BDF0BAB2C4130FA196F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>557FA3A4220EDDF99AC63CFD3D994797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>599E5A41D613BDF0BAB2C4130FA196F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +152,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>88B82DCB895C248BB1AA645ED5960F07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BE41900480C9B39EA68AEEA0FA37C3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,6 +192,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E7C323200BBF62BB342CAC37C8BD70C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EC15B982CD518E85D873E06E7D62F0B3</key>
 		<dict>
 			<key>primary</key>
@@ -163,6 +208,16 @@
 			<true/>
 		</dict>
 		<key>F37595A8FF246A24795AE5036DAE10EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F829AC827ACC53A4FAAD16C3C6E6AF11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

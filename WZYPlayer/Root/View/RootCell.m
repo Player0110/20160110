@@ -18,19 +18,17 @@
 - (void)cell:(RootCell *)cell model:(RootModel *)model {
 
   [self.picImageView
-      sd_setImageWithURL:[NSURL URLWithString:model.img]
+      sd_setImageWithURL:[RootModel stringWithUrl:model.logo]
+        placeholderImage:
+            [[SDImageCache sharedImageCache]
+                imageFromDiskCacheForKey:[[RootModel stringWithUrl:model.logo]
+                                             absoluteString]]
                completed:^(UIImage *image, NSError *error,
-                           SDImageCacheType cacheType, NSURL *imageURL) {
-
-                 if (image) {
-                   self.picImageView.image = image;
-                 }
-
+                           SDImageCacheType cacheType, NSURL *imageURL){
                }];
-  NSLog(@"%@", model);
-  self.titleLabel.text = model.nm;
-  self.summaryLabel.text = model.desc;
 
+  self.titleLabel.text = model.name;
+  self.summaryLabel.text = model.highlight;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
   [super setSelected:selected animated:animated];

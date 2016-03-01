@@ -14,4 +14,8 @@
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters
                    completion:(void (^)(id response, NSError *error, NSDictionary *header))completion ;
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(id)parameters
+                    completion:
+(void (^)(id response, NSError *error))completion;
 @end
