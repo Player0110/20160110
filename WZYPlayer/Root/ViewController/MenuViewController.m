@@ -9,6 +9,8 @@
 #import "CollectViewController.h"
 #import "MenuViewController.h"
 #import "PrevueViewController.h"
+#import "CinemaViewController.h"
+
 @interface MenuViewController ()
 @property(strong, nonatomic) CollectViewController *collectVC;
 
@@ -66,8 +68,18 @@
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
     break;
-
   case 2:
+      [self.sideMenuViewController
+       setContentViewController:
+       [[UINavigationController alloc]
+        initWithRootViewController:
+        [self.storyboard instantiateViewControllerWithIdentifier:
+         @"CinemaViewController"]]
+       animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
+
+  case 3:
     [self.sideMenuViewController
         setContentViewController:
             [[UINavigationController alloc]
@@ -97,7 +109,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)sectionIndex {
-  return 5;
+  return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -121,10 +133,12 @@
   NSArray *titles =
       @[ @"正在热映",
          @"即将上映",
+         @"影院",
          @"我的收藏",
          @"Settings",
          @"Log Out" ];
   NSArray *images = @[
+    @"IconHome",
     @"IconHome",
     @"IconCalendar",
     @"IconProfile",

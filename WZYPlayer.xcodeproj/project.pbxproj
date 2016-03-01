@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		15BE2DEB2099E56567C6B407 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 558CB0EDABED75F46084FFB4 /* libPods.a */; };
+		2906FD181C858AF300750058 /* CinemaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD171C858AF300750058 /* CinemaModel.m */; };
+		2906FD1B1C858D1B00750058 /* CinemaListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1A1C858D1B00750058 /* CinemaListModel.m */; };
+		2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1D1C85946A00750058 /* CinemaCell.m */; };
+		2906FD201C85946A00750058 /* CinemaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2906FD1E1C85946A00750058 /* CinemaCell.xib */; };
+		2906FD241C85983A00750058 /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD221C85983A00750058 /* CinemaViewController.m */; };
 		551554791C462B9500722C52 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551554771C462B9500722C52 /* TextCell.m */; };
 		5515547A1C462B9500722C52 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551554781C462B9500722C52 /* TextCell.xib */; };
 		5515547E1C4637AC00722C52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5515547D1C4637AC00722C52 /* AVFoundation.framework */; };
@@ -60,6 +65,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2906FD161C858AF300750058 /* CinemaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaModel.h; sourceTree = "<group>"; };
+		2906FD171C858AF300750058 /* CinemaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaModel.m; sourceTree = "<group>"; };
+		2906FD191C858D1B00750058 /* CinemaListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaListModel.h; sourceTree = "<group>"; };
+		2906FD1A1C858D1B00750058 /* CinemaListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaListModel.m; sourceTree = "<group>"; };
+		2906FD1C1C85946A00750058 /* CinemaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaCell.h; sourceTree = "<group>"; };
+		2906FD1D1C85946A00750058 /* CinemaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaCell.m; sourceTree = "<group>"; };
+		2906FD1E1C85946A00750058 /* CinemaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaCell.xib; sourceTree = "<group>"; };
+		2906FD211C85983A00750058 /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaViewController.h; sourceTree = "<group>"; };
+		2906FD221C85983A00750058 /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaViewController.m; sourceTree = "<group>"; };
 		551554761C462B9500722C52 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
 		551554771C462B9500722C52 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		551554781C462B9500722C52 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
@@ -184,6 +198,10 @@
 				554492221C416BD4008F6FC0 /* RootListModel.m */,
 				554492231C416BD4008F6FC0 /* RootModel.h */,
 				554492241C416BD4008F6FC0 /* RootModel.m */,
+				2906FD161C858AF300750058 /* CinemaModel.h */,
+				2906FD171C858AF300750058 /* CinemaModel.m */,
+				2906FD191C858D1B00750058 /* CinemaListModel.h */,
+				2906FD1A1C858D1B00750058 /* CinemaListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +224,9 @@
 				5544922A1C416BD4008F6FC0 /* RootCell.xib */,
 				5544922B1C416BD4008F6FC0 /* UIButton+FillColor.h */,
 				5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */,
+				2906FD1C1C85946A00750058 /* CinemaCell.h */,
+				2906FD1D1C85946A00750058 /* CinemaCell.m */,
+				2906FD1E1C85946A00750058 /* CinemaCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +251,8 @@
 				5523F2F51C476D51004033F7 /* MenuViewController.m */,
 				5523F2F71C477679004033F7 /* CollectViewController.h */,
 				5523F2F81C477679004033F7 /* CollectViewController.m */,
+				2906FD211C85983A00750058 /* CinemaViewController.h */,
+				2906FD221C85983A00750058 /* CinemaViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -414,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5515547A1C462B9500722C52 /* TextCell.xib in Resources */,
+				2906FD201C85946A00750058 /* CinemaCell.xib in Resources */,
 				557960A41C08A4D300BB731E /* Assets.xcassets in Resources */,
 				5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */,
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
@@ -492,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5541CF301C48E9EE005144D8 /* PrevueViewController.m in Sources */,
+				2906FD241C85983A00750058 /* CinemaViewController.m in Sources */,
 				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
 				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
 				554492391C416BD4008F6FC0 /* LeftMenuView.m in Sources */,
@@ -499,13 +524,16 @@
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
 				554492401C416BD4008F6FC0 /* RootViewController.m in Sources */,
 				5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */,
+				2906FD181C858AF300750058 /* CinemaModel.m in Sources */,
 				5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */,
 				5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */,
 				554492361C416BD4008F6FC0 /* DataService.m in Sources */,
+				2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */,
 				5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */,
 				5579609C1C08A4D300BB731E /* AppDelegate.m in Sources */,
 				554B78091C43FC5C0031041D /* MovieViewController.m in Sources */,
 				554492381C416BD4008F6FC0 /* RootModel.m in Sources */,
+				2906FD1B1C858D1B00750058 /* CinemaListModel.m in Sources */,
 				5541CF2A1C48BF8F005144D8 /* SavePathString.m in Sources */,
 				5523F2EE1C476BCF004033F7 /* RootMenuViewController.m in Sources */,
 				557960991C08A4D300BB731E /* main.m in Sources */,

@@ -10,6 +10,7 @@
 #import "RootListModel.h"
 #import "RootModel.h"
 #import "SavePathString.h"
+#import "CinemaListModel.h"
 
 @implementation LocaldData
 
@@ -47,5 +48,22 @@
   NSMutableArray *a = [NSMutableArray arrayWithContentsOfFile:filename];
   RootModel *rmodel = [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
   return rmodel;
+}
+
++ (void)saveCinemaListData:(CinemaListModel *)cinemalistModel type:(NSString *)name {
+    NSString *filename = [SavePathString savePathLocalNameType:name];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:cinemalistModel];
+    NSMutableArray *listArray =
+    [[NSMutableArray alloc] initWithObjects:data, nil];
+    [listArray writeToFile:filename atomically:YES];
+
+}
+
++ (CinemaListModel *)achieveCinemaListDataType:(NSString *)name {
+    NSString *filename = [SavePathString savePathLocalNameType:name];
+    NSMutableArray *a = [NSMutableArray arrayWithContentsOfFile:filename];
+    CinemaListModel *cinemaListModel =
+    [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
+    return cinemaListModel;
 }
 @end
