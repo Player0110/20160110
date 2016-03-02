@@ -21,8 +21,16 @@
     self.cinemaNameLabel.text = model.name;
     self.addressLabel.text = model.circleName ? model.circleName:model.address;
     self.screeningsLabel.text = model.screenings;
-    self.lowPriceLabel.text = [NSString stringWithFormat:@"¥%@起",model.lowPrice];
+//    self.lowPriceLabel.text = [NSString stringWithFormat:@"¥%@起",model.lowPrice];
+    if (model.lowPrice != nil) {
     
+    
+    NSMutableAttributedString *lowPrice = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"¥%@起",model.lowPrice]];
+        NSLog(@"%@",lowPrice);
+
+    [lowPrice addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Courier-BoldOblique" size:16.0] range:NSMakeRange(1, [model.lowPrice length])];
+    self.lowPriceLabel.attributedText = lowPrice;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
