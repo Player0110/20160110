@@ -13,6 +13,10 @@
 		2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1D1C85946A00750058 /* CinemaCell.m */; };
 		2906FD201C85946A00750058 /* CinemaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2906FD1E1C85946A00750058 /* CinemaCell.xib */; };
 		2906FD241C85983A00750058 /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD221C85983A00750058 /* CinemaViewController.m */; };
+		2954399C1C86DBE300036842 /* MusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954399A1C86DBE300036842 /* MusicCell.m */; };
+		2954399D1C86DBE300036842 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2954399B1C86DBE300036842 /* MusicCell.xib */; };
+		295439A11C86E11700036842 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954399F1C86E11700036842 /* MusicViewController.m */; };
+		295439A21C86E11700036842 /* MusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295439A01C86E11700036842 /* MusicViewController.xib */; };
 		551554791C462B9500722C52 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551554771C462B9500722C52 /* TextCell.m */; };
 		5515547A1C462B9500722C52 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551554781C462B9500722C52 /* TextCell.xib */; };
 		5515547E1C4637AC00722C52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5515547D1C4637AC00722C52 /* AVFoundation.framework */; };
@@ -28,10 +32,8 @@
 		554492361C416BD4008F6FC0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544921F1C416BD4008F6FC0 /* DataService.m */; };
 		554492371C416BD4008F6FC0 /* RootListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492221C416BD4008F6FC0 /* RootListModel.m */; };
 		554492381C416BD4008F6FC0 /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492241C416BD4008F6FC0 /* RootModel.m */; };
-		554492391C416BD4008F6FC0 /* LeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492271C416BD4008F6FC0 /* LeftMenuView.m */; };
 		5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492291C416BD4008F6FC0 /* RootCell.m */; };
 		5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5544922A1C416BD4008F6FC0 /* RootCell.xib */; };
-		5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */; };
 		5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5544922F1C416BD4008F6FC0 /* BaseViewController.m */; };
 		5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492331C416BD4008F6FC0 /* PersonalViewController.m */; };
 		554492401C416BD4008F6FC0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554492351C416BD4008F6FC0 /* RootViewController.m */; };
@@ -74,6 +76,12 @@
 		2906FD1E1C85946A00750058 /* CinemaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaCell.xib; sourceTree = "<group>"; };
 		2906FD211C85983A00750058 /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaViewController.h; sourceTree = "<group>"; };
 		2906FD221C85983A00750058 /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaViewController.m; sourceTree = "<group>"; };
+		295439991C86DBE300036842 /* MusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicCell.h; sourceTree = "<group>"; };
+		2954399A1C86DBE300036842 /* MusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicCell.m; sourceTree = "<group>"; };
+		2954399B1C86DBE300036842 /* MusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
+		2954399E1C86E11700036842 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		2954399F1C86E11700036842 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
+		295439A01C86E11700036842 /* MusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicViewController.xib; sourceTree = "<group>"; };
 		551554761C462B9500722C52 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
 		551554771C462B9500722C52 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		551554781C462B9500722C52 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
@@ -100,13 +108,9 @@
 		554492221C416BD4008F6FC0 /* RootListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootListModel.m; sourceTree = "<group>"; };
 		554492231C416BD4008F6FC0 /* RootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModel.h; sourceTree = "<group>"; };
 		554492241C416BD4008F6FC0 /* RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootModel.m; sourceTree = "<group>"; };
-		554492261C416BD4008F6FC0 /* LeftMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuView.h; sourceTree = "<group>"; };
-		554492271C416BD4008F6FC0 /* LeftMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuView.m; sourceTree = "<group>"; };
 		554492281C416BD4008F6FC0 /* RootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCell.h; sourceTree = "<group>"; };
 		554492291C416BD4008F6FC0 /* RootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCell.m; sourceTree = "<group>"; };
 		5544922A1C416BD4008F6FC0 /* RootCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootCell.xib; sourceTree = "<group>"; };
-		5544922B1C416BD4008F6FC0 /* UIButton+FillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FillColor.h"; sourceTree = "<group>"; };
-		5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FillColor.m"; sourceTree = "<group>"; };
 		5544922E1C416BD4008F6FC0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		5544922F1C416BD4008F6FC0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		554492321C416BD4008F6FC0 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
@@ -217,16 +221,15 @@
 				55AEF36A1C46173F00000DAF /* LogoCell.h */,
 				55AEF36B1C46173F00000DAF /* LogoCell.m */,
 				55AEF36C1C46173F00000DAF /* LogoCell.xib */,
-				554492261C416BD4008F6FC0 /* LeftMenuView.h */,
-				554492271C416BD4008F6FC0 /* LeftMenuView.m */,
 				554492281C416BD4008F6FC0 /* RootCell.h */,
 				554492291C416BD4008F6FC0 /* RootCell.m */,
 				5544922A1C416BD4008F6FC0 /* RootCell.xib */,
-				5544922B1C416BD4008F6FC0 /* UIButton+FillColor.h */,
-				5544922C1C416BD4008F6FC0 /* UIButton+FillColor.m */,
 				2906FD1C1C85946A00750058 /* CinemaCell.h */,
 				2906FD1D1C85946A00750058 /* CinemaCell.m */,
 				2906FD1E1C85946A00750058 /* CinemaCell.xib */,
+				295439991C86DBE300036842 /* MusicCell.h */,
+				2954399A1C86DBE300036842 /* MusicCell.m */,
+				2954399B1C86DBE300036842 /* MusicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +256,9 @@
 				5523F2F81C477679004033F7 /* CollectViewController.m */,
 				2906FD211C85983A00750058 /* CinemaViewController.h */,
 				2906FD221C85983A00750058 /* CinemaViewController.m */,
+				2954399E1C86E11700036842 /* MusicViewController.h */,
+				2954399F1C86E11700036842 /* MusicViewController.m */,
+				295439A01C86E11700036842 /* MusicViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -442,7 +448,9 @@
 				5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */,
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
 				554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */,
+				295439A21C86E11700036842 /* MusicViewController.xib in Resources */,
 				55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */,
+				2954399D1C86DBE300036842 /* MusicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,17 +524,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5541CF301C48E9EE005144D8 /* PrevueViewController.m in Sources */,
+				295439A11C86E11700036842 /* MusicViewController.m in Sources */,
 				2906FD241C85983A00750058 /* CinemaViewController.m in Sources */,
 				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
 				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
-				554492391C416BD4008F6FC0 /* LeftMenuView.m in Sources */,
 				551554791C462B9500722C52 /* TextCell.m in Sources */,
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
 				554492401C416BD4008F6FC0 /* RootViewController.m in Sources */,
 				5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */,
 				2906FD181C858AF300750058 /* CinemaModel.m in Sources */,
 				5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */,
-				5544923C1C416BD4008F6FC0 /* UIButton+FillColor.m in Sources */,
 				554492361C416BD4008F6FC0 /* DataService.m in Sources */,
 				2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */,
 				5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */,
@@ -540,6 +547,7 @@
 				554492371C416BD4008F6FC0 /* RootListModel.m in Sources */,
 				5541CF271C48A7C1005144D8 /* LocaldData.m in Sources */,
 				5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */,
+				2954399C1C86DBE300036842 /* MusicCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
