@@ -9,10 +9,8 @@
 #import "LocaldData.h"
 #import "LogoCell.h"
 #import "MovieViewController.h"
-#import "MusicViewController.h"
 #import "RootModel.h"
 #import "TextCell.h"
-#import "MusicCell.h"
 #import "UIImageView+WebCache.h"
 #import "YZHUDManager.h"
 #import <AVFoundation/AVFoundation.h>
@@ -78,21 +76,17 @@
     return 140;
   } else if (indexPath.row == 1) {
     return self.height + 5;
-  } else if (indexPath.row == 2){
+  }
 
     return self.desHeight;
-  } else {
-      return 44;
-  }
+  
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    if (self.rootModel.musicId != nil) {
-        return 4;
-    }else {
-        return 3;
-    }
+   
+    return 3;
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -122,29 +116,10 @@
       [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
     return cell;
-  }else if (self.rootModel.musicId != nil) {
-      MusicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MusicCell"
-                                                       forIndexPath:indexPath];
-      cell.titleLabel.text = NSLocalizedString(@"电影原声带", nil);
-      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-      [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-
-
-      return cell;
-      
   }
     return nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.rootModel.musicId != nil && indexPath.row == 3) {
-    
-        MusicViewController * musicVC = [[MusicViewController alloc] initWithNibName:@"MusicViewController"
-                                                                              bundle:nil];
-        musicVC.rootModel = self.rootModel;
-        [self.navigationController showViewController:musicVC sender:nil];
-    }
-}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

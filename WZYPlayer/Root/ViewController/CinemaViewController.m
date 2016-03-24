@@ -12,6 +12,7 @@
 #import "CinemaListModel.h"
 #import "CinemaModel.h"
 #import "LocaldData.h"
+#import "CinemaDetailViewController.h"
 
 @interface CinemaViewController ()
 
@@ -85,14 +86,14 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     [cell cell:cell model:cinemaModel];
     return cell;
 }
-//- (void)tableView:(UITableView *)tableView
-//didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    MovieViewController *movieVC =
-//    [[MovieViewController alloc] initWithNibName:@"MovieViewController"
-//                                          bundle:nil];
-//    movieVC.rootModel = self.dataArray[indexPath.row];
-//    [self.navigationController showViewController:movieVC sender:nil];
-//}
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CinemaDetailViewController *cinemaDetailVC =
+    [[CinemaDetailViewController alloc] initWithNibName:@"CinemaDetailViewController"
+                                          bundle:nil];
+    cinemaDetailVC.cinemaModel = self.dataArray[indexPath.row];
+    [self.navigationController showViewController:cinemaDetailVC sender:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
