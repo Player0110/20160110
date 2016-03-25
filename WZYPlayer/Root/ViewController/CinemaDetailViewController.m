@@ -14,6 +14,7 @@
 #import "CinemaPromptCell.h"
 #import "CinemaTimeCell.h"
 #import "MovieCell.h"
+#import "LocaldData.h"
 
 @interface CinemaDetailViewController ()
 
@@ -26,7 +27,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.title = self.cinemaModel.name;
     [self registerCell];
+    [self data]; 
 }
 
 - (void)registerCell {
@@ -48,6 +51,24 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CinemaTimeCell"
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"CinemaTimeCell"];
+    
+}
+
+- (void)data {
+    if ([LocaldData achieveCinemaDetailData:self.cinemaModel]) {
+        self.cinemaModel = [LocaldData achieveCinemaDetailData:self.cinemaModel];
+        [self.tableView reloadData];
+//        if (self.cinemaModel.grade != nil) {
+            return;
+//        }
+    }
+    
+    [self.cinemaModel detailsblock:^(CinemaModel *cinemaModel, NSError *error) {
+        self.cinemaModel = cinemaModel;
+        [LocaldData saveCinemaDetailData:cinemaModel];
+        [self.tableView reloadData];
+        
+    }];
     
 }
 
@@ -92,7 +113,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemaInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaInformationCell"
                                                              forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            [cell cell:cell model:self.cinemaModel];
             return cell;
         }
             break;
@@ -107,7 +128,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemaMovieDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaMovieDetailCell"
                                                                         forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            [cell cell:cell model:self.cinemaModel];
+
             return cell;
         }
         case 3:

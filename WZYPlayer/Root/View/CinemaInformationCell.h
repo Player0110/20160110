@@ -10,4 +10,11 @@
 
 @interface CinemaInformationCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *cinemaNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
+
+- (void)cell:(CinemaInformationCell *)cell model:(id)model;
+
+
 @end

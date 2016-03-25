@@ -18,11 +18,16 @@
 @property(strong, nonatomic) NSString *tel;
 @property(strong, nonatomic) NSString *circleName;//商圈
 @property(strong, nonatomic) NSString *coord;//经纬度
-@property(strong, nonatomic) NSString *newsCoupon;//规定
+@property(strong, nonatomic) NSString *newsCoupon;//优惠信息
 @property(strong, nonatomic) NSString *screenings;//放映场次
 @property(strong, nonatomic) NSString *spell;//全拼
 @property(strong, nonatomic) NSString *lowPrice;//最低价
+@property(strong, nonatomic) NSString *grade;//影院评分
+@property(strong, nonatomic) NSString *subwayLine;//地铁路线
+@property(strong, nonatomic) NSString *busline;//公交线路
 
+
+//列表
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
                            block:(void (^)(CinemaListModel *cinemaList,
                                            NSError *error))completion;
@@ -31,5 +36,10 @@
                          type:(NSString *)type
                         block:(void (^)(CinemaListModel *cinemaList,
                                         NSError *error))completion;
+//详情
+- (NSURLSessionDataTask *)detailsblock:(void (^)(CinemaModel *cinemaModel,
+                                                 NSError *error))completion;
+
++ (NSURL *)stringWithUrl:(NSString *)string;
 
 @end

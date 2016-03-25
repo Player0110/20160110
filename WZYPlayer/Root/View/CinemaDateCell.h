@@ -10,4 +10,7 @@
 
 @interface CinemaDateCell : UITableViewCell
 
+- (void)cell:(CinemaDateCell *)cell model:(id)model;
+
+
 @end

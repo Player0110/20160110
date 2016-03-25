@@ -10,4 +10,7 @@
 
 @interface CinemaPromptCell : UITableViewCell
 
+- (void)cell:(CinemaPromptCell *)cell model:(id)model;
+
+
 @end

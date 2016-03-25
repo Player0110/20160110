@@ -10,4 +10,6 @@
 
 @interface MovieCell : UICollectionViewCell
 
+- (void)cell:(MovieCell *)cell model:(id)model;
+
 @end

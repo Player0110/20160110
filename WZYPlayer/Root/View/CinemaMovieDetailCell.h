@@ -10,4 +10,7 @@
 
 @interface CinemaMovieDetailCell : UITableViewCell
 
+- (void)cell:(CinemaMovieDetailCell *)cell model:(id)model;
+
+
 @end

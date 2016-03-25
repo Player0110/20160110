@@ -14,6 +14,10 @@
     // Initialization code
 }
 
+- (void)cell:(CinemaMovieDetailCell *)cell model:(id)model {
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

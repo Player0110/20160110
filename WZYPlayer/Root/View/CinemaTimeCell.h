@@ -10,4 +10,6 @@
 
 @interface CinemaTimeCell : UITableViewCell
 
+- (void)cell:(CinemaTimeCell *)cell model:(id)model;
+
 @end
