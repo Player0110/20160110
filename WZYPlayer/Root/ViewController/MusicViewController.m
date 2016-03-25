@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://piao.163.com/wap/musicshare.html?movieId=%@&songId=%@&from=singlemessage&isappinstalled=1",self.rootModel.movieId,self.rootModel.musicId]];
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://piao.163.com/wap/musicshare.html?movieId=%@&songId=%@",self.rootModel.movieId,self.rootModel.musicId]];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     [self.musicWebView loadRequest:request];
     self.musicWebView.delegate = self;

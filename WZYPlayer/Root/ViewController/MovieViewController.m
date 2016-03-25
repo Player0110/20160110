@@ -5,6 +5,7 @@
 //  Created by wzy on 16/1/11.
 //  Copyright © 2016年 wzy. All rights reserved.
 //
+#import "UITableView+FDTemplateLayoutCell.h"
 
 #import "LocaldData.h"
 #import "LogoCell.h"
@@ -51,7 +52,7 @@
   [self data];
 }
 - (void)data {
-  if ([LocaldData achieveDetailData:self.rootModel]) {
+  if (![LocaldData achieveDetailData:self.rootModel]) {
     self.rootModel = [LocaldData achieveDetailData:self.rootModel];
     [self.tableView reloadData];
     return;
@@ -79,7 +80,16 @@
   } else if (indexPath.row == 1) {
     return self.height + 5;
   } else if (indexPath.row == 2){
-
+      
+      
+      //
+//      return [tableView fd_heightForCellWithIdentifier:@"TextCell"                                      cacheByIndexPath:indexPath
+//                                         configuration:^(TextCell *cell) {
+//                                             [cell cell:cell model:self.rootModel];
+//
+////                                             [cell detailCell:cell model:self.detailModels[(NSUInteger)indexPath.row]];
+//                                         }];
+      //
     return self.desHeight;
   } else {
       return 44;

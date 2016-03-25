@@ -15,6 +15,7 @@ pod 'SDWebImage', '~> 3.7.3'
 pod 'RESideMenu','~> 4.0.7'
 pod 'Colours', '~> 5.6.1'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'UITableView+FDTemplateLayoutCell', '~> 1.4'
 platform :ios, '8.0'
 
 pod 'MZFormSheetPresentationController', '~> 2.1.3'
