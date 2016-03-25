@@ -1,14 +1,14 @@
 //
-//  MusicCell.m
+//  CinemaPromptCell.m
 //  WZYPlayer
 //
-//  Created by Tagcare on 16/3/2.
+//  Created by Tagcare on 16/3/24.
 //  Copyright © 2016年 wzy. All rights reserved.
 //
 
-#import "MusicCell.h"
+#import "CinemaPromptCell.h"
 
-@implementation MusicCell
+@implementation CinemaPromptCell
 
 - (void)awakeFromNib {
     // Initialization code
