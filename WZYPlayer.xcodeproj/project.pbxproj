@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15BE2DEB2099E56567C6B407 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 558CB0EDABED75F46084FFB4 /* libPods.a */; };
+		2904B3791CA921EF004A9353 /* CinemaDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2904B3781CA921EF004A9353 /* CinemaDetailModel.m */; };
 		2906FD181C858AF300750058 /* CinemaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD171C858AF300750058 /* CinemaModel.m */; };
 		2906FD1B1C858D1B00750058 /* CinemaListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1A1C858D1B00750058 /* CinemaListModel.m */; };
 		2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1D1C85946A00750058 /* CinemaCell.m */; };
@@ -79,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2904B3771CA921EF004A9353 /* CinemaDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaDetailModel.h; sourceTree = "<group>"; };
+		2904B3781CA921EF004A9353 /* CinemaDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaDetailModel.m; sourceTree = "<group>"; };
 		2906FD161C858AF300750058 /* CinemaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaModel.h; sourceTree = "<group>"; };
 		2906FD171C858AF300750058 /* CinemaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaModel.m; sourceTree = "<group>"; };
 		2906FD191C858D1B00750058 /* CinemaListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaListModel.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				2906FD171C858AF300750058 /* CinemaModel.m */,
 				2906FD191C858D1B00750058 /* CinemaListModel.h */,
 				2906FD1A1C858D1B00750058 /* CinemaListModel.m */,
+				2904B3771CA921EF004A9353 /* CinemaDetailModel.h */,
+				2904B3781CA921EF004A9353 /* CinemaDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				5541CF271C48A7C1005144D8 /* LocaldData.m in Sources */,
 				29F5EF4A1CA3EE4F00EF81AF /* CinemaMovieDetailCell.m in Sources */,
 				5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */,
+				2904B3791CA921EF004A9353 /* CinemaDetailModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

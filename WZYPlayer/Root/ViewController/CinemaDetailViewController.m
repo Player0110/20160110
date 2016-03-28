@@ -15,9 +15,10 @@
 #import "CinemaTimeCell.h"
 #import "MovieCell.h"
 #import "LocaldData.h"
+#import "CinemaDetailModel.h"
 
 @interface CinemaDetailViewController ()
-
+@property(strong, nonatomic) CinemaDetailModel *cinemaDetail;
 @end
 
 @implementation CinemaDetailViewController
@@ -58,14 +59,12 @@
     if ([LocaldData achieveCinemaDetailData:self.cinemaModel]) {
         self.cinemaModel = [LocaldData achieveCinemaDetailData:self.cinemaModel];
         [self.tableView reloadData];
-//        if (self.cinemaModel.grade != nil) {
             return;
-//        }
     }
     
-    [self.cinemaModel detailsblock:^(CinemaModel *cinemaModel, NSError *error) {
-        self.cinemaModel = cinemaModel;
-        [LocaldData saveCinemaDetailData:cinemaModel];
+    [self.cinemaDetail detailsblock:^(CinemaDetailModel *cinemaDetail, NSError *error) {
+        self.cinemaDetail = cinemaDetail;
+        [LocaldData saveCinemaDetailData:cinemaDetail];
         [self.tableView reloadData];
         
     }];

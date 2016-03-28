@@ -15,11 +15,6 @@ static NSString *const CinemaUrl =
     @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
     @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
 
-static NSString *const DetailUrl =
-    @"http://piao.163.com/m/cinema/"
-    @"schedule.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000&cinema_id=%@&movie_id=";
-
 @implementation CinemaModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
@@ -62,30 +57,5 @@ static NSString *const DetailUrl =
                                  }];
 }
 
-- (NSURLSessionDataTask *)detailsblock:(void (^)(CinemaModel *cinemaModel,
-                                                 NSError *error))completion {
-    return [[DataService sharedClient]
-            POST:[self stringByReplacingOccurrencesOfString:self.cinemaId]
-            parameters:@{}
-            completion:^(id response, NSError *error) {
-                CinemaModel *cinema = [MTLJSONAdapter modelOfClass:[CinemaModel class]
-                                            fromJSONDictionary:response[@"cinema"]
-                                                         error:&error];
-                completion(cinema, error);
-            }];
-}
 
-- (NSString *)stringByReplacingOccurrencesOfString:(NSString *)string {
-    NSString *str =
-    [DetailUrl stringByReplacingOccurrencesOfString:@"%@" withString:string];
-    
-    return str;
-}
-
-+ (NSURL *)stringWithUrl:(NSString *)string {
-    NSString *imgUrl =
-    [string stringByReplacingOccurrencesOfString:@".webp" withString:@".jpg"];
-    NSURL *url = [NSURL URLWithString:imgUrl];
-    return url;
-}
 @end

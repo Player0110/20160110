@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/Model/CinemaModel.m"
-            timestampString = "480577826.700513"
+            filePath = "WZYPlayer/Root/Model/RootModel.m"
+            timestampString = "480841777.690612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "+GETUrl:block:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "+URL:type:block:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,29 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/ViewController/CinemaDetailViewController.m"
-            timestampString = "480577909.080698"
+            filePath = "WZYPlayer/Root/Model/RootModel.m"
+            timestampString = "480841814.444349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-data"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/ViewController/CinemaDetailViewController.m"
-            timestampString = "480587360.016352"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-data"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "+URL:type:block:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -26,7 +26,6 @@
 @property(strong, nonatomic) NSString *subwayLine;//地铁路线
 @property(strong, nonatomic) NSString *busline;//公交线路
 
-
 //列表
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
                            block:(void (^)(CinemaListModel *cinemaList,
@@ -36,10 +35,6 @@
                          type:(NSString *)type
                         block:(void (^)(CinemaListModel *cinemaList,
                                         NSError *error))completion;
-//详情
-- (NSURLSessionDataTask *)detailsblock:(void (^)(CinemaModel *cinemaModel,
-                                                 NSError *error))completion;
 
-+ (NSURL *)stringWithUrl:(NSString *)string;
 
 @end
