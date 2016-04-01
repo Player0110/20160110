@@ -11,6 +11,7 @@
 @class RootModel;
 @class CinemaListModel;
 @class CinemaModel;
+@class CinemaDetailModel;
 
 @interface LocaldData : NSObject
 + (void)saveListData:(RootListModel *)listModel type:(NSString *)name;
@@ -19,7 +20,7 @@
 + (RootModel *)achieveDetailData:(RootModel *)model;
 + (void)saveCinemaListData:(CinemaListModel *)cinemalistModel type:(NSString *)name;
 + (CinemaListModel *)achieveCinemaListDataType:(NSString *)name;
-+ (void)saveCinemaDetailData:(CinemaModel *)model;
-+ (CinemaModel *)achieveCinemaDetailData:(CinemaModel *)model;
++ (void)saveCinemaDetailData:(CinemaDetailModel *)model type:(NSString *)name;
++ (CinemaDetailModel *)achieveCinemaDetailData:(NSString *)name;
 
 @end

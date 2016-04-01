@@ -12,6 +12,7 @@
 #import "SavePathString.h"
 #import "CinemaListModel.h"
 #import "CinemaModel.h"
+#import "CinemaDetailModel.h"
 
 @implementation LocaldData
 
@@ -68,20 +69,20 @@
     return cinemaListModel;
 }
 
-+ (void)saveCinemaDetailData:(CinemaModel *)model {
-    NSString *name = [NSString stringWithFormat:@"%@.plist", model.name];
-    NSString *filename = [SavePathString savePathName:name];
++ (void)saveCinemaDetailData:(CinemaDetailModel *)model type:(NSString *)name{
+    NSString *nameStr = [NSString stringWithFormat:@"%@.plist", name];
+    NSString *filename = [SavePathString savePathName:nameStr];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model];
     NSMutableArray *detailArray =
     [[NSMutableArray alloc] initWithObjects:data, nil];
     [detailArray writeToFile:filename atomically:YES];
 }
 
-+ (CinemaModel *)achieveCinemaDetailData:(CinemaModel *)model {
-    NSString *name = [NSString stringWithFormat:@"%@.plist", model.name];
-    NSString *filename = [SavePathString savePathName:name];
++ (CinemaDetailModel *)achieveCinemaDetailData:(NSString *)name {
+    NSString *nameStr = [NSString stringWithFormat:@"%@.plist", name];
+    NSString *filename = [SavePathString savePathName:nameStr];
     NSMutableArray *a = [NSMutableArray arrayWithContentsOfFile:filename];
-    CinemaModel *cinemaModel = [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
-    return cinemaModel;
+    CinemaDetailModel *cinemaDetailModel = [NSKeyedUnarchiver unarchiveObjectWithData:a[0]];
+    return cinemaDetailModel;
 }
 @end

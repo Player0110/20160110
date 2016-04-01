@@ -8,7 +8,6 @@
 
 #import "CinemaDetailViewController.h"
 #import "CinemaInformationCell.h"
-#import "CinemamovieListCell.h"
 #import "CinemaMovieDetailCell.h"
 #import "CinemaDateCell.h"
 #import "CinemaPromptCell.h"
@@ -56,17 +55,14 @@
 }
 
 - (void)data {
-    if ([LocaldData achieveCinemaDetailData:self.cinemaModel]) {
-        self.cinemaModel = [LocaldData achieveCinemaDetailData:self.cinemaModel];
+    if ([LocaldData achieveCinemaDetailData:self.cinemaModel.name]) {
+        self.cinemaDetail = [LocaldData achieveCinemaDetailData:self.cinemaModel.name];
         [self.tableView reloadData];
             return;
     }
-    
-    [self.cinemaDetail detailsblock:^(CinemaDetailModel *cinemaDetail, NSError *error) {
-        self.cinemaDetail = cinemaDetail;
-        [LocaldData saveCinemaDetailData:cinemaDetail];
-        [self.tableView reloadData];
-        
+    [self.cinemaModel detailsblock:^(CinemaDetailModel *cinemaDetailModel, NSError *error) {
+        self.cinemaDetail = cinemaDetailModel;
+        [LocaldData saveCinemaDetailData:cinemaDetailModel type:self.cinemaModel.name];
     }];
     
 }
@@ -112,6 +108,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemaInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaInformationCell"
                                                              forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             [cell cell:cell model:self.cinemaModel];
             return cell;
         }
@@ -120,13 +117,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemamovieListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemamovieListCell"
                                                                           forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            [cell cell:cell model:self.cinemaDetail.movieList];
+            cell.movieListModel = self.cinemaDetail.movieList;
+            cell.delegate = self;
             return cell;
         }
         case 2:{
             CinemaMovieDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaMovieDetailCell"
                                                                         forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
             [cell cell:cell model:self.cinemaModel];
 
             return cell;
@@ -160,6 +161,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (void)touchale:(RootModel *)movie tag:(NSInteger)tag {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

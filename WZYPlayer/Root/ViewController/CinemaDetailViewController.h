@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "CinemaModel.h"
+#import "CinemamovieListCell.h"
 
-@interface CinemaDetailViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface CinemaDetailViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,CinemamovieListCellimageDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 #import "CinemaListModel.h"
+#import "CinemaDetailModel.h"
 
 @interface CinemaModel : MTLModel <MTLJSONSerializing>
 
@@ -35,6 +36,10 @@
                          type:(NSString *)type
                         block:(void (^)(CinemaListModel *cinemaList,
                                         NSError *error))completion;
+//详情
+- (NSURLSessionDataTask *)detailsblock:(void (^)(CinemaDetailModel *cinemaDetailModel,
+                                                 NSError *error))completion;
 
++ (NSURL *)stringWithUrl:(NSString *)string;
 
 @end

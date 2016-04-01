@@ -14,24 +14,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b2Y-bV-GoT">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-yu-AIM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XJx-73-c9A">
-                            <size key="itemSize" width="70" height="90"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
+                    </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="b2Y-bV-GoT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7lm-7I-8JW"/>
-                    <constraint firstAttribute="bottom" secondItem="b2Y-bV-GoT" secondAttribute="bottom" id="Cev-jm-bwZ"/>
-                    <constraint firstItem="b2Y-bV-GoT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FEf-PM-KNM"/>
-                    <constraint firstAttribute="trailing" secondItem="b2Y-bV-GoT" secondAttribute="trailing" id="mW4-2E-2A3"/>
+                    <constraint firstAttribute="bottom" secondItem="HyV-yu-AIM" secondAttribute="bottom" id="3kV-lP-2o5"/>
+                    <constraint firstItem="HyV-yu-AIM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Egg-WU-gDf"/>
+                    <constraint firstItem="HyV-yu-AIM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Lhq-vb-9sr"/>
+                    <constraint firstAttribute="trailing" secondItem="HyV-yu-AIM" secondAttribute="trailing" id="uEO-nn-tCN"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="scrollView" destination="HyV-yu-AIM" id="7TP-D1-WcN"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
