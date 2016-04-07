@@ -55,6 +55,10 @@
                     <constraint firstItem="Jnp-nu-8jV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="tId-Z1-fSF"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="gradeLabel" destination="sNc-wg-fKk" id="VrO-yv-Q4h"/>
+                <outlet property="movieNameLabel" destination="Jnp-nu-8jV" id="IZ7-r3-hse"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

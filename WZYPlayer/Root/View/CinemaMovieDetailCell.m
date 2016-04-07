@@ -7,6 +7,7 @@
 //
 
 #import "CinemaMovieDetailCell.h"
+#import "RootModel.h"
 
 @implementation CinemaMovieDetailCell
 
@@ -14,8 +15,9 @@
     // Initialization code
 }
 
-- (void)cell:(CinemaMovieDetailCell *)cell model:(id)model {
-    
+- (void)cell:(CinemaMovieDetailCell *)cell model:(RootModel *)model {
+    self.movieNameLabel.text = model.name;
+    self.gradeLabel.text = model.grade;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

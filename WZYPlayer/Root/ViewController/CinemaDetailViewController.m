@@ -15,9 +15,12 @@
 #import "MovieCell.h"
 #import "LocaldData.h"
 #import "CinemaDetailModel.h"
+#import "RootModel.h"
 
 @interface CinemaDetailViewController ()
 @property(strong, nonatomic) CinemaDetailModel *cinemaDetail;
+@property(strong, nonatomic) RootModel * movieModel;
+
 @end
 
 @implementation CinemaDetailViewController
@@ -29,7 +32,9 @@
     self.tableView.delegate = self;
     self.title = self.cinemaModel.name;
     [self registerCell];
-    [self data]; 
+    [self data];
+    self.movieModel = self.cinemaDetail.movieList[0];
+
 }
 
 - (void)registerCell {
@@ -117,8 +122,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemamovieListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemamovieListCell"
                                                                           forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            [cell cell:cell model:self.cinemaDetail.movieList];
             cell.movieListModel = self.cinemaDetail.movieList;
+            [cell cell:cell model:self.movieModel];
             cell.delegate = self;
             return cell;
         }
@@ -128,7 +133,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
-            [cell cell:cell model:self.cinemaModel];
+            [cell cell:cell model:self.movieModel];
 
             return cell;
         }
@@ -166,7 +171,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)touchale:(RootModel *)movie tag:(NSInteger)tag {
-    
+    self.movieModel = movie;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
