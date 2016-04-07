@@ -51,7 +51,10 @@
 }
 
 -(void)tap:(UITapGestureRecognizer*)sender{
-    
+    for (UIView * view in [self.scrollView subviews]) {
+        [view removeFromSuperview];
+
+    }
     RootModel * rootModel = self.movieListModel[sender.view.tag];
 
     if(_delegate && [_delegate respondsToSelector:@selector(touchale:tag:)]){
