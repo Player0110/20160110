@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/View/CinemamovieListCell.m"
-            timestampString = "481716496.367109"
+            filePath = "WZYPlayer/Root/ViewController/CinemaDetailViewController.m"
+            timestampString = "482139090.344088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-setupSubviews:"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-ticketData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,13 +83,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/View/CinemamovieListCell.m"
-            timestampString = "481716496.367109"
+            filePath = "WZYPlayer/Root/Model/TicketModel.m"
+            timestampString = "482138040.614513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-setupSubviews:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+URL:type:cinemaId:movieId:block:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WZYPlayer/Root/Model/TicketModel.m"
+            timestampString = "482138199.556962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "+URL:type:cinemaId:movieId:block:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WZYPlayer/Root/ViewController/CinemaDetailViewController.m"
+            timestampString = "482139090.344088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-ticketData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

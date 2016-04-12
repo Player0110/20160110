@@ -1,4 +1,4 @@
-//
+   //
 //  CinemaDetailViewController.m
 //  WZYPlayer
 //
@@ -10,17 +10,18 @@
 #import "CinemaInformationCell.h"
 #import "CinemaMovieDetailCell.h"
 #import "CinemaDateCell.h"
-#import "CinemaPromptCell.h"
 #import "CinemaTimeCell.h"
 #import "MovieCell.h"
 #import "LocaldData.h"
 #import "CinemaDetailModel.h"
 #import "RootModel.h"
+#import "TicketUnitModel.h"
+#import "TicketModel.h"
 
 @interface CinemaDetailViewController ()
 @property(strong, nonatomic) CinemaDetailModel *cinemaDetail;
 @property(strong, nonatomic) RootModel * movieModel;
-
+@property(strong, nonatomic) TicketModel * ticketModel;
 @end
 
 @implementation CinemaDetailViewController
@@ -34,6 +35,7 @@
     [self registerCell];
     [self data];
     self.movieModel = self.cinemaDetail.movieList[0];
+    [self ticketData];
 
 }
 
@@ -72,6 +74,17 @@
     
 }
 
+- (void)ticketData {
+    
+    [TicketModel URL:@""
+                type:@""
+            cinemaId:self.cinemaModel.cinemaId
+             movieId:self.movieModel.movieId
+               block:^(TicketListModel *listModel, NSError *error) {
+                   NSLog(@"%@",listModel);
+               }];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -89,8 +102,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             return 44;
         case 3:
             return 30;
-        case 4:
-            return 30;
         default:
             return 50;
             break;
@@ -102,7 +113,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-    return 5+5;
+    return 4+5;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -145,14 +156,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             
             return cell;
         }
-        case 4:
-        {
-            CinemaPromptCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaPromptCell"
-                                                                          forIndexPath:indexPath];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
-            return cell;
-        }
         default:
         {
             CinemaTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaTimeCell"
@@ -172,6 +175,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)touchale:(RootModel *)movie tag:(NSInteger)tag {
     self.movieModel = movie;
+    [self ticketData];
     [self.tableView reloadData];
 }
 

@@ -14,6 +14,10 @@
 		2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD1D1C85946A00750058 /* CinemaCell.m */; };
 		2906FD201C85946A00750058 /* CinemaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2906FD1E1C85946A00750058 /* CinemaCell.xib */; };
 		2906FD241C85983A00750058 /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906FD221C85983A00750058 /* CinemaViewController.m */; };
+		2914DFE91CBBB37500FDBCE7 /* TicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFE81CBBB37500FDBCE7 /* TicketModel.m */; };
+		2914DFEC1CBBB3B400FDBCE7 /* TicketListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFEB1CBBB3B400FDBCE7 /* TicketListModel.m */; };
+		2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFEE1CBBBA3E00FDBCE7 /* TicketUnitModel.m */; };
+		2914DFF21CBBBA5900FDBCE7 /* TicketUnitListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */; };
 		29F5EF311CA3DB9A00EF81AF /* CinemaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */; };
 		29F5EF321CA3DB9A00EF81AF /* CinemaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */; };
 		29F5EF3B1CA3E20800EF81AF /* CinemaInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF391CA3E20800EF81AF /* CinemaInformationCell.m */; };
@@ -24,8 +28,6 @@
 		29F5EF4B1CA3EE4F00EF81AF /* CinemaMovieDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF491CA3EE4F00EF81AF /* CinemaMovieDetailCell.xib */; };
 		29F5EF4F1CA3EED600EF81AF /* CinemaDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF4D1CA3EED600EF81AF /* CinemaDateCell.m */; };
 		29F5EF501CA3EED600EF81AF /* CinemaDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF4E1CA3EED600EF81AF /* CinemaDateCell.xib */; };
-		29F5EF541CA3EF4000EF81AF /* CinemaPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF521CA3EF4000EF81AF /* CinemaPromptCell.m */; };
-		29F5EF551CA3EF4000EF81AF /* CinemaPromptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF531CA3EF4000EF81AF /* CinemaPromptCell.xib */; };
 		29F5EF591CA3F01C00EF81AF /* CinemaTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF571CA3F01C00EF81AF /* CinemaTimeCell.m */; };
 		29F5EF5A1CA3F01C00EF81AF /* CinemaTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF581CA3F01C00EF81AF /* CinemaTimeCell.xib */; };
 		29F5EF5E1CA3F74600EF81AF /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF5C1CA3F74600EF81AF /* MovieCell.m */; };
@@ -91,6 +93,14 @@
 		2906FD1E1C85946A00750058 /* CinemaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaCell.xib; sourceTree = "<group>"; };
 		2906FD211C85983A00750058 /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaViewController.h; sourceTree = "<group>"; };
 		2906FD221C85983A00750058 /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaViewController.m; sourceTree = "<group>"; };
+		2914DFE71CBBB37500FDBCE7 /* TicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketModel.h; sourceTree = "<group>"; };
+		2914DFE81CBBB37500FDBCE7 /* TicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketModel.m; sourceTree = "<group>"; };
+		2914DFEA1CBBB3B400FDBCE7 /* TicketListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketListModel.h; sourceTree = "<group>"; };
+		2914DFEB1CBBB3B400FDBCE7 /* TicketListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketListModel.m; sourceTree = "<group>"; };
+		2914DFED1CBBBA3E00FDBCE7 /* TicketUnitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketUnitModel.h; sourceTree = "<group>"; };
+		2914DFEE1CBBBA3E00FDBCE7 /* TicketUnitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketUnitModel.m; sourceTree = "<group>"; };
+		2914DFF01CBBBA5900FDBCE7 /* TicketUnitListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketUnitListModel.h; sourceTree = "<group>"; };
+		2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketUnitListModel.m; sourceTree = "<group>"; };
 		29F5EF2E1CA3DB9A00EF81AF /* CinemaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaDetailViewController.h; sourceTree = "<group>"; };
 		29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaDetailViewController.m; sourceTree = "<group>"; };
 		29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaDetailViewController.xib; sourceTree = "<group>"; };
@@ -106,9 +116,6 @@
 		29F5EF4C1CA3EED600EF81AF /* CinemaDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaDateCell.h; sourceTree = "<group>"; };
 		29F5EF4D1CA3EED600EF81AF /* CinemaDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaDateCell.m; sourceTree = "<group>"; };
 		29F5EF4E1CA3EED600EF81AF /* CinemaDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaDateCell.xib; sourceTree = "<group>"; };
-		29F5EF511CA3EF4000EF81AF /* CinemaPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaPromptCell.h; sourceTree = "<group>"; };
-		29F5EF521CA3EF4000EF81AF /* CinemaPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaPromptCell.m; sourceTree = "<group>"; };
-		29F5EF531CA3EF4000EF81AF /* CinemaPromptCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaPromptCell.xib; sourceTree = "<group>"; };
 		29F5EF561CA3F01C00EF81AF /* CinemaTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaTimeCell.h; sourceTree = "<group>"; };
 		29F5EF571CA3F01C00EF81AF /* CinemaTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaTimeCell.m; sourceTree = "<group>"; };
 		29F5EF581CA3F01C00EF81AF /* CinemaTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaTimeCell.xib; sourceTree = "<group>"; };
@@ -241,6 +248,14 @@
 				2906FD1A1C858D1B00750058 /* CinemaListModel.m */,
 				2904B3771CA921EF004A9353 /* CinemaDetailModel.h */,
 				2904B3781CA921EF004A9353 /* CinemaDetailModel.m */,
+				2914DFE71CBBB37500FDBCE7 /* TicketModel.h */,
+				2914DFE81CBBB37500FDBCE7 /* TicketModel.m */,
+				2914DFEA1CBBB3B400FDBCE7 /* TicketListModel.h */,
+				2914DFEB1CBBB3B400FDBCE7 /* TicketListModel.m */,
+				2914DFED1CBBBA3E00FDBCE7 /* TicketUnitModel.h */,
+				2914DFEE1CBBBA3E00FDBCE7 /* TicketUnitModel.m */,
+				2914DFF01CBBBA5900FDBCE7 /* TicketUnitListModel.h */,
+				2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,9 +289,6 @@
 				29F5EF4C1CA3EED600EF81AF /* CinemaDateCell.h */,
 				29F5EF4D1CA3EED600EF81AF /* CinemaDateCell.m */,
 				29F5EF4E1CA3EED600EF81AF /* CinemaDateCell.xib */,
-				29F5EF511CA3EF4000EF81AF /* CinemaPromptCell.h */,
-				29F5EF521CA3EF4000EF81AF /* CinemaPromptCell.m */,
-				29F5EF531CA3EF4000EF81AF /* CinemaPromptCell.xib */,
 				29F5EF561CA3F01C00EF81AF /* CinemaTimeCell.h */,
 				29F5EF571CA3F01C00EF81AF /* CinemaTimeCell.m */,
 				29F5EF581CA3F01C00EF81AF /* CinemaTimeCell.xib */,
@@ -500,7 +512,6 @@
 				29F5EF411CA3E69D00EF81AF /* CinemamovieListCell.xib in Resources */,
 				2906FD201C85946A00750058 /* CinemaCell.xib in Resources */,
 				557960A41C08A4D300BB731E /* Assets.xcassets in Resources */,
-				29F5EF551CA3EF4000EF81AF /* CinemaPromptCell.xib in Resources */,
 				29F5EF321CA3DB9A00EF81AF /* CinemaDetailViewController.xib in Resources */,
 				29F5EF4B1CA3EE4F00EF81AF /* CinemaMovieDetailCell.xib in Resources */,
 				5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */,
@@ -587,8 +598,9 @@
 				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
 				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
 				551554791C462B9500722C52 /* TextCell.m in Sources */,
+				2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */,
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
-				29F5EF541CA3EF4000EF81AF /* CinemaPromptCell.m in Sources */,
+				2914DFEC1CBBB3B400FDBCE7 /* TicketListModel.m in Sources */,
 				29F5EF401CA3E69D00EF81AF /* CinemamovieListCell.m in Sources */,
 				554492401C416BD4008F6FC0 /* RootViewController.m in Sources */,
 				5544923D1C416BD4008F6FC0 /* BaseViewController.m in Sources */,
@@ -612,6 +624,8 @@
 				554492371C416BD4008F6FC0 /* RootListModel.m in Sources */,
 				5541CF271C48A7C1005144D8 /* LocaldData.m in Sources */,
 				29F5EF4A1CA3EE4F00EF81AF /* CinemaMovieDetailCell.m in Sources */,
+				2914DFF21CBBBA5900FDBCE7 /* TicketUnitListModel.m in Sources */,
+				2914DFE91CBBB37500FDBCE7 /* TicketModel.m in Sources */,
 				5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */,
 				2904B3791CA921EF004A9353 /* CinemaDetailModel.m in Sources */,
 			);
