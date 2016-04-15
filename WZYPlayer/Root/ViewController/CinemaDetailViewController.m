@@ -75,7 +75,7 @@
 }
 
 - (void)ticketData {
-    
+
     [TicketModel URL:@""
                 type:@""
             cinemaId:self.cinemaModel.cinemaId
