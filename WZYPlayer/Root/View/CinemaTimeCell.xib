@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUQ-bF-nML">
@@ -79,6 +79,14 @@
                     <constraint firstItem="c7y-sS-hYs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vPc-qS-U8K"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dimensionalAndLanguageLabel" destination="bBT-dv-sA2" id="0Nc-rc-iQg"/>
+                <outlet property="endTimeLabel" destination="c7y-sS-hYs" id="1R0-8X-tqy"/>
+                <outlet property="hallNameLabel" destination="lKA-tZ-Oeu" id="BIt-nF-C3U"/>
+                <outlet property="priceLabel" destination="TAj-jC-hsX" id="LGq-PA-iGD"/>
+                <outlet property="showTimeLabel" destination="NUQ-bF-nML" id="Zjm-jD-9ik"/>
+            </connections>
+            <point key="canvasLocation" x="244" y="245"/>
         </tableViewCell>
     </objects>
 </document>

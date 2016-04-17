@@ -50,7 +50,7 @@
   [self data];
 }
 - (void)data {
-  if (![LocaldData achieveDetailData:self.rootModel]) {
+  if ([LocaldData achieveDetailData:self.rootModel]) {
     self.rootModel = [LocaldData achieveDetailData:self.rootModel];
     [self.tableView reloadData];
     return;

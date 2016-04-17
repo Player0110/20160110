@@ -21,7 +21,7 @@
 @interface CinemaDetailViewController ()
 @property(strong, nonatomic) CinemaDetailModel *cinemaDetail;
 @property(strong, nonatomic) RootModel * movieModel;
-@property(strong, nonatomic) TicketModel * ticketModel;
+@property(strong, nonatomic) TicketUnitListModel * ticketUnitListModel;
 @end
 
 @implementation CinemaDetailViewController
@@ -34,9 +34,6 @@
     self.title = self.cinemaModel.name;
     [self registerCell];
     [self data];
-    self.movieModel = self.cinemaDetail.movieList[0];
-    [self ticketData];
-
 }
 
 - (void)registerCell {
@@ -62,26 +59,33 @@
 }
 
 - (void)data {
-    if ([LocaldData achieveCinemaDetailData:self.cinemaModel.name]) {
-        self.cinemaDetail = [LocaldData achieveCinemaDetailData:self.cinemaModel.name];
-        [self.tableView reloadData];
-            return;
-    }
+//    if ([LocaldData achieveCinemaDetailData:self.cinemaModel.name]) {
+//        self.cinemaDetail = [LocaldData achieveCinemaDetailData:self.cinemaModel.name];
+//        self.movieModel = self.cinemaDetail.movieList[0];
+//
+//        [self.tableView reloadData];
+//            return;
+//    }
     [self.cinemaModel detailsblock:^(CinemaDetailModel *cinemaDetailModel, NSError *error) {
         self.cinemaDetail = cinemaDetailModel;
         [LocaldData saveCinemaDetailData:cinemaDetailModel type:self.cinemaModel.name];
+        self.movieModel = cinemaDetailModel.movieList[0];
+        [self ticketData];
+        [self.tableView reloadData];
+
     }];
     
 }
 
 - (void)ticketData {
 
-    [TicketModel URL:@""
+    [TicketUnitModel URL:@""
                 type:@""
             cinemaId:self.cinemaModel.cinemaId
              movieId:self.movieModel.movieId
-               block:^(TicketListModel *listModel, NSError *error) {
-                   NSLog(@"%@",listModel);
+               block:^(TicketUnitListModel *listModel, NSError *error) {
+                   self.ticketUnitListModel = listModel;
+                   [self.tableView reloadData];
                }];
 }
 
@@ -112,8 +116,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    
-    return 4+5;
+    TicketUnitModel * ticketUnit = self.ticketUnitListModel.ticketUnitList[0];
+
+    return 4+[ticketUnit.ticketList count];
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -153,7 +158,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemaDateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaDateCell"
                                                                           forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            [cell cell:cell model:self.ticketUnitListModel];
             return cell;
         }
         default:
@@ -161,7 +166,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             CinemaTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CinemaTimeCell"
                                                                           forIndexPath:indexPath];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            TicketUnitModel * ticketUnit = self.ticketUnitListModel.ticketUnitList[0];
+            TicketModel * ticket = ticketUnit.ticketList[indexPath.row-4];
+
+            [cell cell:cell model:ticket];
+            NSLog(@"self.ticketUnitList %@",self.ticketUnitListModel);
             return cell;
         }
             break;

@@ -22,15 +22,5 @@
 @property(nonatomic, strong) NSString * price;
 @property(nonatomic, strong) NSString * hallName;
 
-+ (NSURLSessionDataTask *)GETUrl:(NSString *)url
-                           block:(void (^)(TicketListModel *ticketList,
-                                           NSError *error))completion;
-+ (NSURLSessionDataTask *)URL:(NSString *)url
-                         type:(NSString *)type
-                     cinemaId:(NSString *)cinemaId
-                      movieId:(NSString *)movieId
-                        block:(void (^)(TicketListModel *ticketList,
-                                        NSError *error))completion;
-
 
 @end

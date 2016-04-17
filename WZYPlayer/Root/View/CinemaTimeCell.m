@@ -8,11 +8,22 @@
 
 #import "CinemaTimeCell.h"
 
+#import "TicketModel.h"
+
 @implementation CinemaTimeCell
 
 - (void)awakeFromNib {
     // Initialization code
 }
+
+- (void)cell:(CinemaTimeCell *)cell model:(TicketModel *)model {
+    self.showTimeLabel.text = model.showTime;
+    self.endTimeLabel.text = model.endTime;
+    self.dimensionalAndLanguageLabel.text = [NSString stringWithFormat:@"%@%@",model.language,model.dimensional];
+    self.hallNameLabel.text = model.hallName;
+    self.priceLabel.text = model.price;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

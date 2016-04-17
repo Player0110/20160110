@@ -10,6 +10,8 @@
 
 @interface CinemaDateCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (void)cell:(CinemaDateCell *)cell model:(id)model;
 
 
