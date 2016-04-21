@@ -17,7 +17,10 @@
 
 - (void)cell:(CinemaMovieDetailCell *)cell model:(RootModel *)model {
     self.movieNameLabel.text = model.name;
-    self.gradeLabel.text = model.grade;
+    
+    NSMutableAttributedString *grade = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@分",model.grade]];
+    [grade addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AppleGothic" size:17.0] range:NSMakeRange(0, [model.grade length])];
+    self.gradeLabel.attributedText = grade;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

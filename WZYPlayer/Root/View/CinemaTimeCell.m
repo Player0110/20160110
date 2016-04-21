@@ -18,10 +18,15 @@
 
 - (void)cell:(CinemaTimeCell *)cell model:(TicketModel *)model {
     self.showTimeLabel.text = model.showTime;
-    self.endTimeLabel.text = model.endTime;
+    self.endTimeLabel.text = [NSString stringWithFormat:@"%@结束",model.endTime];
     self.dimensionalAndLanguageLabel.text = [NSString stringWithFormat:@"%@%@",model.language,model.dimensional];
     self.hallNameLabel.text = model.hallName;
-    self.priceLabel.text = model.price;
+    
+    
+    NSMutableAttributedString *price = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"¥%@",model.price]];
+    [price addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AppleGothic" size:16.0] range:NSMakeRange(1, [model.price length])];
+    self.priceLabel.attributedText = price;
+
 }
 
 

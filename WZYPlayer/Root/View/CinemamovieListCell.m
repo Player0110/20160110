@@ -18,14 +18,14 @@
 
 - (void)setupSubviews:(RootModel *)model {
     for (int i = 0; i<[self.movieListModel count]; i++) {
-        self.picImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15+78*i, 5, 70, 90)];
+        self.picImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15+78*i, 15, 70, 90)];
         [self.scrollView addSubview:self.picImageView];
         self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(3, 3, 64, 84)];
         [self.picImageView addSubview:self.logoImageView];
         self.logoImageView.tag = i;
         RootModel * rootModel = self.movieListModel[i];
         if (rootModel == model) {
-            self.picImageView.backgroundColor = [UIColor orangeColor];
+            self.picImageView.backgroundColor = [UIColor colorWithRed:246.0/255 green:83.0/255 blue:59.0/255 alpha:1.0];
             
         }else {
             self.picImageView.backgroundColor = [UIColor clearColor];
