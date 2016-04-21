@@ -67,7 +67,11 @@
     [self.cinemaModel detailsblock:^(CinemaDetailModel *cinemaDetailModel, NSError *error) {
         self.cinemaDetail = cinemaDetailModel;
         [LocaldData saveCinemaDetailData:cinemaDetailModel type:self.cinemaModel.name];
-        self.movieModel = cinemaDetailModel.movieList[0];
+        if ([cinemaDetailModel.movieList count] == 0) {
+            self.movieModel = nil;
+        } else {
+            self.movieModel = cinemaDetailModel.movieList[0];
+        }
         [self ticketData];
         [self.tableView reloadData];
 
