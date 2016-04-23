@@ -13,7 +13,7 @@
 @interface CinemaDetailModel : MTLModel<MTLJSONSerializing>
 
 @property(strong, nonatomic) NSMutableArray *movieList;//电影列表
-@property(strong, nonatomic) CinemaModel *cinemaModel;//影院
+@property(strong, nonatomic) CinemaModel *cinema;//影院
 
 
 

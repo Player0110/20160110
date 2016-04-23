@@ -7,6 +7,7 @@
 //
 
 #import "CinemaDetailViewController.h"
+#import "CinemaInformationController.h"
 #import "MovieViewController.h"
 #import "CinemaInformationCell.h"
 #import "CinemaMovieDetailCell.h"
@@ -72,6 +73,7 @@
         } else {
             self.movieModel = cinemaDetailModel.movieList[0];
         }
+        self.cinemaModel = cinemaDetailModel.cinema;
         [self ticketData];
         [self.tableView reloadData];
 
@@ -213,6 +215,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+            
+            CinemaInformationController * cinemaInformationVC = [[CinemaInformationController alloc] initWithNibName:@"CinemaInformationController" bundle:nil];
+            cinemaInformationVC.cinemaModel = self.cinemaModel;
+            [self showViewController:cinemaInformationVC sender:nil];
             
         } else if(indexPath.row == 2) {
             MovieViewController *movieVC =

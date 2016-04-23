@@ -27,8 +27,15 @@
                            SDImageCacheType cacheType, NSURL *imageURL){
                }];
 
-  self.titleLabel.text = model.name;
-  self.summaryLabel.text = model.highlight;
+    cell.titleLabel.text = model.name;
+    cell.summaryLabel.text = model.highlight;
+    cell.screeningsLabel.text = model.screenings;
+    
+    NSMutableAttributedString *grade = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@分",model.grade]];
+    
+    [grade addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AppleGothic" size:17.0] range:NSMakeRange(0, [model.grade length])];
+    self.scoreLabel.attributedText = grade;
+
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
   [super setSelected:selected animated:animated];

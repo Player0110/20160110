@@ -56,6 +56,12 @@
 		557960A41C08A4D300BB731E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557960A31C08A4D300BB731E /* Assets.xcassets */; };
 		557960B21C08A4D300BB731E /* WZYPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557960B11C08A4D300BB731E /* WZYPlayerTests.m */; };
 		557960BD1C08A4D300BB731E /* WZYPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557960BC1C08A4D300BB731E /* WZYPlayerUITests.m */; };
+		559C19C91CCB448E000F9984 /* CinemaInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 559C19C71CCB448E000F9984 /* CinemaInformationController.m */; };
+		559C19CA1CCB448E000F9984 /* CinemaInformationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559C19C81CCB448E000F9984 /* CinemaInformationController.xib */; };
+		559C19CE1CCB5888000F9984 /* TrafficCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 559C19CC1CCB5888000F9984 /* TrafficCell.m */; };
+		559C19CF1CCB5888000F9984 /* TrafficCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559C19CD1CCB5888000F9984 /* TrafficCell.xib */; };
+		559C19D31CCB77CA000F9984 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 559C19D11CCB77CA000F9984 /* CouponCell.m */; };
+		559C19D41CCB77CA000F9984 /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559C19D21CCB77CA000F9984 /* CouponCell.xib */; };
 		55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEF36B1C46173F00000DAF /* LogoCell.m */; };
 		55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AEF36C1C46173F00000DAF /* LogoCell.xib */; };
 /* End PBXBuildFile section */
@@ -164,6 +170,15 @@
 		557960BC1C08A4D300BB731E /* WZYPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZYPlayerUITests.m; sourceTree = "<group>"; };
 		557960BE1C08A4D300BB731E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558CB0EDABED75F46084FFB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		559C19C61CCB448E000F9984 /* CinemaInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaInformationController.h; sourceTree = "<group>"; };
+		559C19C71CCB448E000F9984 /* CinemaInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaInformationController.m; sourceTree = "<group>"; };
+		559C19C81CCB448E000F9984 /* CinemaInformationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaInformationController.xib; sourceTree = "<group>"; };
+		559C19CB1CCB5888000F9984 /* TrafficCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCell.h; sourceTree = "<group>"; };
+		559C19CC1CCB5888000F9984 /* TrafficCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCell.m; sourceTree = "<group>"; };
+		559C19CD1CCB5888000F9984 /* TrafficCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficCell.xib; sourceTree = "<group>"; };
+		559C19D01CCB77CA000F9984 /* CouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponCell.h; sourceTree = "<group>"; };
+		559C19D11CCB77CA000F9984 /* CouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponCell.m; sourceTree = "<group>"; };
+		559C19D21CCB77CA000F9984 /* CouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
 		55AEF36A1C46173F00000DAF /* LogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoCell.h; sourceTree = "<group>"; };
 		55AEF36B1C46173F00000DAF /* LogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoCell.m; sourceTree = "<group>"; };
 		55AEF36C1C46173F00000DAF /* LogoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoCell.xib; sourceTree = "<group>"; };
@@ -279,6 +294,12 @@
 				29F5EF561CA3F01C00EF81AF /* CinemaTimeCell.h */,
 				29F5EF571CA3F01C00EF81AF /* CinemaTimeCell.m */,
 				29F5EF581CA3F01C00EF81AF /* CinemaTimeCell.xib */,
+				559C19CB1CCB5888000F9984 /* TrafficCell.h */,
+				559C19CC1CCB5888000F9984 /* TrafficCell.m */,
+				559C19CD1CCB5888000F9984 /* TrafficCell.xib */,
+				559C19D01CCB77CA000F9984 /* CouponCell.h */,
+				559C19D11CCB77CA000F9984 /* CouponCell.m */,
+				559C19D21CCB77CA000F9984 /* CouponCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +329,9 @@
 				29F5EF2E1CA3DB9A00EF81AF /* CinemaDetailViewController.h */,
 				29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */,
 				29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */,
+				559C19C61CCB448E000F9984 /* CinemaInformationController.h */,
+				559C19C71CCB448E000F9984 /* CinemaInformationController.m */,
+				559C19C81CCB448E000F9984 /* CinemaInformationController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -491,16 +515,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559C19D41CCB77CA000F9984 /* CouponCell.xib in Resources */,
 				29F5EF3C1CA3E20800EF81AF /* CinemaInformationCell.xib in Resources */,
 				5515547A1C462B9500722C52 /* TextCell.xib in Resources */,
 				29F5EF411CA3E69D00EF81AF /* CinemamovieListCell.xib in Resources */,
 				2906FD201C85946A00750058 /* CinemaCell.xib in Resources */,
+				559C19CA1CCB448E000F9984 /* CinemaInformationController.xib in Resources */,
 				557960A41C08A4D300BB731E /* Assets.xcassets in Resources */,
 				29F5EF321CA3DB9A00EF81AF /* CinemaDetailViewController.xib in Resources */,
 				29F5EF4B1CA3EE4F00EF81AF /* CinemaMovieDetailCell.xib in Resources */,
 				5544923B1C416BD4008F6FC0 /* RootCell.xib in Resources */,
 				29F5EF5A1CA3F01C00EF81AF /* CinemaTimeCell.xib in Resources */,
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
+				559C19CF1CCB5888000F9984 /* TrafficCell.xib in Resources */,
 				554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */,
 				55AEF36E1C46173F00000DAF /* LogoCell.xib in Resources */,
 			);
@@ -582,6 +609,7 @@
 				551554791C462B9500722C52 /* TextCell.m in Sources */,
 				2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */,
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
+				559C19C91CCB448E000F9984 /* CinemaInformationController.m in Sources */,
 				2914DFEC1CBBB3B400FDBCE7 /* TicketListModel.m in Sources */,
 				29F5EF401CA3E69D00EF81AF /* CinemamovieListCell.m in Sources */,
 				554492401C416BD4008F6FC0 /* RootViewController.m in Sources */,
@@ -589,8 +617,10 @@
 				2906FD181C858AF300750058 /* CinemaModel.m in Sources */,
 				29F5EF3B1CA3E20800EF81AF /* CinemaInformationCell.m in Sources */,
 				5544923A1C416BD4008F6FC0 /* RootCell.m in Sources */,
+				559C19D31CCB77CA000F9984 /* CouponCell.m in Sources */,
 				554492361C416BD4008F6FC0 /* DataService.m in Sources */,
 				2906FD1F1C85946A00750058 /* CinemaCell.m in Sources */,
+				559C19CE1CCB5888000F9984 /* TrafficCell.m in Sources */,
 				5523F35E1C47931E004033F7 /* YZHUDManager.m in Sources */,
 				5579609C1C08A4D300BB731E /* AppDelegate.m in Sources */,
 				554B78091C43FC5C0031041D /* MovieViewController.m in Sources */,

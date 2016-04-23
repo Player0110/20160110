@@ -21,7 +21,7 @@
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[RootModel class]];
 }
 
-+ (NSValueTransformer *)cinemaModelJSONTransformer {
++ (NSValueTransformer *)cinemaJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[CinemaModel class]];
 }
 
