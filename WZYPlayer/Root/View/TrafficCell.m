@@ -17,11 +17,21 @@
 
 - (void)cell:(TrafficCell *)cell model:(CinemaModel *)model row:(int)row{
     if (row == 0) {
-        cell.buslineLabel.attributedText = [self text:model.busline];
+        if (model.busline == nil) {
+            cell.buslineLabel.attributedText = [self text:@"无"];
+
+        }else{
+            cell.buslineLabel.attributedText = [self text:model.busline];
+        }
 
     }else {
         cell.trafficLabel.text = @"地铁";
-        cell.buslineLabel.attributedText = [self text:model.subwayLine];
+
+        if (model.subwayLine == nil) {
+            cell.buslineLabel.attributedText = [self text:@"无"];
+        }else{
+            cell.buslineLabel.attributedText = [self text:model.subwayLine];
+        }
     }
 }
 

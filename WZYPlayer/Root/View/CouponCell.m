@@ -16,6 +16,9 @@
 }
 
 - (void)cell:(CouponCell *)cell model:(CinemaModel *)model {
+    if (model.newsCoupon == nil) {
+        model.newsCoupon = @"无";
+    }
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:model.newsCoupon];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     [paragraphStyle setLineSpacing:5];
