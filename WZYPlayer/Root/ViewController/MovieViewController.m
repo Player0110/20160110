@@ -19,7 +19,7 @@
 @interface MovieViewController ()
 @property(assign, nonatomic) CGFloat height;
 @property(assign, nonatomic) CGFloat desHeight;
-@property(strong, nonatomic) UIButton *rightButton;
+@property(strong, nonatomic) UIButton *favoriteButton;
 
 @end
 
@@ -203,24 +203,42 @@
                    }];
 }
 - (void)shareButtonView {
-  self.rightButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-  self.rightButton.frame = CGRectMake(0, 0, 55, 55);
+  self.favoriteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+  self.favoriteButton.frame = CGRectMake(0, 0, 30, 30);
   //
   UIImage *image = [[UIImage imageNamed:@"share"]
       imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-  [self.rightButton.imageView setTintColor:[UIColor grayColor]];
+  [self.favoriteButton.imageView setTintColor:[UIColor grayColor]];
   //
-  [self.rightButton setImage:image forState:(UIControlStateNormal)];
-  [self.rightButton addTarget:self
+  [self.favoriteButton setImage:image forState:(UIControlStateNormal)];
+  [self.favoriteButton addTarget:self
                        action:@selector(didClickEdit)
              forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareButton.frame = CGRectMake(30, 0, 30, 30);
+    [shareButton setImage:[[UIImage imageNamed:@"share"]
+                           imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                 forState:UIControlStateNormal];
+    [shareButton addTarget:self
+                    action:@selector(didClickShare)
+          forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView * rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    [rightView addSubview:self.favoriteButton];
+    [rightView addSubview:shareButton];
   UIBarButtonItem *rightButton =
-      [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
+      [[UIBarButtonItem alloc] initWithCustomView:rightView];
   self.navigationItem.rightBarButtonItem = rightButton;
 }
+
 - (void)didClickEdit {
   [self.rootModel collectModel];
   [[YZHUDManager sharedYZHUDManager] showWithHint:@"收藏成功"];
+}
+
+- (void)didClickShare {
+    
 }
 ///
 /*

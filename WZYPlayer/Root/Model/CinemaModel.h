@@ -13,10 +13,10 @@
 
 @interface CinemaModel : MTLModel <MTLJSONSerializing>
 
-@property(strong, nonatomic) NSString *name;
-@property(strong, nonatomic) NSString *cinemaId;
-@property(strong, nonatomic) NSString *address;
-@property(strong, nonatomic) NSString *tel;
+@property(strong, nonatomic) NSString *name;//影院名
+@property(strong, nonatomic) NSString *cinemaId;//影院编号
+@property(strong, nonatomic) NSString *address;//影院地址
+@property(strong, nonatomic) NSString *tel;//影院电话
 @property(strong, nonatomic) NSString *circleName;//商圈
 @property(strong, nonatomic) NSString *coord;//经纬度
 @property(strong, nonatomic) NSString *newsCoupon;//优惠信息
