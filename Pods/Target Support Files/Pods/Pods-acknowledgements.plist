@@ -418,6 +418,14 @@ THE SOFTWARE.</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright &#169; 2012-2015 mob</string>
+			<key>Title</key>
+			<string>ShareSDK3</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2013 Michael Tyson
 
 This software is provided 'as-is', without any express or implied

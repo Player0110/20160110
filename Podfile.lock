@@ -53,6 +53,9 @@ PODS:
   - SDWebImage (3.7.4):
     - SDWebImage/Core (= 3.7.4)
   - SDWebImage/Core (3.7.4)
+  - ShareSDK3 (3.2.5):
+    - ShareSDK3/ShareSDK (= 3.2.5)
+  - ShareSDK3/ShareSDK (3.2.5)
   - SWTableViewCell (0.3.7)
   - TPKeyboardAvoiding (1.2.11)
   - UITableView+FDTemplateLayoutCell (1.4)
@@ -72,6 +75,7 @@ DEPENDENCIES:
   - ReactiveCocoa (= 2.5)
   - RESideMenu (~> 4.0.7)
   - SDWebImage (~> 3.7.3)
+  - ShareSDK3 (~> 3.2.5)
   - SWTableViewCell (~> 0.3.7)
   - TPKeyboardAvoiding (~> 1.2.11)
   - UITableView+FDTemplateLayoutCell (~> 1.4)
@@ -92,6 +96,7 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  ShareSDK3: ccdd8ec971044703e7722e19c2f3b38fb03775e2
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
