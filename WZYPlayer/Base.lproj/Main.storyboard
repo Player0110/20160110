@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fjR-IE-QCv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fjR-IE-QCv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="yOd-uh-Zet">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" automaticallyAdjustsScrollViewInsets="NO" id="kXW-LU-w0g" customClass="SettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="idj-v9-cA7"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Bm-t3-cJU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9iD-No-nLP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o1g-Ot-Bbe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="o1g-Ot-Bbe" secondAttribute="trailing" id="BG0-fv-9Kc"/>
+                            <constraint firstItem="4Bm-t3-cJU" firstAttribute="top" secondItem="o1g-Ot-Bbe" secondAttribute="bottom" id="BR9-Am-xxu"/>
+                            <constraint firstItem="o1g-Ot-Bbe" firstAttribute="leading" secondItem="9iD-No-nLP" secondAttribute="leading" id="FR5-nS-XkD"/>
+                            <constraint firstItem="o1g-Ot-Bbe" firstAttribute="top" secondItem="idj-v9-cA7" secondAttribute="bottom" id="Z6f-kq-K6X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vo4-wK-mKa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="xiG-Rq-0Cg"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableview" destination="o1g-Ot-Bbe" id="7nC-O0-gJT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLx-7V-E0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662.5" y="-424.5"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -14,7 +51,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -25,8 +62,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,10 +77,11 @@
                         <viewControllerLayoutGuide type="bottom" id="qhS-Me-aLe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aaU-GV-DxW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CF-18-TE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,6 +109,7 @@
         <scene sceneID="5Of-1D-Ylf">
             <objects>
                 <navigationController storyboardIdentifier="contentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXV-AS-GJC" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wil-jY-vaL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -81,11 +119,12 @@
                         <segue destination="J3M-3Q-Ex5" kind="show" id="nIv-Le-5wn"/>
                         <segue destination="Lxc-UZ-5d3" kind="show" id="9if-Zr-Nwj"/>
                         <segue destination="6Dn-ac-bai" kind="show" id="NCL-9p-JNO"/>
+                        <segue destination="kXW-LU-w0g" kind="show" id="GW8-gr-kIl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-DK-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="64"/>
+            <point key="canvasLocation" x="146.5" y="-252.5"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="6Qd-7v-kMp">
@@ -114,7 +153,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7Ye-a8-Phy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GNp-PB-gIJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -139,11 +178,11 @@
                         <viewControllerLayoutGuide type="bottom" id="kVS-pA-JIa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wQh-bx-IBl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-Nd-WXB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -162,8 +201,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="Y2d-Nd-WXB" id="NNx-uX-ZPm"/>
                     </connections>
@@ -181,7 +219,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KWd-5Y-03X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="v6e-Kh-2mV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,6 +230,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQa-k8-QsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

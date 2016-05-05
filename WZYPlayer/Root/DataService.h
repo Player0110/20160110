@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DataService : AFHTTPSessionManager
+@property(strong,nonatomic)NSString *nicheng;
 + (DataService *)sharedClient;
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters

@@ -82,6 +82,11 @@
 		76FAC95B1CD9E33B00966324 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FAC95A1CD9E33B00966324 /* libstdc++.tbd */; };
 		76FAC95D1CD9E34900966324 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FAC95C1CD9E34900966324 /* libz.tbd */; };
 		76FAC95F1CD9E35800966324 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FAC95E1CD9E35800966324 /* libicucore.tbd */; };
+		76FAC9631CD9F82C00966324 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FAC9611CD9F82C00966324 /* SettingViewController.m */; };
+		76FEC2FD1CDAE892007F90ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FEC2FB1CDAE892007F90ED /* LoginViewController.m */; };
+		76FEC2FE1CDAE892007F90ED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FEC2FC1CDAE892007F90ED /* LoginViewController.xib */; };
+		76FEC3021CDB47BC007F90ED /* SeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FEC3001CDB47BC007F90ED /* SeetingCell.m */; };
+		76FEC3031CDB47BC007F90ED /* SeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FEC3011CDB47BC007F90ED /* SeetingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +237,14 @@
 		76FAC95A1CD9E33B00966324 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		76FAC95C1CD9E34900966324 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		76FAC95E1CD9E35800966324 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		76FAC9601CD9F82C00966324 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		76FAC9611CD9F82C00966324 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		76FEC2FA1CDAE892007F90ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		76FEC2FB1CDAE892007F90ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		76FEC2FC1CDAE892007F90ED /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		76FEC2FF1CDB47BC007F90ED /* SeetingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeetingCell.h; sourceTree = "<group>"; };
+		76FEC3001CDB47BC007F90ED /* SeetingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeetingCell.m; sourceTree = "<group>"; };
+		76FEC3011CDB47BC007F90ED /* SeetingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeetingCell.xib; sourceTree = "<group>"; };
 		77DBD327FC03862668A5BBE8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C48AAC129A0F0504A7E23473 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +376,9 @@
 				559C19D01CCB77CA000F9984 /* CouponCell.h */,
 				559C19D11CCB77CA000F9984 /* CouponCell.m */,
 				559C19D21CCB77CA000F9984 /* CouponCell.xib */,
+				76FEC2FF1CDB47BC007F90ED /* SeetingCell.h */,
+				76FEC3001CDB47BC007F90ED /* SeetingCell.m */,
+				76FEC3011CDB47BC007F90ED /* SeetingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +411,11 @@
 				559C19C61CCB448E000F9984 /* CinemaInformationController.h */,
 				559C19C71CCB448E000F9984 /* CinemaInformationController.m */,
 				559C19C81CCB448E000F9984 /* CinemaInformationController.xib */,
+				76FAC9601CD9F82C00966324 /* SettingViewController.h */,
+				76FAC9611CD9F82C00966324 /* SettingViewController.m */,
+				76FEC2FA1CDAE892007F90ED /* LoginViewController.h */,
+				76FEC2FB1CDAE892007F90ED /* LoginViewController.m */,
+				76FEC2FC1CDAE892007F90ED /* LoginViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -671,6 +692,8 @@
 				29F5EF3C1CA3E20800EF81AF /* CinemaInformationCell.xib in Resources */,
 				5515547A1C462B9500722C52 /* TextCell.xib in Resources */,
 				29F5EF411CA3E69D00EF81AF /* CinemamovieListCell.xib in Resources */,
+				76FEC3031CDB47BC007F90ED /* SeetingCell.xib in Resources */,
+				76FEC2FE1CDAE892007F90ED /* LoginViewController.xib in Resources */,
 				76FAC94E1CD9E1A700966324 /* WeiboSDK.bundle in Resources */,
 				2906FD201C85946A00750058 /* CinemaCell.xib in Resources */,
 				559C19CA1CCB448E000F9984 /* CinemaInformationController.xib in Resources */,
@@ -762,6 +785,7 @@
 				2906FD241C85983A00750058 /* CinemaViewController.m in Sources */,
 				55AEF36D1C46173F00000DAF /* LogoCell.m in Sources */,
 				5523F2F61C476D51004033F7 /* MenuViewController.m in Sources */,
+				76FEC3021CDB47BC007F90ED /* SeetingCell.m in Sources */,
 				551554791C462B9500722C52 /* TextCell.m in Sources */,
 				2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */,
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
@@ -792,7 +816,9 @@
 				29F5EF4A1CA3EE4F00EF81AF /* CinemaMovieDetailCell.m in Sources */,
 				2914DFF21CBBBA5900FDBCE7 /* TicketUnitListModel.m in Sources */,
 				2914DFE91CBBB37500FDBCE7 /* TicketModel.m in Sources */,
+				76FEC2FD1CDAE892007F90ED /* LoginViewController.m in Sources */,
 				5544923F1C416BD4008F6FC0 /* PersonalViewController.m in Sources */,
+				76FAC9631CD9F82C00966324 /* SettingViewController.m in Sources */,
 				2904B3791CA921EF004A9353 /* CinemaDetailModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
