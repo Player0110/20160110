@@ -10,6 +10,7 @@
 #import "MenuViewController.h"
 #import "PrevueViewController.h"
 #import "CinemaViewController.h"
+#import "SettingViewController.h"
 
 @interface MenuViewController ()
 @property(strong, nonatomic) CollectViewController *collectVC;
@@ -86,12 +87,23 @@
                 initWithRootViewController:
                     [self.storyboard instantiateViewControllerWithIdentifier:
                                          @"CollectViewController"]]
-                        animated:YES];
-    [self.sideMenuViewController hideMenuViewController];
-
-    break;
-  default:
-    break;
+     animated:YES];
+          [self.sideMenuViewController hideMenuViewController];
+          
+          break;
+    case 4:
+          [self.sideMenuViewController
+           setContentViewController:
+           [[UINavigationController alloc]
+            initWithRootViewController:
+            [self.storyboard instantiateViewControllerWithIdentifier:
+             @"SettingViewController"]]
+           animated:YES];
+          [self.sideMenuViewController hideMenuViewController];
+          
+          break;
+      default:
+          break;
   }
 }
 

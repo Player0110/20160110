@@ -11,6 +11,7 @@
 
 @interface DataService : AFHTTPSessionManager
 //自行创建
+@property(strong,nonatomic)NSString *nicheng;
 + (DataService *)sharedClient;
 //get请求
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
