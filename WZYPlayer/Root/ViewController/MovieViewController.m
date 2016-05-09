@@ -246,17 +246,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)didClickShare {
     
     //1、创建分享参数
-    
+    //分享图片的URL
     NSString *imageStr = [[NSString stringWithFormat:@"%@",self.rootModel.logo] stringByReplacingOccurrencesOfString:@".webp" withString:@".jpg"];
     NSURL * imageUrl = [NSURL URLWithString:imageStr];
     //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
     
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    [shareParams SSDKSetupShareParamsByText:[NSString stringWithFormat:@"%@",self.rootModel.name]
+    [shareParams SSDKSetupShareParamsByText:[NSString stringWithFormat:@"%@上映 %@",self.rootModel.releaseDate,self.rootModel.highlight]
                                      images:@[imageUrl]
-                                        url:[NSURL URLWithString:@"http://mob.com"]
-                                      title:@"分享标题"
+                                        url:[NSURL URLWithString:@""]
+                                      title:[NSString stringWithFormat:@"《%@》%@分",self.rootModel.name,self.rootModel.grade]
                                        type:SSDKContentTypeAuto];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
     [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
@@ -267,22 +267,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                    switch (state) {
                        case SSDKResponseStateSuccess:
                        {
-                           UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享成功"
-                                                                               message:nil
-                                                                              delegate:nil
-                                                                     cancelButtonTitle:@"确定"
-                                                                     otherButtonTitles:nil];
-                           [alertView show];
+                           [[YZHUDManager sharedYZHUDManager] showWithHint:@"分享成功"];
                            break;
                        }
                        case SSDKResponseStateFail:
                        {
-                           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
-                                                                           message:[NSString stringWithFormat:@"%@",error]
-                                                                          delegate:nil
-                                                                 cancelButtonTitle:@"OK"
-                                                                 otherButtonTitles:nil, nil];
-                           [alert show];
+                           [[YZHUDManager sharedYZHUDManager] showWithHint:@"分享失败"];
                            break;
                        }
                        default:
