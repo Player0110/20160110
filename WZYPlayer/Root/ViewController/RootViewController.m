@@ -35,8 +35,8 @@
 }
 
 - (void)data {
-  if ([LocaldData achieveListDataType:@"list.plist"]) {
-    self.dataArray = [LocaldData achieveListDataType:@"list.plist"].list;
+  if ([LocaldData achieveListDataType:@"movieList.plist"]) {
+    self.dataArray = [LocaldData achieveListDataType:@"movieList.plist"].list;
     [self.baseTableView reloadData];
 
   } else {
@@ -45,7 +45,7 @@
              block:^(RootListModel *listModel, NSError *error) {
                if (!error) {
                  self.dataArray = listModel.list;
-                 [LocaldData saveListData:listModel type:@"list.plist"];
+                 [LocaldData saveListData:listModel type:@"movieList.plist"];
                  [self.baseTableView reloadData];
                }
              }];
