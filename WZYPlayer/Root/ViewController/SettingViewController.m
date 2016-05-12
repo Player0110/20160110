@@ -20,10 +20,6 @@
 
 @implementation SettingViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [self data];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -35,11 +31,10 @@
     
     self.tableview.tableFooterView = [[UIView alloc] init];
     self.tableview.backgroundColor = [UIColor whiteColor];
-    [self data];
 
 }
 
-- (void)data {
+- (void)viewWillAppear:(BOOL)animated{
     [self.tableview reloadData];
 }
 
@@ -78,9 +73,6 @@ heightForHeaderInSection:(NSInteger)section {
         [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:(UIControlStateNormal)];
     }
     [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
-//    loginBtn.layer.borderColor = [[UIColor colorWithRed:74.0/255.0 green:102.0/255.0 blue:173.0/255.0 alpha:1] CGColor];
-//    loginBtn.layer.borderWidth = 0.5;
-//    loginBtn.layer.cornerRadius = 50.0f;
     [headerView addSubview:loginBtn];
     [loginBtn addTarget:self action:@selector(didLogin) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -88,8 +80,6 @@ heightForHeaderInSection:(NSInteger)section {
 }
 
 - (void)didLogin{
-//    UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:@"sb点什么点，又不能登录" preferredStyle:(UIAlertControllerStyleAlert)];
-//    [self presentViewController:alert animated:YES completion:nil];
     LoginViewController * LoginVC = [[LoginViewController alloc]init];
     [self presentViewController:LoginVC animated:YES completion:nil];
 }

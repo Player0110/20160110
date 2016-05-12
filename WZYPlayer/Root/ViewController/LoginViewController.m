@@ -72,7 +72,11 @@
                                        associateHandler (user.uid, user, user);
                                        NSLog(@"dd%@",user.rawData);
                                        NSLog(@"dd%@",user.credential);
-//                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"headimgurl"];
+                                       
+                                       UserInfo * userInfo = [[UserInfo alloc] init];
+                                       userInfo.userName = [user.rawData objectForKey:@"nickname"];
+                                       userInfo.userIcon = [user.rawData objectForKey:@"headimgurl"];
+                                       [userInfo saveDictionaryUser];
                                        
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
@@ -97,10 +101,13 @@
                                        //在此回调中可以将社交平台用户信息与自身用户系统进行绑定，最后使用一个唯一用户标识来关联此用户信息。
                                        //在此示例中没有跟用户系统关联，则使用一个社交用户对应一个系统用户的方式。将社交用户的uid作为关联ID传入associateHandler。
                                        associateHandler (user.uid, user, user);
+                                       NSLog(@"user%@",user);
                                        NSLog(@"dd%@",user.rawData);
                                        NSLog(@"dd%@",user.credential);
-//                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"figureurl_qq_2"];
-                                       
+                                       UserInfo * userInfo = [[UserInfo alloc] init];
+                                       userInfo.userName = user.nickname;
+                                       userInfo.userIcon = user.icon;
+                                       [userInfo saveDictionaryUser];
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
                                     
@@ -112,6 +119,10 @@
                                     
                                 }];
 
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
