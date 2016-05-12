@@ -11,6 +11,7 @@
 #import "DataService.h"
 #import "SeetingCell.h"
 #import "SDImageCache.h"
+#import "UserInfo.h"
 
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -35,6 +36,7 @@
     self.tableview.tableFooterView = [[UIView alloc] init];
     self.tableview.backgroundColor = [UIColor whiteColor];
     [self data];
+
 }
 
 - (void)data {
@@ -64,20 +66,21 @@ heightForHeaderInSection:(NSInteger)section {
     [headerView addSubview:imageView];
     
     UIButton *loginBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    
     loginBtn.frame = CGRectMake(self.view.frame.size.width/2-50, 60, 100, 100);
     loginBtn.layer.cornerRadius = 50.0f;
-    //loginBtn.backgroundColor = [UIColor greenColor];
-    if ([DataService sharedClient].nicheng == nil) {
+    loginBtn.layer.masksToBounds = YES;
+
+    UserInfo * user = [[UserInfo alloc] init];
+    
+    if (user == nil) {
         loginBtn.backgroundColor = [UIColor greenColor];
     }else{
-        [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[DataService sharedClient].nicheng]]] forState:(UIControlStateNormal)];
+        [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:(UIControlStateNormal)];
     }
     [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
 //    loginBtn.layer.borderColor = [[UIColor colorWithRed:74.0/255.0 green:102.0/255.0 blue:173.0/255.0 alpha:1] CGColor];
 //    loginBtn.layer.borderWidth = 0.5;
-    loginBtn.layer.cornerRadius = 50.0f;
-//    loginBtn.layer.masksToBounds = YES;
+//    loginBtn.layer.cornerRadius = 50.0f;
     [headerView addSubview:loginBtn];
     [loginBtn addTarget:self action:@selector(didLogin) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -110,8 +113,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         SeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell"];
 
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [cell cell:cell string:[NSString stringWithFormat:@"%@",[DataService sharedClient].nicheng]];
 
+        UserInfo * user = [[UserInfo alloc] init];
+        [cell cell:cell string:[NSString stringWithFormat:@"%@",user.userName]];
         
         return cell;
     } else if (indexPath.row == 1) {
@@ -119,7 +123,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         SeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell"];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [cell cell:cell string:@""];
+        cell.titleLabel.text = @"清除缓存";
+        cell.detailLabel.text = [NSString stringWithFormat:@"当前缓存:%.2fMB",[self calculateCache]];
         return cell;
         
     }
@@ -131,6 +136,38 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         [[SDImageCache sharedImageCache] clearDisk];
         [self.tableview reloadData];
     }
+}
+
+- (double)calculateCache{
+    
+    NSString * cachePath  = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject];//读取缓存文件大小
+    NSString *filePath  = [cachePath stringByAppendingPathComponent:@"default/"];
+    NSDirectoryEnumerator *dirEnumerater = [[NSFileManager defaultManager] enumeratorAtPath:filePath];
+    
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    double totalLength = 0.0;
+    
+    NSString *fileName;
+    while (fileName = [dirEnumerater nextObject]) {
+        if ([fileName isEqualToString:@"profile.plist"]) {
+            continue;
+        }
+        
+        NSString *file=[[NSString alloc] initWithString:[filePath stringByAppendingPathComponent:fileName]];
+        if ([fileManager fileExistsAtPath:file]) {
+            NSDictionary * attributes = [fileManager attributesOfItemAtPath:file error:nil];
+            // file size
+            NSNumber *size   = [attributes objectForKey:NSFileSize];
+            if ([attributes objectForKey:NSFileSize]){
+                totalLength += [size intValue];
+            }
+        }
+        
+    }
+    
+    totalLength = totalLength/1024/1024;
+    
+    return totalLength;
 }
 
 /*

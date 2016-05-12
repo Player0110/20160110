@@ -16,6 +16,8 @@
 #import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 #import "DataService.h"
 
+#import "UserInfo.h"
+
 @interface LoginViewController ()
 
 @end
@@ -24,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -39,9 +42,13 @@
                                        //在此回调中可以将社交平台用户信息与自身用户系统进行绑定，最后使用一个唯一用户标识来关联此用户信息。
                                        //在此示例中没有跟用户系统关联，则使用一个社交用户对应一个系统用户的方式。将社交用户的uid作为关联ID传入associateHandler。
                                        associateHandler (user.uid, user, user);
-                                       NSLog(@"dd%@",user.rawData);
-                                       NSLog(@"dd%@",user.credential);
-                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"figureurl_qq_2"];
+                                       NSLog(@"user.rawData %@",user.rawData);
+                                       NSLog(@"user.credential %@",user.credential);
+                                       
+                                       UserInfo * userInfo = [[UserInfo alloc] init];
+                                       userInfo.userName = [user.rawData objectForKey:@"nickname"];
+                                       userInfo.userIcon = [user.rawData objectForKey:@"figureurl_qq_2"];
+                                       [userInfo saveDictionaryUser];
                                        
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
@@ -65,7 +72,7 @@
                                        associateHandler (user.uid, user, user);
                                        NSLog(@"dd%@",user.rawData);
                                        NSLog(@"dd%@",user.credential);
-                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"headimgurl"];
+//                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"headimgurl"];
                                        
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
@@ -92,7 +99,7 @@
                                        associateHandler (user.uid, user, user);
                                        NSLog(@"dd%@",user.rawData);
                                        NSLog(@"dd%@",user.credential);
-                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"figureurl_qq_2"];
+//                                       [DataService sharedClient].nicheng = [user.rawData objectForKey:@"figureurl_qq_2"];
                                        
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
