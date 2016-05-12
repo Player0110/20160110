@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WZYPlayer/Root/Model/LocaldData.m"
-            timestampString = "484565289.590871"
+            filePath = "WZYPlayer/Root/ViewController/LoginViewController.m"
+            timestampString = "484730108.97854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "+saveListData:type:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-didClickQQ:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
