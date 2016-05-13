@@ -69,6 +69,13 @@ heightForHeaderInSection:(NSInteger)section {
     loginBtn.layer.masksToBounds = YES;
 
     UserInfo * user = [[UserInfo alloc] init];
+//    TODO: 未登录时怎么判断user
+   
+    
+    //读取图片
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"userIcon.jpg"];
+    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    NSLog(@"image = %@",savedImage);
     
     if (user == nil) {
         loginBtn.backgroundColor = [UIColor greenColor];
@@ -126,6 +133,12 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
 {
+//    TODO:添加保存图片到沙盒
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"userIcon.jpg"]];   // 保存文件的名称
+    BOOL result = [UIImagePNGRepresentation(image)writeToFile:filePath atomically:YES];
+    NSLog(@"image result = %d",result);
+    
     [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
