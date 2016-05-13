@@ -13,7 +13,9 @@
 #import "SDImageCache.h"
 #import "UserInfo.h"
 
-@interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "CLImageEditor.h"
+
+@interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLImageEditorDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property(assign, nonatomic) CGFloat height;
 @end
@@ -31,7 +33,8 @@
     
     self.tableview.tableFooterView = [[UIView alloc] init];
     self.tableview.backgroundColor = [UIColor whiteColor];
-
+    UILabel * label = [[UILabel alloc]init];
+    label.userInteractionEnabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -80,8 +83,50 @@ heightForHeaderInSection:(NSInteger)section {
 }
 
 - (void)didLogin{
-    LoginViewController * LoginVC = [[LoginViewController alloc]init];
-    [self presentViewController:LoginVC animated:YES completion:nil];
+    UserInfo *userInfo = [[UserInfo alloc] init];
+    if (userInfo == nil) {
+        LoginViewController * LoginVC = [[LoginViewController alloc]init];
+        [self presentViewController:LoginVC animated:YES completion:nil];
+    }else{
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"打开相册" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"选取相片" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //处理点击拍照
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePickerController animated:YES completion:^{
+                
+            }];
+        }]];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"拍照" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            //处理点击从相册选取
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagePickerController animated:YES completion:^{
+                
+            }];
+        }]];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+
+    }
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *imageIcon = info[UIImagePickerControllerEditedImage];
+    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:imageIcon];
+    editor.delegate = self;
+    
+    [picker pushViewController:editor animated:YES];
+}
+
+- (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
+{
+    [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView

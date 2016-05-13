@@ -59,11 +59,13 @@ install_resource()
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "AXStretchableHeaderTabViewController/Classes/AXStretchableHeaderTabViewController.xib"
+  install_resource "CLImageEditor/CLImageEditor/CLImageEditor.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AXStretchableHeaderTabViewController/Classes/AXStretchableHeaderTabViewController.xib"
+  install_resource "CLImageEditor/CLImageEditor/CLImageEditor.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
 fi
