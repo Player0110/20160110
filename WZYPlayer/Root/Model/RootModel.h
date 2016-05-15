@@ -45,4 +45,6 @@
 - (void)collectModel;
 + (NSMutableArray *)fetchCollectModel;
 - (void)deleteCollectModel;
+- (BOOL)isCollectModel;
+
 @end

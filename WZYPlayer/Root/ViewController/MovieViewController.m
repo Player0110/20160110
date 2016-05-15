@@ -227,8 +227,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
  *  收藏按钮点击事件,收藏成功后有提示
  */
 - (void)didClickEdit {
-    [self.rootModel collectModel];
-    [[YZHUDManager sharedYZHUDManager] showWithHint:@"收藏成功"];
+    if ([self.rootModel isCollectModel]) {
+        [[YZHUDManager sharedYZHUDManager] showWithHint:@"已经收藏"];
+    }else {
+        [self.rootModel collectModel];
+        [[YZHUDManager sharedYZHUDManager] showWithHint:@"收藏成功"];
+    }
+    
 }
 
 /**

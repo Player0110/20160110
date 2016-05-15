@@ -132,6 +132,16 @@ static NSString *const PrevueUrl =
 
   return array;
 }
+
+- (BOOL)isCollectModel {
+    NSMutableArray *array =[RootModel fetchCollectModel];
+    for (RootModel *m in array) {
+        if ([self.movieId isEqualToString:m.movieId]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 - (void)deleteCollectModel {
 
   NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
