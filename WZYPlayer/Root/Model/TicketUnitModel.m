@@ -51,6 +51,8 @@ static NSString *const TicketUrl =
                                         NSError *error))completion {
     NSString * ticketUrl = [TicketUnitModel stringByReplacingOccurrencesOfCinema_idString:cinemaId
                                                                        movie_idString:movieId];
+    
+    
     return [[DataService sharedClient] POST:ticketUrl
                                  parameters:@{}
                                  completion:^(id response, NSError *error) {

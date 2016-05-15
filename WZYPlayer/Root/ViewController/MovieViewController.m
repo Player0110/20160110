@@ -69,14 +69,24 @@
         
     }];
 }
+
+/**
+ *  返回tabelView的头视图
+ *  [self tableViewHeaderFooterView]用于创建tabelView的头视图
+ */
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section {
     return [self tableViewHeaderFooterView];
 }
+
+/**
+ *  tabelView的头视图的高度
+ */
 - (CGFloat)tableView:(UITableView *)tableView
 heightForHeaderInSection:(NSInteger)section {
     return 235;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
@@ -84,29 +94,14 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     } else if (indexPath.row == 1) {
         return self.height + 5;
     }
-    //  else if (indexPath.row == 2){
-    
-    
-    //
-    //      return [tableView fd_heightForCellWithIdentifier:@"TextCell"                                      cacheByIndexPath:indexPath
-    //                                         configuration:^(TextCell *cell) {
-    //                                             [cell cell:cell model:self.rootModel];
-    //
-    ////                                             [cell detailCell:cell model:self.detailModels[(NSUInteger)indexPath.row]];
-    //                                         }];
-    //
-    //  }
-    
-    return self.desHeight;
-    
+    return self.desHeight;    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    
     return 3;
-    
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
@@ -139,31 +134,20 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+/**
+ *  定义tabelView的头视图，用于展示视频缩略图
+*/
 - (UITableViewHeaderFooterView *)tableViewHeaderFooterView {
-    UITableViewHeaderFooterView *headerView =
-    [[UITableViewHeaderFooterView alloc] init];
+    
+    UITableViewHeaderFooterView *headerView = [[UITableViewHeaderFooterView alloc] init];
     UIImageView *imageView = [[UIImageView alloc]
                               initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 235)];
-    NSLog(@"%@", self.rootModel.logo556640);
-    [imageView
-     sd_setImageWithURL:[RootModel stringWithUrl:self.rootModel.logo556640]
-     placeholderImage:[[SDImageCache sharedImageCache]
-                       imageFromDiskCacheForKey:
-                       [[RootModel
-                         stringWithUrl:self.rootModel.logo556640]
-                        absoluteString]]
-     completed:^(UIImage *image, NSError *error,
-                 SDImageCacheType cacheType, NSURL *imageURL){
-     }];
-    
+    [imageView sd_setImageWithURL:[RootModel stringWithUrl:self.rootModel.logo556640]
+                 placeholderImage:[[SDImageCache sharedImageCache] imageFromDiskCacheForKey:[[RootModel stringWithUrl:self.rootModel.logo556640] absoluteString]]
+                        completed:^(UIImage *image, NSError *error,
+                                    SDImageCacheType cacheType, NSURL *imageURL){
+                        }];
     [headerView addSubview:imageView];
-    
     UIButton *playButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [playButton setImage:[UIImage imageNamed:@"play"]
                 forState:(UIControlStateNormal)];
@@ -173,21 +157,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.rootModel.mobilePreview) {
         [headerView addSubview:playButton];
     }
-    playButton.frame =
-    CGRectMake((self.view.frame.size.width - 80) / 2, 80, 80, 80);
+    playButton.frame = CGRectMake((self.view.frame.size.width - 80) / 2, 80, 80, 80);
     
-    UILabel *nameLabel =
-    [[UILabel alloc] initWithFrame:CGRectMake(15, 185, 200, 20)];
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 185, 200, 20)];
     [headerView addSubview:nameLabel];
     nameLabel.text = self.rootModel.name;
     nameLabel.font = [UIFont systemFontOfSize:17.];
     nameLabel.textColor = [UIColor whiteColor];
     
-    UILabel *dateLabel =
-    [[UILabel alloc] initWithFrame:CGRectMake(15, 210, 200, 20)];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 210, 200, 20)];
     [headerView addSubview:dateLabel];
-    dateLabel.text =
-    [NSString stringWithFormat:@"%@上映 %@", self.rootModel.releaseDate,
+    dateLabel.text = [NSString stringWithFormat:@"%@上映 %@", self.rootModel.releaseDate,
      self.rootModel.area];
     dateLabel.font = [UIFont systemFontOfSize:13.];
     dateLabel.textColor = [UIColor grayColor];
@@ -195,7 +175,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return headerView;
 }
 
-///
+/**
+ *  视频按钮点击事件
+ */
 - (void)playClick {
     AVPlayerViewController *avPlayView = [[AVPlayerViewController alloc] init];
     avPlayView.view.transform = CGAffineTransformMakeRotation((M_PI / 2.0));
@@ -208,19 +190,22 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                      completion:^{
                      }];
 }
+
+/**
+ *  分享与收藏按钮的创建
+ */
 - (void)shareButtonView {
+//    收藏按钮
     self.favoriteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.favoriteButton.frame = CGRectMake(0, 0, 30, 30);
-    //
     UIImage *image = [[UIImage imageNamed:@"share"]
                       imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.favoriteButton.imageView setTintColor:[UIColor grayColor]];
-    //
     [self.favoriteButton setImage:image forState:(UIControlStateNormal)];
     [self.favoriteButton addTarget:self
                             action:@selector(didClickEdit)
                   forControlEvents:(UIControlEventTouchUpInside)];
-    
+//    分享按钮
     UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     shareButton.frame = CGRectMake(30, 0, 30, 30);
     [shareButton setImage:[[UIImage imageNamed:@"share"]
@@ -238,20 +223,22 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     self.navigationItem.rightBarButtonItem = rightButton;
 }
 
+/**
+ *  收藏按钮点击事件,收藏成功后有提示
+ */
 - (void)didClickEdit {
     [self.rootModel collectModel];
     [[YZHUDManager sharedYZHUDManager] showWithHint:@"收藏成功"];
 }
 
+/**
+ *  分享按钮点击事件
+ */
 - (void)didClickShare {
-    
     //1、创建分享参数
     //分享图片的URL
     NSString *imageStr = [[NSString stringWithFormat:@"%@",self.rootModel.logo] stringByReplacingOccurrencesOfString:@".webp" withString:@".jpg"];
     NSURL * imageUrl = [NSURL URLWithString:imageStr];
-    //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
-    
-    
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:[NSString stringWithFormat:@"%@上映 %@",self.rootModel.releaseDate,self.rootModel.highlight]
                                      images:@[imageUrl]
@@ -259,7 +246,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                                       title:[NSString stringWithFormat:@"《%@》%@分",self.rootModel.name,self.rootModel.grade]
                                        type:SSDKContentTypeAuto];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
-    [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
+    [ShareSDK showShareActionSheet:nil
                              items:nil
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
@@ -278,8 +265,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                        default:
                            break;
                    }
-               }
-     ];
+               }];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 ///
 /*

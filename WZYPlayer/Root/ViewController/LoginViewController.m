@@ -48,6 +48,7 @@
                                        UserInfo * userInfo = [[UserInfo alloc] init];
                                        userInfo.userName = [user.rawData objectForKey:@"nickname"];
                                        userInfo.userIcon = [user.rawData objectForKey:@"figureurl_qq_2"];
+                                       userInfo.isLogin = @"YES";
                                        [userInfo saveDictionaryUser];
                                        
                                    }
@@ -76,6 +77,7 @@
                                        UserInfo * userInfo = [[UserInfo alloc] init];
                                        userInfo.userName = [user.rawData objectForKey:@"nickname"];
                                        userInfo.userIcon = [user.rawData objectForKey:@"headimgurl"];
+                                       userInfo.isLogin = @"YES";
                                        [userInfo saveDictionaryUser];
                                        
                                    }
@@ -107,6 +109,7 @@
                                        UserInfo * userInfo = [[UserInfo alloc] init];
                                        userInfo.userName = user.nickname;
                                        userInfo.userIcon = user.icon;
+                                       userInfo.isLogin = @"YES";
                                        [userInfo saveDictionaryUser];
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {

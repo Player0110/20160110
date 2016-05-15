@@ -25,6 +25,13 @@
     return _userName;
 }
 
+- (NSString *)isLogin {
+    if (_isLogin == nil) {
+        _isLogin = @"NO";
+    }
+    return _isLogin;
+}
+
 - (instancetype)init {
     NSDictionary * userDefault = [[NSUserDefaults standardUserDefaults] valueForKey:USER_DEFAULT];
     [self setValuesForKeysWithDictionary:userDefault];
@@ -45,6 +52,7 @@
     
     [userDefaultDictionary setObject:self.userName forKey:@"userName"];
     [userDefaultDictionary setObject:self.userIcon forKey:@"userIcon"];
+    [userDefaultDictionary setObject:self.isLogin forKey:@"isLogin"];
 
     return userDefaultDictionary;
 

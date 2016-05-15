@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.title = @"我的";
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
@@ -77,7 +77,7 @@ heightForHeaderInSection:(NSInteger)section {
     UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
     NSLog(@"image = %@",savedImage);
     
-    if (user == nil) {
+    if ([user.isLogin isEqualToString:@"NO"]) {
         loginBtn.backgroundColor = [UIColor greenColor];
     }else{
         [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:(UIControlStateNormal)];
@@ -91,7 +91,7 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)didLogin{
     UserInfo *userInfo = [[UserInfo alloc] init];
-    if (userInfo == nil) {
+    if ([userInfo.isLogin isEqualToString:@"NO"]) {
         LoginViewController * LoginVC = [[LoginViewController alloc]init];
         [self presentViewController:LoginVC animated:YES completion:nil];
     }else{

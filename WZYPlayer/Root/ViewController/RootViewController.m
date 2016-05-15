@@ -34,6 +34,11 @@
   [self setupEmptyView];
 }
 
+/**
+ *  RootViewController.m
+ *  数据请求
+ *  判断（首先从本地获取 如果本地有数据直接展示、否则从网上请求）
+ */
 - (void)data {
   if ([LocaldData achieveListDataType:@"movieList.plist"]) {
     self.dataArray = [LocaldData achieveListDataType:@"movieList.plist"].list;
@@ -51,21 +56,35 @@
              }];
   }
 }
+
 #pragma mark - TabelView Delegate and DataSource
+//RootViewController.m
+/**
+ *  设置tabelView列表的分区数
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return 1;
 }
-
+/**
+ *  设置tabelView列表每个分区的行数
+ *  行数为数组self.dataArray里元素的个数
+ */
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
   return self.dataArray.count;
 }
+/**
+ *  设置tabelView每行的高度
+ */
 - (CGFloat)tableView:(UITableView *)tableView
     heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
   return 100;
 }
-
+/**
+ *  创建cell，并给cell上的控件赋值数据
+ *  从数组self.dataArray中获取一个元素，给cell赋值
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   RootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RootCell"];
@@ -74,6 +93,10 @@
   [cell cell:cell model:rootModel];
   return cell;
 }
+/**
+ *  点击某一行cell，跳转至电影详情页面
+ *  跳转页面时将要展示的数据传给后一个页面
+ */
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   MovieViewController *movieVC =
@@ -87,14 +110,14 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
-//////////////
 
 - (void)setupSubviews {
-  self.baseTableView =
-      [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+  self.baseTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.view addSubview:self.baseTableView];
   self.baseTableView.dataSource = self;
   self.baseTableView.delegate = self;
+    
   [self.baseTableView registerNib:[UINib nibWithNibName:@"RootCell"
                                                  bundle:[NSBundle mainBundle]]
            forCellReuseIdentifier:@"RootCell"];

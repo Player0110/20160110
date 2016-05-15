@@ -97,7 +97,11 @@ static NSString *const PrevueUrl =
   NSURL *url = [NSURL URLWithString:imgUrl];
   return url;
 }
-//收藏
+
+/**
+ *  收藏
+ *  收藏的电影存在本地
+ */
 - (void)collectModel {
 
   NSString *filename = [SavePathString savePathName:@"CollectList.plist"];
