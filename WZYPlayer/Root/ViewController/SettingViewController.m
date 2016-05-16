@@ -123,12 +123,16 @@ heightForHeaderInSection:(NSInteger)section {
     
 }
 
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *imageIcon = info[UIImagePickerControllerEditedImage];
     CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:imageIcon];
     editor.delegate = self;
     
-    [picker pushViewController:editor animated:YES];
+    [picker presentViewController:editor animated:YES completion:nil];
 }
 
 - (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
@@ -139,7 +143,11 @@ heightForHeaderInSection:(NSInteger)section {
     BOOL result = [UIImagePNGRepresentation(image)writeToFile:filePath atomically:YES];
     NSLog(@"image result = %d",result);
     
-    [editor dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imageEditorDidCancel:(CLImageEditor *)editor{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
