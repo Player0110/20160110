@@ -190,12 +190,19 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)didClickLogout {
-    UserInfo *userInfo = [[UserInfo alloc] init];
-    userInfo.userName = @"";
-    userInfo.userIcon = @"";
-    userInfo.isLogin = @"NO";
-    [userInfo saveDictionaryUser];
-    [self.tableview reloadData];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"是否退出当前账号？" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        UserInfo *userInfo = [[UserInfo alloc] init];
+        userInfo.userName = @"";
+        userInfo.userIcon = @"";
+        userInfo.isLogin = @"NO";
+        [userInfo saveDictionaryUser];
+        [self.tableview reloadData];
+    }];
+    [alert addAction:cancelAction];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -227,8 +234,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 1) {
-        [[SDImageCache sharedImageCache] clearDisk];
-        [self.tableview reloadData];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"是否清除缓存？" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [[SDImageCache sharedImageCache] clearDisk];
+            [self.tableview reloadData];
+        }];
+        [alert addAction:cancelAction];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
