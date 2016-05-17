@@ -48,106 +48,22 @@
 
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section {
-    return [self tableViewHeaderFooterView];
+    return [self tableViewHeaderView];
 }
+
+- (UIView *)tableView:(UITableView *)tableView
+viewForFooterInSection:(NSInteger)section {
+    return [self tabelViewFooterView];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView
 heightForHeaderInSection:(NSInteger)section {
     return 235;
 }
 
-
-- (UITableViewHeaderFooterView *)tableViewHeaderFooterView {
-    UITableViewHeaderFooterView *headerView =
-    [[UITableViewHeaderFooterView alloc] init];
-    UIImageView *imageView = [[UIImageView alloc]
-                              initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 235)];
-    [headerView addSubview:imageView];
-    
-    UIButton *loginBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    loginBtn.frame = CGRectMake(self.view.frame.size.width/2-50, 60, 100, 100);
-    loginBtn.layer.cornerRadius = 50.0f;
-    loginBtn.layer.masksToBounds = YES;
-
-    UserInfo * user = [[UserInfo alloc] init];
-//    TODO: 未登录时怎么判断user
-   
-    
-    //读取图片
-    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"userIcon.jpg"];
-    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
-    NSLog(@"image = %@",savedImage);
-    
-    if ([user.isLogin isEqualToString:@"NO"]) {
-        loginBtn.backgroundColor = [UIColor greenColor];
-    }else{
-        [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:(UIControlStateNormal)];
-    }
-    [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
-    [headerView addSubview:loginBtn];
-    [loginBtn addTarget:self action:@selector(didLogin) forControlEvents:(UIControlEventTouchUpInside)];
-    
-    return headerView;
-}
-
-- (void)didLogin{
-    UserInfo *userInfo = [[UserInfo alloc] init];
-    if ([userInfo.isLogin isEqualToString:@"NO"]) {
-        LoginViewController * LoginVC = [[LoginViewController alloc]init];
-        [self presentViewController:LoginVC animated:YES completion:nil];
-    }else{
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"打开相册" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-        [alertController addAction: [UIAlertAction actionWithTitle: @"选取相片" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            //处理点击拍照
-            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-            imagePickerController.delegate = self;
-            imagePickerController.allowsEditing = YES;
-            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:imagePickerController animated:YES completion:^{
-                
-            }];
-        }]];
-        [alertController addAction: [UIAlertAction actionWithTitle: @"拍照" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            //处理点击从相册选取
-            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-            imagePickerController.delegate = self;
-            imagePickerController.allowsEditing = YES;
-            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-            [self presentViewController:imagePickerController animated:YES completion:^{
-                
-            }];
-        }]];
-        [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
-
-    }
-    
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    UIImage *imageIcon = info[UIImagePickerControllerEditedImage];
-    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:imageIcon];
-    editor.delegate = self;
-    
-    [picker presentViewController:editor animated:YES completion:nil];
-}
-
-- (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
-{
-//    TODO:添加保存图片到沙盒
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"userIcon.jpg"]];   // 保存文件的名称
-    BOOL result = [UIImagePNGRepresentation(image)writeToFile:filePath atomically:YES];
-    NSLog(@"image result = %d",result);
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imageEditorDidCancel:(CLImageEditor *)editor{
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section {
+    return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -185,6 +101,128 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         
     }
     return nil;
+}
+
+- (UITableViewHeaderFooterView *)tableViewHeaderView {
+    UITableViewHeaderFooterView *headerView =
+    [[UITableViewHeaderFooterView alloc] init];
+    UIImageView *imageView = [[UIImageView alloc]
+                              initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 235)];
+    [headerView addSubview:imageView];
+    
+    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    loginBtn.frame = CGRectMake(self.view.frame.size.width/2-50, 60, 100, 100);
+    loginBtn.layer.cornerRadius = 50.0f;
+    loginBtn.layer.masksToBounds = YES;
+    
+    UserInfo * user = [[UserInfo alloc] init];
+    //读取图片
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"userIcon.jpg"];
+    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    NSLog(@"image = %@",savedImage);
+    
+    if ([user.isLogin isEqualToString:@"NO"]) {
+        loginBtn.backgroundColor = [UIColor greenColor];
+    }else{
+        if (savedImage == nil) {
+            [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:UIControlStateNormal];
+            
+        }else {
+            [loginBtn setImage:savedImage forState:UIControlStateNormal];
+        }
+    }
+    [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
+    [headerView addSubview:loginBtn];
+    [loginBtn addTarget:self action:@selector(didLogin) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    return headerView;
+}
+
+- (UITableViewHeaderFooterView *) tabelViewFooterView {
+    UITableViewHeaderFooterView *footerView =
+    [[UITableViewHeaderFooterView alloc] init];
+    UIButton * logoutButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    logoutButton.frame = CGRectMake(self.view.frame.size.width/2-125, 10, 250, 40);
+    logoutButton.backgroundColor = [UIColor redColor];
+    logoutButton.tintColor = [UIColor whiteColor];
+    logoutButton.layer.cornerRadius = 5.0f;
+    logoutButton.layer.masksToBounds = YES;
+    
+    [logoutButton setTitle:@"退 出" forState:UIControlStateNormal];
+    [logoutButton addTarget:self action:@selector(didClickLogout) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:logoutButton];
+    
+    return footerView;
+}
+
+- (void)didLogin{
+    UserInfo *userInfo = [[UserInfo alloc] init];
+    if ([userInfo.isLogin isEqualToString:@"NO"]) {
+        LoginViewController * LoginVC = [[LoginViewController alloc]init];
+        [self presentViewController:LoginVC animated:YES completion:nil];
+    }else{
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"打开相册" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"选取相片" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //处理点击拍照
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePickerController animated:YES completion:^{
+                
+            }];
+        }]];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"拍照" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            //处理点击从相册选取
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagePickerController animated:YES completion:^{
+                
+            }];
+        }]];
+        [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }
+    
+}
+
+- (void)didClickLogout {
+    UserInfo *userInfo = [[UserInfo alloc] init];
+    userInfo.userName = @"";
+    userInfo.userIcon = @"";
+    userInfo.isLogin = @"NO";
+    [userInfo saveDictionaryUser];
+    [self.tableview reloadData];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *imageIcon = info[UIImagePickerControllerEditedImage];
+    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:imageIcon];
+    editor.delegate = self;
+    
+    [picker presentViewController:editor animated:YES completion:nil];
+}
+
+- (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
+{
+    //  添加保存图片到沙盒
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"userIcon.jpg"]];   // 保存文件的名称
+    BOOL result = [UIImagePNGRepresentation(image)writeToFile:filePath atomically:YES];
+    NSLog(@"image result = %d",result);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imageEditorDidCancel:(CLImageEditor *)editor{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
