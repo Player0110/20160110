@@ -63,6 +63,10 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForFooterInSection:(NSInteger)section {
+    UserInfo * user = [[UserInfo alloc] init];
+    if ([user.isLogin isEqualToString:@"NO"]) {
+        return 0;
+    }
     return 60;
 }
 
