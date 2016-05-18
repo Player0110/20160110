@@ -20,7 +20,6 @@
 		2914DFF21CBBBA5900FDBCE7 /* TicketUnitListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */; };
 		2943974C1CE2CE8700E7D257 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943974B1CE2CE8700E7D257 /* UserInfo.m */; };
 		2977E6941CEB232600FD1253 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977E6921CEB232600FD1253 /* CityViewController.m */; };
-		2977E6951CEB232600FD1253 /* CityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2977E6931CEB232600FD1253 /* CityViewController.xib */; };
 		29F5EF311CA3DB9A00EF81AF /* CinemaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */; };
 		29F5EF321CA3DB9A00EF81AF /* CinemaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */; };
 		29F5EF3B1CA3E20800EF81AF /* CinemaInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF391CA3E20800EF81AF /* CinemaInformationCell.m */; };
@@ -132,7 +131,6 @@
 		2943974B1CE2CE8700E7D257 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		2977E6911CEB232600FD1253 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
 		2977E6921CEB232600FD1253 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
-		2977E6931CEB232600FD1253 /* CityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityViewController.xib; sourceTree = "<group>"; };
 		29F5EF2E1CA3DB9A00EF81AF /* CinemaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaDetailViewController.h; sourceTree = "<group>"; };
 		29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaDetailViewController.m; sourceTree = "<group>"; };
 		29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaDetailViewController.xib; sourceTree = "<group>"; };
@@ -423,7 +421,6 @@
 				76FEC2FC1CDAE892007F90ED /* LoginViewController.xib */,
 				2977E6911CEB232600FD1253 /* CityViewController.h */,
 				2977E6921CEB232600FD1253 /* CityViewController.m */,
-				2977E6931CEB232600FD1253 /* CityViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -713,7 +710,6 @@
 				557960A21C08A4D300BB731E /* Main.storyboard in Resources */,
 				76FAC9491CD9E1A700966324 /* ShareSDKUI.bundle in Resources */,
 				76FAC9501CD9E1A700966324 /* read_me.txt in Resources */,
-				2977E6951CEB232600FD1253 /* CityViewController.xib in Resources */,
 				76FAC9521CD9E1A700966324 /* ShareSDK.bundle in Resources */,
 				559C19CF1CCB5888000F9984 /* TrafficCell.xib in Resources */,
 				554B780A1C43FC5C0031041D /* MovieViewController.xib in Resources */,

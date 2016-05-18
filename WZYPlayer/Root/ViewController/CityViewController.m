@@ -10,6 +10,8 @@
 
 @interface CityViewController ()
 
+@property (nonatomic, strong)NSDictionary * cityDic;
+
 @end
 
 @implementation CityViewController
@@ -17,11 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cityCell"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.cityDic = [NSDictionary dictionaryWithObjects:@[@"北京",@"郑州", @"上海", @"广州", @"天津", @"重庆", @"杭州", @"成都", @"沈阳", @"南京", @"哈尔滨", @"武汉", @"长沙", @"福州", @"贵阳", @"长春", @"合肥", @"呼和浩特", @"海口", @"济南"] forKeys:@[@"110000", @"310000", @"440100", @"120000", @"500000", @"330100", @"510100", @"210100", @"320100", @"230100", @"420100", @"430100", @"350100", @"520100", @"220100", @"340100", @"150100", @"460100", @"370100", @"410100"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,25 +32,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if (section == 0) {
+        return 1;
+    }else {
+        return self.cityDic.count;
+    }
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cityCell" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        
+    } else{
+        NSArray * cityArray = [self.cityDic allValues];
+        cell.textLabel.text = cityArray[indexPath.row];
+    }
     
     return cell;
 }
-*/
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 1) {
+        
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,21 +97,7 @@
 }
 */
 
-/*
-#pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
 
 /*
 #pragma mark - Navigation
