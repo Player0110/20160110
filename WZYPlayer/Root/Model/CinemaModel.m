@@ -10,14 +10,16 @@
 #import "DataService.h"
 #import "SavePathString.h"
 
+#import "UrlAboutCity.h"
+
 static NSString *const CinemaUrl =
     @"http://piao.163.com/m/cinema/"
     @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER";
 static NSString *const DetailUrl =
     @"http://piao.163.com/m/cinema/"
     @"schedule.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000&cinema_id=%@&movie_id=";
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER&cinema_id=%@&movie_id=";
 
 @implementation CinemaModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -48,7 +50,7 @@ static NSString *const DetailUrl =
                          type:(NSString *)type
                         block:(void (^)(CinemaListModel *cinemaList,
                                         NSError *error))completion {
-    NSString *str = CinemaUrl;
+    NSString *str = [CinemaUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]];
    
     return [[DataService sharedClient] POST:str
                                  parameters:@{}
@@ -77,8 +79,9 @@ static NSString *const DetailUrl =
 }
 
 - (NSString *)stringByReplacingOccurrencesOfString:(NSString *)string {
+    NSString *str1 = [DetailUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]];
     NSString *str =
-    [DetailUrl stringByReplacingOccurrencesOfString:@"%@" withString:string];
+    [str1 stringByReplacingOccurrencesOfString:@"%@" withString:string];
     
     return str;
 }

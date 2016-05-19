@@ -35,11 +35,11 @@
 }
 
 - (void)data {
-    if ([LocaldData achieveCinemaListDataType:@"cinemaList.plist"]) {
-        self.dataArray = [LocaldData achieveCinemaListDataType:@"cinemaList.plist"].cinemaList;
-        [self.baseTableView reloadData];
-        
-    } else {
+//    if ([LocaldData achieveCinemaListDataType:@"cinemaList.plist"]) {
+//        self.dataArray = [LocaldData achieveCinemaListDataType:@"cinemaList.plist"].cinemaList;
+//        [self.baseTableView reloadData];
+//        
+//    } else {
         [CinemaModel URL:@""
                   type:@""
                  block:^(CinemaListModel *cinemaListModel, NSError *error) {
@@ -49,7 +49,7 @@
                          [self.baseTableView reloadData];
                      }
                  }];
-    }
+//    }
 }
 
 - (void)setupSubviews {

@@ -72,6 +72,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="rightBarButton" destination="nnF-BC-i0a" id="VQi-wC-ZPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +104,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="rbe-Uv-dQQ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="J1e-jD-pYS"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="J1e-jD-pYS">
+                            <connections>
+                                <action selector="leftBarButtonAction:" destination="2lA-l9-UB5" id="jPo-eR-3yP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UyE-cc-ucv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,10 +7,13 @@
 //
 
 #import "CityViewController.h"
+#import "UrlAboutCity.h"
 
 @interface CityViewController ()
 
-@property (nonatomic, strong)NSDictionary * cityDic;
+@property (nonatomic, strong) NSArray * cityNameArray;
+@property (nonatomic, strong) NSArray * cityNumberArray;
+@property (nonatomic, strong) NSString * currentCity;
 
 @end
 
@@ -20,8 +23,17 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cityCell"];
+    self.cityNameArray = @[@"北京", @"上海",@"郑州", @"广州", @"天津", @"重庆", @"杭州", @"成都", @"沈阳", @"南京", @"哈尔滨", @"武汉", @"长沙", @"福州", @"贵阳", @"长春", @"合肥", @"呼和浩特", @"海口", @"济南"];
+    self.cityNumberArray = @[@"110000", @"310000", @"410100", @"440100", @"120000", @"500000", @"330100", @"510100", @"210100", @"320100", @"230100", @"420100", @"430100", @"350100", @"520100", @"220100", @"340100", @"150100", @"460100", @"370100"];
     
-    self.cityDic = [NSDictionary dictionaryWithObjects:@[@"北京",@"郑州", @"上海", @"广州", @"天津", @"重庆", @"杭州", @"成都", @"沈阳", @"南京", @"哈尔滨", @"武汉", @"长沙", @"福州", @"贵阳", @"长春", @"合肥", @"呼和浩特", @"海口", @"济南"] forKeys:@[@"110000", @"310000", @"440100", @"120000", @"500000", @"330100", @"510100", @"210100", @"320100", @"230100", @"420100", @"430100", @"350100", @"520100", @"220100", @"340100", @"150100", @"460100", @"370100", @"410100"]];
+    
+    NSString * cityName = [UrlAboutCity userDefaultsForCityName];
+    self.currentCity = cityName;
+    self.title = [NSString stringWithFormat:@"当前城市－%@",self.currentCity];
+}
+
+- (IBAction)leftBarButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,21 +47,32 @@
     return 2;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"当前城市";
+    } else {
+        return @"热门城市";
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
     }else {
-        return self.cityDic.count;
+        return self.cityNameArray.count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cityCell" forIndexPath:indexPath];
     if (indexPath.section == 0) {
-        
+        cell.textLabel.text = self.currentCity;
     } else{
-        NSArray * cityArray = [self.cityDic allValues];
-        cell.textLabel.text = cityArray[indexPath.row];
+        cell.textLabel.text = self.cityNameArray[indexPath.row];
     }
     
     return cell;
@@ -60,7 +83,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 1) {
-        
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString * cityNumber = self.cityNumberArray[indexPath.row];
+        NSString * cityName = self.cityNameArray[indexPath.row];
+        NSDictionary * oneCityDic = [NSDictionary dictionaryWithObject:cityName forKey:cityNumber];
+        [userDefaults setObject:oneCityDic forKey:@"city"];
+        [self.tableView reloadData];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
     }
 }
 /*

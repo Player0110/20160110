@@ -10,11 +10,12 @@
 #import "TicketModel.h"
 #import "DataService.h"
 #import "SavePathString.h"
+#import "UrlAboutCity.h"
 
 static NSString *const TicketUrl =
 @"http://piao.163.com/m/cinema/"
 @"ticket.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
-@"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000"
+@"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER"
 @"&cinema_id=CINEMAID&movie_id=MOVIEID";
 @implementation TicketUnitModel
 
@@ -66,9 +67,10 @@ static NSString *const TicketUrl =
 }
 
 + (NSString *)stringByReplacingOccurrencesOfCinema_idString:(NSString *)cinema_id movie_idString:(NSString *)movie_id {
+    NSString *str1 = [TicketUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]];
     if (cinema_id.length>0&&movie_id.length>0) {
         NSString *str =
-        [TicketUrl stringByReplacingOccurrencesOfString:@"CINEMAID" withString:cinema_id];
+        [str1 stringByReplacingOccurrencesOfString:@"CINEMAID" withString:cinema_id];
         NSString *returnStr = [str stringByReplacingOccurrencesOfString:@"MOVIEID" withString:movie_id];
         return returnStr;
 

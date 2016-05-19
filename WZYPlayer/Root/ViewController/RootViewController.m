@@ -14,9 +14,12 @@
 #import "RootModel.h"
 #import "RootViewController.h"
 
+#import "UrlAboutCity.h"
+
 @interface RootViewController ()
 
 @property(strong, nonatomic) NSMutableArray *dataArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;
 
 @end
 
@@ -112,7 +115,6 @@
 }
 
 - (void)setupSubviews {
-    
   self.baseTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.view addSubview:self.baseTableView];
   self.baseTableView.dataSource = self;
@@ -122,7 +124,10 @@
                                                  bundle:[NSBundle mainBundle]]
            forCellReuseIdentifier:@"RootCell"];
 }
-- (void)viewDidAppear:(BOOL)animated {
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.baseTableView reloadData];
+    [self.rightBarButton setTitle:[NSString stringWithFormat:@"%@>",[UrlAboutCity userDefaultsForCityName]]];
 }
 
 /*

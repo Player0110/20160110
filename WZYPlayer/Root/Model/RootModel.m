@@ -10,21 +10,22 @@
 #import "RootListModel.h"
 #import "RootModel.h"
 #import "SavePathString.h"
+#import "UrlAboutCity.h"
 static NSString *const RootUrl =
     @"http://piao.163.com/m/movie/"
     @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&channel=lede&deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER";
 static NSString *const DetailsUrl =
     @"http://piao.163.com/m/movie/"
     @"detail.html?movie_id=%@&mobileType=iPhone&ver=3.7.1&channel=lede&"
     @"deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER";
 
 static NSString *const PrevueUrl =
     @"http://piao.163.com/m/movie/"
     @"list.html?app_id=2&mobileType=iPhone&ver=3.7.1&type=1&channel=lede&"
     @"deviceId="
-    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=110000";
+    @"6FAB3353-D9B2-4430-8B8A-A25A76C85EC9&apiVer=21&city=CITYNUMBER";
 
 //
 
@@ -58,9 +59,9 @@ static NSString *const PrevueUrl =
                                         NSError *error))completion {
   NSString *str;
   if ([type isEqualToString:@"1"]) {
-    str = PrevueUrl;
+    str = [PrevueUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]] ;
   } else {
-    str = RootUrl;
+    str = [RootUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]];
   }
   return [[DataService sharedClient] POST:str
       parameters:@{}
@@ -86,8 +87,9 @@ static NSString *const PrevueUrl =
       }];
 }
 - (NSString *)stringByReplacingOccurrencesOfString:(NSString *)string {
-  NSString *str =
-      [DetailsUrl stringByReplacingOccurrencesOfString:@"%@" withString:string];
+    NSString *str1 = [DetailsUrl stringByReplacingOccurrencesOfString:@"CITYNUMBER" withString:[UrlAboutCity userDefaultsForCityNumber]];
+    NSString *str =
+      [str1 stringByReplacingOccurrencesOfString:@"%@" withString:string];
 
   return str;
 }

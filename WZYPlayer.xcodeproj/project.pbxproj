@@ -19,6 +19,7 @@
 		2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFEE1CBBBA3E00FDBCE7 /* TicketUnitModel.m */; };
 		2914DFF21CBBBA5900FDBCE7 /* TicketUnitListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */; };
 		2943974C1CE2CE8700E7D257 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943974B1CE2CE8700E7D257 /* UserInfo.m */; };
+		2955E7631CED64BD0063C81B /* UrlAboutCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2955E7621CED64BD0063C81B /* UrlAboutCity.m */; };
 		2977E6941CEB232600FD1253 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977E6921CEB232600FD1253 /* CityViewController.m */; };
 		29F5EF311CA3DB9A00EF81AF /* CinemaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F5EF2F1CA3DB9A00EF81AF /* CinemaDetailViewController.m */; };
 		29F5EF321CA3DB9A00EF81AF /* CinemaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F5EF301CA3DB9A00EF81AF /* CinemaDetailViewController.xib */; };
@@ -129,6 +130,8 @@
 		2914DFF11CBBBA5900FDBCE7 /* TicketUnitListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketUnitListModel.m; sourceTree = "<group>"; };
 		2943974A1CE2CE8700E7D257 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		2943974B1CE2CE8700E7D257 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		2955E7611CED64BD0063C81B /* UrlAboutCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlAboutCity.h; sourceTree = "<group>"; };
+		2955E7621CED64BD0063C81B /* UrlAboutCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlAboutCity.m; sourceTree = "<group>"; };
 		2977E6911CEB232600FD1253 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
 		2977E6921CEB232600FD1253 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		29F5EF2E1CA3DB9A00EF81AF /* CinemaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaDetailViewController.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				5541CF261C48A7C1005144D8 /* LocaldData.m */,
 				5541CF281C48BF8E005144D8 /* SavePathString.h */,
 				5541CF291C48BF8E005144D8 /* SavePathString.m */,
+				2955E7611CED64BD0063C81B /* UrlAboutCity.h */,
+				2955E7621CED64BD0063C81B /* UrlAboutCity.m */,
 				554492201C416BD4008F6FC0 /* Model */,
 				554492251C416BD4008F6FC0 /* View */,
 				5544922D1C416BD4008F6FC0 /* ViewController */,
@@ -793,6 +798,7 @@
 				76FEC3021CDB47BC007F90ED /* SeetingCell.m in Sources */,
 				551554791C462B9500722C52 /* TextCell.m in Sources */,
 				2914DFEF1CBBBA3E00FDBCE7 /* TicketUnitModel.m in Sources */,
+				2955E7631CED64BD0063C81B /* UrlAboutCity.m in Sources */,
 				2977E6941CEB232600FD1253 /* CityViewController.m in Sources */,
 				5523F2FA1C477679004033F7 /* CollectViewController.m in Sources */,
 				2943974C1CE2CE8700E7D257 /* UserInfo.m in Sources */,
@@ -974,7 +980,7 @@
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.login.gg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.WZYplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1000,7 +1006,7 @@
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.login.gg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.WZYplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
