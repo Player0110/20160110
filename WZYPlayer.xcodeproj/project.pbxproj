@@ -211,6 +211,7 @@
 		55AEF36A1C46173F00000DAF /* LogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoCell.h; sourceTree = "<group>"; };
 		55AEF36B1C46173F00000DAF /* LogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoCell.m; sourceTree = "<group>"; };
 		55AEF36C1C46173F00000DAF /* LogoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoCell.xib; sourceTree = "<group>"; };
+		765F349E1CEEA71A00C8FD73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		76FAC9291CD9E1A700966324 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		76FAC92A1CD9E1A700966324 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
 		76FAC92B1CD9E1A700966324 /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
@@ -661,7 +662,7 @@
 				TargetAttributes = {
 					557960931C08A4D300BB731E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = C53DGAEY52;
+						DevelopmentTeam = 6U7UH8838D;
 					};
 					557960AC1C08A4D300BB731E = {
 						CreatedOnToolsVersion = 7.1;
@@ -871,6 +872,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				557960A11C08A4D300BB731E /* Base */,
+				765F349E1CEEA71A00C8FD73 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -980,7 +982,7 @@
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.login.WZYplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.gg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1006,7 +1008,7 @@
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/WZYPlayer/support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.login.WZYplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.gg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -120,13 +120,14 @@
      
           activePlatforms:@[
                             @(SSDKPlatformTypeSinaWeibo),
-                            @(SSDKPlatformTypeMail),
-                            @(SSDKPlatformTypeSMS),
-                            @(SSDKPlatformTypeCopy),
+//                            @(SSDKPlatformTypeMail),
+//                            @(SSDKPlatformTypeSMS),
+//                            @(SSDKPlatformTypeCopy),
                             @(SSDKPlatformTypeWechat),
                             @(SSDKPlatformTypeQQ),
-                            @(SSDKPlatformTypeRenren),
-                            @(SSDKPlatformTypeGooglePlus)]
+//                            @(SSDKPlatformTypeRenren),
+//                            @(SSDKPlatformTypeGooglePlus)
+                            ]
                  onImport:^(SSDKPlatformType platformType)
      {
          switch (platformType)
