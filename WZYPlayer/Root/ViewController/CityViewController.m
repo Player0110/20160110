@@ -22,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_backgroungImage"] forBarMetrics:UIBarMetricsDefault];
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    self.navigationController.navigationBar.titleTextAttributes = dict;
+    [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cityCell"];
     self.cityNameArray = @[@"北京", @"上海",@"郑州", @"广州", @"天津", @"重庆", @"杭州", @"成都", @"沈阳", @"南京", @"哈尔滨", @"武汉", @"长沙", @"福州", @"贵阳", @"长春", @"合肥", @"呼和浩特", @"海口", @"济南"];
     self.cityNumberArray = @[@"110000", @"310000", @"410100", @"440100", @"120000", @"500000", @"330100", @"510100", @"210100", @"320100", @"230100", @"420100", @"430100", @"350100", @"520100", @"220100", @"340100", @"150100", @"460100", @"370100"];

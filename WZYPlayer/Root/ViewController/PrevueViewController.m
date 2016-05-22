@@ -33,6 +33,7 @@
   [self setupSubviews];
   [self setupRefresh];
   [self setupEmptyView];
+    [self menuBarbutton];
 }
 
 - (void)data {

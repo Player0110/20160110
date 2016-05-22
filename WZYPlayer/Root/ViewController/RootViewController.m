@@ -35,6 +35,7 @@
   [self setupSubviews];
   [self setupRefresh];
   [self setupEmptyView];
+    [self menuBarbutton];
 }
 
 /**
@@ -127,7 +128,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.baseTableView reloadData];
-    [self.rightBarButton setTitle:[NSString stringWithFormat:@"%@>",[UrlAboutCity userDefaultsForCityName]]];
+    
+    [self.rightBarButton setTitle:[NSString stringWithFormat:@"%@▾",[UrlAboutCity userDefaultsForCityName]]];
 }
 
 /*

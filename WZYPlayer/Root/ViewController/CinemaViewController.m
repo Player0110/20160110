@@ -31,6 +31,7 @@
     [self data];
     [self setupRefresh];
     [self setupEmptyView];
+    [self menuBarbutton];
     // Do any additional setup after loading the view from its nib.
 }
 

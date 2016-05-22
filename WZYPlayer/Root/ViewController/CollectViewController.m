@@ -22,6 +22,13 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
   self.title = NSLocalizedString(@"我的收藏", nil);
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_backgroungImage"] forBarMetrics:UIBarMetricsDefault];
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    self.navigationController.navigationBar.titleTextAttributes = dict;
+    
+    [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:@"nav_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
   [self.tableView registerNib:[UINib nibWithNibName:@"RootCell"
@@ -29,6 +36,7 @@
        forCellReuseIdentifier:@"RootCell"];
   self.tableView.tableFooterView = [[UIView alloc] init];
   [self data];
+
 }
 - (void)data {
   self.array = [RootModel fetchCollectModel];

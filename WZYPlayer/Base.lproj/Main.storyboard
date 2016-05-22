@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fjR-IE-QCv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fjR-IE-QCv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,10 +14,10 @@
                         <viewControllerLayoutGuide type="bottom" id="4Bm-t3-cJU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9iD-No-nLP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o1g-Ot-Bbe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o1g-Ot-Bbe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vo4-wK-mKa">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="xiG-Rq-0Cg">
+                        <barButtonItem key="leftBarButtonItem" id="xiG-Rq-0Cg">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="kXW-LU-w0g" id="swZ-sE-ob6"/>
                             </connections>
@@ -55,17 +55,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7LW-Yb-30Q">
-                        <barButtonItem key="leftBarButtonItem" title="leftButton" id="OEX-LG-k4S">
+                        <barButtonItem key="leftBarButtonItem" id="OEX-LG-k4S">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="BYZ-38-t0r" id="L9P-kL-Ih1"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="RightItem" id="nnF-BC-i0a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Ew0-DB-idJ" kind="modal" identifier="city" id="PHl-ke-kfU"/>
                             </connections>
@@ -80,20 +81,20 @@
             </objects>
             <point key="canvasLocation" x="1375" y="-64"/>
         </scene>
-        <!--Root View Controller-->
+        <!--CityViewController-->
         <scene sceneID="1Oa-5o-1dq">
             <objects>
                 <tableViewController id="2lA-l9-UB5" customClass="CityViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dt5-m1-YOA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="acX-JV-w2U">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acX-JV-w2U" id="ixI-3m-3oS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -103,8 +104,8 @@
                             <outlet property="delegate" destination="2lA-l9-UB5" id="Lsx-ub-ARz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rbe-Uv-dQQ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="J1e-jD-pYS">
+                    <navigationItem key="navigationItem" title="CityViewController" id="rbe-Uv-dQQ">
+                        <barButtonItem key="leftBarButtonItem" id="J1e-jD-pYS">
                             <connections>
                                 <action selector="leftBarButtonAction:" destination="2lA-l9-UB5" id="jPo-eR-3yP"/>
                             </connections>
@@ -120,7 +121,7 @@
             <objects>
                 <navigationController id="Ew0-DB-idJ" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xyl-M9-iG1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xyl-M9-iG1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -156,7 +157,7 @@
             <objects>
                 <navigationController storyboardIdentifier="contentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXV-AS-GJC" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wil-jY-vaL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Wil-jY-vaL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -181,10 +182,11 @@
                         <viewControllerLayoutGuide type="bottom" id="l18-j2-dqE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mz0-Eu-Vqr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OX-kz-z8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,12 +201,12 @@
                         <viewControllerLayoutGuide type="bottom" id="7Ye-a8-Phy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GNp-PB-gIJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="k1X-x6-5kz">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="mU2-Zf-uyA">
+                        <barButtonItem key="leftBarButtonItem" id="mU2-Zf-uyA">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="Lxc-UZ-5d3" id="ne3-jR-XKy"/>
                             </connections>
@@ -224,7 +226,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kVS-pA-JIa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wQh-bx-IBl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-Nd-WXB">
@@ -234,14 +236,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="top" secondItem="Obf-FL-gyo" secondAttribute="bottom" constant="-64" id="6LX-61-Xn0"/>
+                            <constraint firstItem="Y2d-Nd-WXB" firstAttribute="top" secondItem="Obf-FL-gyo" secondAttribute="bottom" id="6LX-61-Xn0"/>
                             <constraint firstItem="Y2d-Nd-WXB" firstAttribute="leading" secondItem="wQh-bx-IBl" secondAttribute="leading" id="PlL-ee-R3V"/>
-                            <constraint firstItem="kVS-pA-JIa" firstAttribute="top" secondItem="Y2d-Nd-WXB" secondAttribute="bottom" id="aiK-F9-UU8"/>
+                            <constraint firstItem="kVS-pA-JIa" firstAttribute="top" secondItem="Y2d-Nd-WXB" secondAttribute="bottom" constant="-64" id="aiK-F9-UU8"/>
                             <constraint firstAttribute="trailing" secondItem="Y2d-Nd-WXB" secondAttribute="trailing" id="sGO-KT-EeA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8SD-Gw-QDB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="DvD-lR-Bni">
+                        <barButtonItem key="leftBarButtonItem" id="DvD-lR-Bni">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="J3M-3Q-Ex5" id="WXr-cz-UBN"/>
                             </connections>
@@ -265,12 +267,12 @@
                         <viewControllerLayoutGuide type="bottom" id="KWd-5Y-03X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="v6e-Kh-2mV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fHk-nl-tO3">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="HV9-ls-EzU">
+                        <barButtonItem key="leftBarButtonItem" id="HV9-ls-EzU">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="6Dn-ac-bai" id="8RY-9j-DYK"/>
                             </connections>

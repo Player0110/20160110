@@ -35,6 +35,7 @@
     self.tableview.backgroundColor = [UIColor whiteColor];
     UILabel * label = [[UILabel alloc]init];
     label.userInteractionEnabled = YES;
+    [self menuBarbutton];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

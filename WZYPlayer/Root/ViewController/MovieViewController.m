@@ -199,7 +199,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     self.favoriteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.favoriteButton.frame = CGRectMake(0, 0, 30, 30);
     UIImage *image = [[UIImage imageNamed:@"share"]
-                      imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                      imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.favoriteButton.imageView setTintColor:[UIColor grayColor]];
     [self.favoriteButton setImage:image forState:(UIControlStateNormal)];
     [self.favoriteButton addTarget:self
@@ -209,7 +209,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     shareButton.frame = CGRectMake(30, 0, 30, 30);
     [shareButton setImage:[[UIImage imageNamed:@"share"]
-                           imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                           imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                  forState:UIControlStateNormal];
     [shareButton addTarget:self
                     action:@selector(didClickShare)
