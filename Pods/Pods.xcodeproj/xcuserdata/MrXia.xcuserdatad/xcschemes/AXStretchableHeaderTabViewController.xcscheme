@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0B9AEE19F0F2D39100D9D01A'
+               BlueprintIdentifier = '3759FBD56BF5B80090660D73'
                BlueprintName = 'AXStretchableHeaderTabViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libAXStretchableHeaderTabViewController.a'>
