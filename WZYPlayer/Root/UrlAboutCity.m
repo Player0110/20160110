@@ -22,7 +22,7 @@
 + (NSString *)userDefaultsForCityNumber {
     NSDictionary * currentCityDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"city"];
     if (currentCityDic == nil) {
-        currentCityDic = [NSDictionary dictionaryWithObject:@"郑州" forKey:@"310000"];
+        currentCityDic = [NSDictionary dictionaryWithObject:@"郑州" forKey:@"410100"];
     }
     NSArray * array = [currentCityDic allKeys];
     return array[0];
