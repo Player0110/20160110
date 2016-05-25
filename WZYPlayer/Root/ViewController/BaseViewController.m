@@ -20,7 +20,10 @@ static const CGFloat MJDuration = 2.0;
 
 - (void)viewDidLoad {
 
-  [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_backgroungImage"] forBarMetrics:UIBarMetricsDefault];
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    self.navigationController.navigationBar.titleTextAttributes = dict;
+    [super viewDidLoad];
 
   // Do any additional setup after loading the view, typically from a nib.
 }
@@ -30,7 +33,7 @@ static const CGFloat MJDuration = 2.0;
   UIImage *image = [UIImage imageNamed:@"nav_back"];
 
   UIImage *backImage =
-      [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+      [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
   [self.returnButton setImage:backImage forState:(UIControlStateNormal)];
   [self.returnButton setTintColor:[UIColor grayColor]];
   [self.returnButton addTarget:self
@@ -40,16 +43,17 @@ static const CGFloat MJDuration = 2.0;
       [[UIBarButtonItem alloc] initWithCustomView:self.returnButton];
   self.navigationItem.leftBarButtonItem = returnButton;
 }
-- (void)didClickEdit {
-    
-    
-}
+
 - (void)didClickReturn {
 
   [self.navigationController popViewControllerAnimated:YES];
   [super viewDidLoad];
 
   // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)menuBarbutton {
+    [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:@"nav_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
 #pragma mark - MJRefresh上下拉

@@ -1,4 +1,4 @@
-//
+                                                                                                                                                                                                                                                                                                                                                                       //
 //  PrevueViewController.m
 //  WZYPlayer
 //
@@ -7,7 +7,6 @@
 //
 
 #import "DataService.h"
-#import "LeftMenuView.h"
 #import "LocaldData.h"
 #import "MovieViewController.h"
 #import "PrevueViewController.h"
@@ -34,6 +33,7 @@
   [self setupSubviews];
   [self setupRefresh];
   [self setupEmptyView];
+    [self menuBarbutton];
 }
 
 - (void)data {

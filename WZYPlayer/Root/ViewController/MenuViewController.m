@@ -9,6 +9,9 @@
 #import "CollectViewController.h"
 #import "MenuViewController.h"
 #import "PrevueViewController.h"
+#import "CinemaViewController.h"
+#import "SettingViewController.h"
+
 @interface MenuViewController ()
 @property(strong, nonatomic) CollectViewController *collectVC;
 
@@ -66,20 +69,41 @@
                         animated:YES];
     [self.sideMenuViewController hideMenuViewController];
     break;
-
   case 2:
+      [self.sideMenuViewController
+       setContentViewController:
+       [[UINavigationController alloc]
+        initWithRootViewController:
+        [self.storyboard instantiateViewControllerWithIdentifier:
+         @"CinemaViewController"]]
+       animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
+
+  case 3:
     [self.sideMenuViewController
         setContentViewController:
             [[UINavigationController alloc]
                 initWithRootViewController:
                     [self.storyboard instantiateViewControllerWithIdentifier:
                                          @"CollectViewController"]]
-                        animated:YES];
-    [self.sideMenuViewController hideMenuViewController];
-
-    break;
-  default:
-    break;
+     animated:YES];
+          [self.sideMenuViewController hideMenuViewController];
+          
+          break;
+    case 4:
+          [self.sideMenuViewController
+           setContentViewController:
+           [[UINavigationController alloc]
+            initWithRootViewController:
+            [self.storyboard instantiateViewControllerWithIdentifier:
+             @"SettingViewController"]]
+           animated:YES];
+          [self.sideMenuViewController hideMenuViewController];
+          
+          break;
+      default:
+          break;
   }
 }
 
@@ -97,7 +121,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)sectionIndex {
-  return 5;
+  return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -121,10 +145,12 @@
   NSArray *titles =
       @[ @"正在热映",
          @"即将上映",
-         @"我的收藏",
-         @"Settings",
+         @"影院",
+         @"收藏",
+         @"我的",
          @"Log Out" ];
   NSArray *images = @[
+    @"IconHome",
     @"IconHome",
     @"IconCalendar",
     @"IconProfile",

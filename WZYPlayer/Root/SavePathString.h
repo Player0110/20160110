@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SavePathString : NSObject
+
+//返回保存的路径
 + (NSString *)savePathName:(NSString *)name;
 + (NSString *)savePathLocalNameType:(NSString *)name;
 @end
