@@ -41,6 +41,8 @@
     tableView.scrollsToTop = NO;
     tableView;
   });
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_bag"]];
   [self.view addSubview:self.tableView];
 }
 #pragma mark UITableView Delegate
@@ -121,7 +123,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)sectionIndex {
-  return 6;
+  return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -130,12 +132,10 @@
 
   UITableViewCell *cell =
       [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  cell.backgroundColor = [UIColor redColor];
-
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                   reuseIdentifier:cellIdentifier];
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
@@ -147,16 +147,13 @@
          @"即将上映",
          @"影院",
          @"收藏",
-         @"我的",
-         @"Log Out" ];
+         @"我的"];
   NSArray *images = @[
-    @"IconHome",
-    @"IconHome",
-    @"IconCalendar",
-    @"IconProfile",
-    @"IconSettings",
-    @"IconEmpty"
-  ];
+    @"menu_hot",
+    @"menu_prevue",
+    @"menu_cinema",
+    @"menu_favorite",
+    @"menu_mine"];
   cell.textLabel.text = titles[indexPath.row];
   cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
 

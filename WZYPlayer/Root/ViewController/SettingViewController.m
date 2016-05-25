@@ -17,7 +17,8 @@
 
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLImageEditorDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property(assign, nonatomic) CGFloat height;
+@property (assign, nonatomic) CGFloat height;
+@property (strong, nonatomic) UILabel * lab;
 @end
 
 @implementation SettingViewController
@@ -68,7 +69,7 @@ heightForFooterInSection:(NSInteger)section {
     if ([user.isLogin isEqualToString:@"NO"]) {
         return 0;
     }
-    return 60;
+    return 150;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -114,6 +115,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UIImageView *imageView = [[UIImageView alloc]
                               initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 235)];
     [headerView addSubview:imageView];
+    imageView.image = [UIImage imageNamed:@"setting_header"];
+    
+    self.lab = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-50, 165, 100, 30)];
+    self.lab.text = @"点击登录";
+    self.lab.textColor = [UIColor whiteColor];
+    self.lab.textAlignment = NSTextAlignmentCenter;
     
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     loginBtn.frame = CGRectMake(self.view.frame.size.width/2-50, 60, 100, 100);
@@ -127,7 +134,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"image = %@",savedImage);
     
     if ([user.isLogin isEqualToString:@"NO"]) {
-        loginBtn.backgroundColor = [UIColor greenColor];
+//        loginBtn.backgroundColor = [UIColor greenColor];
+        loginBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"setting_icon"]];
+        [headerView addSubview:self.lab];
     }else{
         if (savedImage == nil) {
             [loginBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.userIcon]]] forState:UIControlStateNormal];
@@ -136,7 +145,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             [loginBtn setImage:savedImage forState:UIControlStateNormal];
         }
     }
-    [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
+//    [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
     [headerView addSubview:loginBtn];
     [loginBtn addTarget:self action:@selector(didLogin) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -147,7 +156,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewHeaderFooterView *footerView =
     [[UITableViewHeaderFooterView alloc] init];
     UIButton * logoutButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    logoutButton.frame = CGRectMake(self.view.frame.size.width/2-125, 10, 250, 40);
+    logoutButton.frame = CGRectMake(self.view.frame.size.width/2-125, self.view.frame.size.height-450, 250, 40);
     logoutButton.backgroundColor = [UIColor redColor];
     logoutButton.tintColor = [UIColor whiteColor];
     logoutButton.layer.cornerRadius = 5.0f;

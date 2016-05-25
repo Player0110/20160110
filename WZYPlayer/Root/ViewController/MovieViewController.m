@@ -198,7 +198,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    收藏按钮
     self.favoriteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.favoriteButton.frame = CGRectMake(0, 0, 30, 30);
-    UIImage *image = [[UIImage imageNamed:@"share"]
+    UIImage *image = [[UIImage imageNamed:@"nav_favorite"]
                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.favoriteButton.imageView setTintColor:[UIColor grayColor]];
     [self.favoriteButton setImage:image forState:(UIControlStateNormal)];
@@ -208,7 +208,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    分享按钮
     UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     shareButton.frame = CGRectMake(30, 0, 30, 30);
-    [shareButton setImage:[[UIImage imageNamed:@"share"]
+    [shareButton setImage:[[UIImage imageNamed:@"nav_share"]
                            imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                  forState:UIControlStateNormal];
     [shareButton addTarget:self
