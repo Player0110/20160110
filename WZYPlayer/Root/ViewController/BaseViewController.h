@@ -23,8 +23,16 @@
  *  空白页
  */
 - (void)setupEmptyView;
+
+/**
+ *  返回按钮
+ */
 - (void)leftButton;
--(void)shareButtonView;
+
+/**
+ *  菜单按钮
+ */
+- (void)menuBarbutton;
 
 @end
 
