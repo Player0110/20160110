@@ -69,7 +69,7 @@ heightForFooterInSection:(NSInteger)section {
     if ([user.isLogin isEqualToString:@"NO"]) {
         return 0;
     }
-    return 150;
+    return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -156,7 +156,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewHeaderFooterView *footerView =
     [[UITableViewHeaderFooterView alloc] init];
     UIButton * logoutButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    logoutButton.frame = CGRectMake(self.view.frame.size.width/2-125, self.view.frame.size.height-450, 250, 40);
+    logoutButton.frame = CGRectMake(self.view.frame.size.width/2-125, 10, 250, 40);
     logoutButton.backgroundColor = [UIColor redColor];
     logoutButton.tintColor = [UIColor whiteColor];
     logoutButton.layer.cornerRadius = 5.0f;
